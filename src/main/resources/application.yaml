@@ -1,0 +1,27 @@
+spring:
+  main:
+    banner-mode: off
+
+  h2:
+    console.enabled: true
+
+  sql:
+    init:
+      mode: always
+
+  datasource:
+    url: ${datasource.url}
+    username: ${datasource.username}
+    password: ${datasource.password}
+    driverClassName: org.h2.Driver
+
+  jpa:
+#     show-sql: true
+    spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
+#     defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: none
+
+  liquibase:
+    change-log: classpath:/db/changelog/changelog-master.xml
+    drop-first: true
