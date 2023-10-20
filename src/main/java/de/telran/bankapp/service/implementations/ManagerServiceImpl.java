@@ -9,6 +9,7 @@ import de.telran.bankapp.exceptions.ManagerNotFoundException;
 import de.telran.bankapp.mapper.ManagerMapper;
 import de.telran.bankapp.repository.ManagerRepository;
 import de.telran.bankapp.service.interfaces.ManagerService;
+import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -43,20 +44,19 @@ public class ManagerServiceImpl implements ManagerService {
     }
 
     @Override
-    public void saveManager(ManagerDto managerDto) {
+    public void createManager(ManagerDto managerDto) {
         if (managerDto.getId().isEmpty()) {
             throw new ManagerCreationException("ID can´t be empty.");
         }
         UUID currentID = UUID.fromString(managerDto.getId());
         if (managerRepository.existsById(currentID)) {
-
             String currentFirstName = managerDto.getFirstName();
             String currentLastName = managerDto.getLastName();
             ManagerStatus currentStatus = ManagerStatus.valueOf(managerDto.getStatus());
             Manager newManager = new Manager(currentID, currentFirstName, currentLastName, currentStatus);
             managerRepository.save(newManager);
         } else {
-            throw new ManagerNotFoundException("with ID " + currentID);
+            throw new ManagerCreationException("A manager with ID " + currentID + " already exists");
         }
     }
 
@@ -65,20 +65,25 @@ public class ManagerServiceImpl implements ManagerService {
         if (managerDto.getId().isEmpty()) {
             throw new ManagerCreationException("ID can´t be empty.");
         }
-        Manager manager = managerRepository.getReferenceById(UUID.fromString(managerDto.getId()));
-        if (managerDto.getFirstName() != null &&
-                !managerDto.getFirstName().equals(manager.getFirstName())) {
-            manager.setFirstName(managerDto.getFirstName());
+        UUID currentID = UUID.fromString(managerDto.getId());
+        if (managerRepository.existsById(currentID)) {
+            Manager manager = managerRepository.getReferenceById(UUID.fromString(managerDto.getId()));
+            if (managerDto.getFirstName() != null &&
+                    !managerDto.getFirstName().equals(manager.getFirstName())) {
+                manager.setFirstName(managerDto.getFirstName());
+            }
+            if (managerDto.getLastName() != null &&
+                    !managerDto.getLastName().equals(manager.getLastName())) {
+                manager.setLastName(managerDto.getLastName());
+            }
+            if (managerDto.getStatus() != null &&
+                    !ManagerStatus.valueOf(managerDto.getStatus()).equals(manager.getStatus())) {
+                manager.setStatus(ManagerStatus.valueOf(managerDto.getStatus()));
+            }
+            managerRepository.save(manager);
+        } else {
+            throw new ManagerNotFoundException("with ID " + currentID);
         }
-        if (managerDto.getLastName() != null &&
-                !managerDto.getLastName().equals(manager.getLastName())) {
-            manager.setLastName(managerDto.getLastName());
-        }
-        if (managerDto.getStatus() != null &&
-                !ManagerStatus.valueOf(managerDto.getStatus()).equals(manager.getStatus())) {
-            manager.setStatus(ManagerStatus.valueOf(managerDto.getStatus()));
-        }
-        managerRepository.save(manager);
     }
 
     @Override

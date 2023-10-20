@@ -13,7 +13,7 @@ public interface ManagerService {
 
     void deleteManagerByID(UUID id);
 
-    void saveManager(ManagerDto managerDto);
+    void createManager(ManagerDto managerDto);
 
     void updateManager(ManagerDto managerDto);
 

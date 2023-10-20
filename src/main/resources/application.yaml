@@ -13,11 +13,12 @@ spring:
     url: ${datasource.url}
     username: ${datasource.username}
     password: ${datasource.password}
-    driverClassName: org.h2.Driver
+    driverClassName: org.postgresql.Driver
+#    driverClassName: org.h2.Driver
 
   jpa:
 #     show-sql: true
-    spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
+#    spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
 #     defer-datasource-initialization: true
     hibernate:
       ddl-auto: none
