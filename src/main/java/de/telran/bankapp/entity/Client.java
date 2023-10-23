@@ -71,6 +71,10 @@ public class Client {
             cascade = {MERGE, PERSIST, REFRESH})
     private Set<Account> accounts = new HashSet<>();
 
+    public String getFullName() {
+        return firstName.concat(" ").concat(lastName);
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

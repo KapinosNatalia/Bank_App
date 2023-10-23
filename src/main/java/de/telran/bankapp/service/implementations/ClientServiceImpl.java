@@ -16,9 +16,9 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class ClientServiceImpl implements ClientService {
-    final ClientRepository clientRepository;
-    final ClientMapper clientMapper;
-    final AccountRepository accountRepository;
+    private final ClientRepository clientRepository;
+    private final ClientMapper clientMapper;
+    private final AccountRepository accountRepository;
 
     @Override
     public List<ClientDto> getClientsWithBalanceMoreThan(BigDecimal amount) {

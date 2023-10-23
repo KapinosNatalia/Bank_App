@@ -19,8 +19,8 @@ import java.util.UUID;
 @Service
 @RequiredArgsConstructor
 public class ManagerServiceImpl implements ManagerService {
-    final ManagerRepository managerRepository;
-    final ManagerMapper managerMapper;
+    private final ManagerRepository managerRepository;
+    private final ManagerMapper managerMapper;
 
     @Override
     public List<ManagerDto> getAllManagers() {
