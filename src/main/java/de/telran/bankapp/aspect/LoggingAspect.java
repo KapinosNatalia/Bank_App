@@ -18,7 +18,7 @@ public class LoggingAspect {
     public void controllerLog() {
     }
 
-    @Pointcut("execution(public * de.telran.bankapp.service.*.*(..))")
+    @Pointcut("execution(public * de.telran.bankapp.service.implementations.*.*(..))")
     public void serviceLog() {
     }
 
