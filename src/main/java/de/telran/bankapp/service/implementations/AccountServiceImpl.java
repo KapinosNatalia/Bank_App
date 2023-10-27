@@ -11,6 +11,7 @@ import de.telran.bankapp.repository.AccountRepository;
 import de.telran.bankapp.service.interfaces.AccountService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;

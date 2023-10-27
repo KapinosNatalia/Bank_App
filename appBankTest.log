@@ -1,0 +1,267 @@
+2023-10-27 12:24:17,090 INFO  [main] de.telran.bankapp.controller.AccountControllerTest : Starting AccountControllerTest using Java 19.0.2 with PID 5900 (started by natal in D:\Natalia\TelRan\TestH2\BankApp)
+2023-10-27 12:24:17,099 INFO  [main] de.telran.bankapp.controller.AccountControllerTest : No active profile set, falling back to 1 default profile: "default"
+2023-10-27 12:24:17,694 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-10-27 12:24:17,695 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-10-27 12:24:17,742 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface de.telran.bankapp.repository.AccountRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-10-27 12:24:17,745 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface de.telran.bankapp.repository.AgreementRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-10-27 12:24:17,746 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface de.telran.bankapp.repository.ClientRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-10-27 12:24:17,748 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface de.telran.bankapp.repository.ManagerRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-10-27 12:24:17,749 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface de.telran.bankapp.repository.ProductRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-10-27 12:24:17,750 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 39 ms. Found 0 JDBC repository interfaces.
+2023-10-27 12:24:17,769 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-10-27 12:24:17,770 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-27 12:24:17,830 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 51 ms. Found 5 JPA repository interfaces.
+2023-10-27 12:24:18,393 INFO  [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Starting...
+2023-10-27 12:24:18,602 INFO  [main] com.zaxxer.hikari.pool.HikariPool : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5db3d57c
+2023-10-27 12:24:18,605 INFO  [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Start completed.
+2023-10-27 12:24:18,827 INFO  [main] liquibase.database : Set default schema name to public
+2023-10-27 12:24:19,646 INFO  [main] liquibase.changelog : Reading from public.databasechangelog
+2023-10-27 12:24:19,738 INFO  [main] liquibase.lockservice : Successfully acquired change log lock
+2023-10-27 12:24:19,746 INFO  [main] liquibase.command : Using deploymentId: 8402259746
+2023-10-27 12:24:19,749 INFO  [main] liquibase.changelog : Reading from public.databasechangelog
+2023-10-27 12:24:19,798 INFO  [main] liquibase.changelog : Continuing past: dbtest/changelog/changes/v0.0.1-SNAPSHOT/01-create-table-manager-changelog.xml::create managers table::n.kapinos despite precondition failure due to onFail='CONTINUE': 
+          dbtest/changelog/changelog-master.xml : Table managers already exists
+
+2023-10-27 12:24:19,808 INFO  [main] liquibase.changelog : Continuing past: dbtest/changelog/changes/v0.0.1-SNAPSHOT/02-create-table-product-changelog.xml::create products table::n.kapinos despite precondition failure due to onFail='CONTINUE': 
+          dbtest/changelog/changelog-master.xml : Table products already exists
+
+2023-10-27 12:24:19,814 INFO  [main] liquibase.changelog : Continuing past: dbtest/changelog/changes/v0.0.1-SNAPSHOT/03-create-table-client-changelog.xml::create clients table::n.kapinos despite precondition failure due to onFail='CONTINUE': 
+          dbtest/changelog/changelog-master.xml : Table clients already exists
+
+2023-10-27 12:24:19,819 INFO  [main] liquibase.changelog : Continuing past: dbtest/changelog/changes/v0.0.1-SNAPSHOT/04-create-table-account-changelog.xml::create accounts table::n.kapinos despite precondition failure due to onFail='CONTINUE': 
+          dbtest/changelog/changelog-master.xml : Table accounts already exists
+
+2023-10-27 12:24:19,825 INFO  [main] liquibase.changelog : Continuing past: dbtest/changelog/changes/v0.0.1-SNAPSHOT/05-create-table-agreement-changelog.xml::create agreements table::n.kapinos despite precondition failure due to onFail='CONTINUE': 
+          dbtest/changelog/changelog-master.xml : Table agreements already exists
+
+2023-10-27 12:24:19,830 INFO  [main] liquibase.changelog : Continuing past: dbtest/changelog/changes/v0.0.1-SNAPSHOT/06-create-table-transaction-changelog.xml::create transactions table::n.kapinos despite precondition failure due to onFail='CONTINUE': 
+          dbtest/changelog/changelog-master.xml : Table transactions already exists
+
+2023-10-27 12:24:19,837 INFO  [main] liquibase.util : UPDATE SUMMARY
+2023-10-27 12:24:19,837 INFO  [main] liquibase.util : Run:                          6
+2023-10-27 12:24:19,838 INFO  [main] liquibase.util : Previously run:               0
+2023-10-27 12:24:19,838 INFO  [main] liquibase.util : Filtered out:                 0
+2023-10-27 12:24:19,838 INFO  [main] liquibase.util : -------------------------------
+2023-10-27 12:24:19,838 INFO  [main] liquibase.util : Total change sets:            6
+
+2023-10-27 12:24:19,839 INFO  [main] liquibase.util : Update summary generated
+2023-10-27 12:24:19,843 INFO  [main] liquibase.command : Update command completed successfully.
+2023-10-27 12:24:19,847 INFO  [main] liquibase.lockservice : Successfully released change log lock
+2023-10-27 12:24:19,848 INFO  [main] liquibase.command : Command execution complete
+2023-10-27 12:24:20,108 INFO  [main] org.hibernate.jpa.internal.util.LogHelper : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-27 12:24:20,207 INFO  [main] org.hibernate.Version : HHH000412: Hibernate ORM core version 6.2.7.Final
+2023-10-27 12:24:20,218 INFO  [main] org.hibernate.cfg.Environment : HHH000406: Using bytecode reflection optimizer
+2023-10-27 12:24:20,379 INFO  [main] org.hibernate.bytecode.internal.BytecodeProviderInitiator : HHH000021: Bytecode provider name : bytebuddy
+2023-10-27 12:24:20,471 INFO  [main] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-10-27 12:24:20,690 INFO  [main] org.hibernate.bytecode.internal.BytecodeProviderInitiator : HHH000021: Bytecode provider name : bytebuddy
+2023-10-27 12:24:21,237 INFO  [main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-27 12:24:21,239 INFO  [main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-27 12:24:22,071 INFO  [main] org.springframework.data.jpa.repository.query.QueryEnhancerFactory : Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-10-27 12:24:23,990 WARN  [main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-27 12:24:25,412 INFO  [main] de.telran.bankapp.controller.AccountControllerTest : Started AccountControllerTest in 8.664 seconds (process running for 9.438)
+2023-10-27 12:24:25,934 INFO  [SpringApplicationShutdownHook] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-10-27 12:24:25,936 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown initiated...
+2023-10-27 12:24:25,939 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown completed.
+2023-10-27 12:24:58,595 INFO  [main] de.telran.bankapp.controller.AccountControllerTest : Starting AccountControllerTest using Java 19.0.2 with PID 6720 (started by natal in D:\Natalia\TelRan\TestH2\BankApp)
+2023-10-27 12:24:58,603 INFO  [main] de.telran.bankapp.controller.AccountControllerTest : No active profile set, falling back to 1 default profile: "default"
+2023-10-27 12:24:59,219 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-10-27 12:24:59,220 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-10-27 12:24:59,247 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface de.telran.bankapp.repository.AccountRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-10-27 12:24:59,248 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface de.telran.bankapp.repository.AgreementRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-10-27 12:24:59,249 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface de.telran.bankapp.repository.ClientRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-10-27 12:24:59,250 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface de.telran.bankapp.repository.ManagerRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-10-27 12:24:59,251 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface de.telran.bankapp.repository.ProductRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-10-27 12:24:59,252 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 28 ms. Found 0 JDBC repository interfaces.
+2023-10-27 12:24:59,264 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-10-27 12:24:59,265 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-27 12:24:59,295 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 28 ms. Found 5 JPA repository interfaces.
+2023-10-27 12:24:59,866 INFO  [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Starting...
+2023-10-27 12:25:00,057 INFO  [main] com.zaxxer.hikari.pool.HikariPool : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@f882465
+2023-10-27 12:25:00,059 INFO  [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Start completed.
+2023-10-27 12:25:00,401 INFO  [main] liquibase.database : Set default schema name to public
+2023-10-27 12:25:01,101 INFO  [main] liquibase.changelog : Reading from public.databasechangelog
+2023-10-27 12:25:01,202 INFO  [main] liquibase.lockservice : Successfully acquired change log lock
+2023-10-27 12:25:01,211 INFO  [main] liquibase.command : Using deploymentId: 8402301211
+2023-10-27 12:25:01,213 INFO  [main] liquibase.changelog : Reading from public.databasechangelog
+2023-10-27 12:25:01,261 INFO  [main] liquibase.changelog : Continuing past: dbtest/changelog/changes/v0.0.1-SNAPSHOT/01-create-table-manager-changelog.xml::create managers table::n.kapinos despite precondition failure due to onFail='CONTINUE': 
+          dbtest/changelog/changelog-master.xml : Table managers already exists
+
+2023-10-27 12:25:01,270 INFO  [main] liquibase.changelog : Continuing past: dbtest/changelog/changes/v0.0.1-SNAPSHOT/02-create-table-product-changelog.xml::create products table::n.kapinos despite precondition failure due to onFail='CONTINUE': 
+          dbtest/changelog/changelog-master.xml : Table products already exists
+
+2023-10-27 12:25:01,275 INFO  [main] liquibase.changelog : Continuing past: dbtest/changelog/changes/v0.0.1-SNAPSHOT/03-create-table-client-changelog.xml::create clients table::n.kapinos despite precondition failure due to onFail='CONTINUE': 
+          dbtest/changelog/changelog-master.xml : Table clients already exists
+
+2023-10-27 12:25:01,281 INFO  [main] liquibase.changelog : Continuing past: dbtest/changelog/changes/v0.0.1-SNAPSHOT/04-create-table-account-changelog.xml::create accounts table::n.kapinos despite precondition failure due to onFail='CONTINUE': 
+          dbtest/changelog/changelog-master.xml : Table accounts already exists
+
+2023-10-27 12:25:01,286 INFO  [main] liquibase.changelog : Continuing past: dbtest/changelog/changes/v0.0.1-SNAPSHOT/05-create-table-agreement-changelog.xml::create agreements table::n.kapinos despite precondition failure due to onFail='CONTINUE': 
+          dbtest/changelog/changelog-master.xml : Table agreements already exists
+
+2023-10-27 12:25:01,291 INFO  [main] liquibase.changelog : Continuing past: dbtest/changelog/changes/v0.0.1-SNAPSHOT/06-create-table-transaction-changelog.xml::create transactions table::n.kapinos despite precondition failure due to onFail='CONTINUE': 
+          dbtest/changelog/changelog-master.xml : Table transactions already exists
+
+2023-10-27 12:25:01,299 INFO  [main] liquibase.util : UPDATE SUMMARY
+2023-10-27 12:25:01,300 INFO  [main] liquibase.util : Run:                          6
+2023-10-27 12:25:01,300 INFO  [main] liquibase.util : Previously run:               0
+2023-10-27 12:25:01,300 INFO  [main] liquibase.util : Filtered out:                 0
+2023-10-27 12:25:01,300 INFO  [main] liquibase.util : -------------------------------
+2023-10-27 12:25:01,300 INFO  [main] liquibase.util : Total change sets:            6
+
+2023-10-27 12:25:01,301 INFO  [main] liquibase.util : Update summary generated
+2023-10-27 12:25:01,305 INFO  [main] liquibase.command : Update command completed successfully.
+2023-10-27 12:25:01,310 INFO  [main] liquibase.lockservice : Successfully released change log lock
+2023-10-27 12:25:01,312 INFO  [main] liquibase.command : Command execution complete
+2023-10-27 12:25:01,597 INFO  [main] org.hibernate.jpa.internal.util.LogHelper : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-27 12:25:01,690 INFO  [main] org.hibernate.Version : HHH000412: Hibernate ORM core version 6.2.7.Final
+2023-10-27 12:25:01,695 INFO  [main] org.hibernate.cfg.Environment : HHH000406: Using bytecode reflection optimizer
+2023-10-27 12:25:01,838 INFO  [main] org.hibernate.bytecode.internal.BytecodeProviderInitiator : HHH000021: Bytecode provider name : bytebuddy
+2023-10-27 12:25:01,930 INFO  [main] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-10-27 12:25:02,166 INFO  [main] org.hibernate.bytecode.internal.BytecodeProviderInitiator : HHH000021: Bytecode provider name : bytebuddy
+2023-10-27 12:25:02,748 INFO  [main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-27 12:25:02,750 INFO  [main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-27 12:25:03,588 INFO  [main] org.springframework.data.jpa.repository.query.QueryEnhancerFactory : Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-10-27 12:25:05,407 WARN  [main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-27 12:25:06,633 INFO  [main] de.telran.bankapp.controller.AccountControllerTest : Started AccountControllerTest in 8.374 seconds (process running for 9.241)
+2023-10-27 12:25:07,060 INFO  [SpringApplicationShutdownHook] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-10-27 12:25:07,063 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown initiated...
+2023-10-27 12:25:07,067 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown completed.
+2023-10-27 12:26:56,511 INFO  [main] de.telran.bankapp.controller.AccountControllerTest : Starting AccountControllerTest using Java 19.0.2 with PID 18004 (started by natal in D:\Natalia\TelRan\TestH2\BankApp)
+2023-10-27 12:26:56,521 INFO  [main] de.telran.bankapp.controller.AccountControllerTest : No active profile set, falling back to 1 default profile: "default"
+2023-10-27 12:26:57,197 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-10-27 12:26:57,198 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-10-27 12:26:57,227 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface de.telran.bankapp.repository.AccountRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-10-27 12:26:57,229 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface de.telran.bankapp.repository.AgreementRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-10-27 12:26:57,230 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface de.telran.bankapp.repository.ClientRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-10-27 12:26:57,231 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface de.telran.bankapp.repository.ManagerRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-10-27 12:26:57,232 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface de.telran.bankapp.repository.ProductRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-10-27 12:26:57,232 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 31 ms. Found 0 JDBC repository interfaces.
+2023-10-27 12:26:57,245 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-10-27 12:26:57,246 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-27 12:26:57,276 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 26 ms. Found 5 JPA repository interfaces.
+2023-10-27 12:26:57,841 INFO  [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Starting...
+2023-10-27 12:26:58,024 INFO  [main] com.zaxxer.hikari.pool.HikariPool : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@764a3e5d
+2023-10-27 12:26:58,025 INFO  [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Start completed.
+2023-10-27 12:26:58,286 INFO  [main] liquibase.database : Set default schema name to public
+2023-10-27 12:26:58,449 INFO  [main] liquibase.lockservice : Successfully acquired change log lock
+2023-10-27 12:26:58,460 INFO  [main] liquibase.command : Dropping Database Objects in schema: bank_test.public
+2023-10-27 12:26:58,659 WARN  [main] liquibase.executor : Löschvorgang löscht ebenfalls 2 weitere Objekte
+2023-10-27 12:26:58,663 WARN  [main] liquibase.executor : Löschvorgang löscht ebenfalls 3 weitere Objekte
+2023-10-27 12:26:58,667 WARN  [main] liquibase.executor : Löschvorgang löscht ebenfalls Constraint manager_id_in_product für Tabelle products
+2023-10-27 12:26:58,749 INFO  [main] liquibase.database : Successfully deleted all supported object types in schema bank_test.public.
+2023-10-27 12:26:58,756 WARN  [main] liquibase.lockservice : Failed to release change log lock
+2023-10-27 12:26:58,758 INFO  [main] liquibase.command : Command execution complete
+2023-10-27 12:26:59,152 INFO  [main] liquibase.changelog : Creating database history table with name: public.databasechangelog
+2023-10-27 12:26:59,170 INFO  [main] liquibase.changelog : Reading from public.databasechangelog
+2023-10-27 12:26:59,252 INFO  [main] liquibase.lockservice : Successfully acquired change log lock
+2023-10-27 12:26:59,259 INFO  [main] liquibase.command : Using deploymentId: 8402419258
+2023-10-27 12:26:59,262 INFO  [main] liquibase.changelog : Reading from public.databasechangelog
+2023-10-27 12:26:59,348 INFO  [main] liquibase.changelog : Table managers created
+2023-10-27 12:26:59,350 INFO  [main] liquibase.changelog : ChangeSet dbtest/changelog/changes/v0.0.1-SNAPSHOT/01-create-table-manager-changelog.xml::create managers table::n.kapinos ran successfully in 41ms
+2023-10-27 12:26:59,382 INFO  [main] liquibase.changelog : Table products created
+2023-10-27 12:26:59,383 INFO  [main] liquibase.changelog : ChangeSet dbtest/changelog/changes/v0.0.1-SNAPSHOT/02-create-table-product-changelog.xml::create products table::n.kapinos ran successfully in 19ms
+2023-10-27 12:26:59,405 INFO  [main] liquibase.changelog : Table clients created
+2023-10-27 12:26:59,406 INFO  [main] liquibase.changelog : ChangeSet dbtest/changelog/changes/v0.0.1-SNAPSHOT/03-create-table-client-changelog.xml::create clients table::n.kapinos ran successfully in 17ms
+2023-10-27 12:26:59,422 INFO  [main] liquibase.changelog : Table accounts created
+2023-10-27 12:26:59,423 INFO  [main] liquibase.changelog : ChangeSet dbtest/changelog/changes/v0.0.1-SNAPSHOT/04-create-table-account-changelog.xml::create accounts table::n.kapinos ran successfully in 13ms
+2023-10-27 12:26:59,445 INFO  [main] liquibase.changelog : Table agreements created
+2023-10-27 12:26:59,446 INFO  [main] liquibase.changelog : ChangeSet dbtest/changelog/changes/v0.0.1-SNAPSHOT/05-create-table-agreement-changelog.xml::create agreements table::n.kapinos ran successfully in 16ms
+2023-10-27 12:26:59,462 INFO  [main] liquibase.changelog : Table transactions created
+2023-10-27 12:26:59,463 INFO  [main] liquibase.changelog : ChangeSet dbtest/changelog/changes/v0.0.1-SNAPSHOT/06-create-table-transaction-changelog.xml::create transactions table::n.kapinos ran successfully in 13ms
+2023-10-27 12:26:59,471 INFO  [main] liquibase.util : UPDATE SUMMARY
+2023-10-27 12:26:59,471 INFO  [main] liquibase.util : Run:                          6
+2023-10-27 12:26:59,472 INFO  [main] liquibase.util : Previously run:               0
+2023-10-27 12:26:59,472 INFO  [main] liquibase.util : Filtered out:                 0
+2023-10-27 12:26:59,472 INFO  [main] liquibase.util : -------------------------------
+2023-10-27 12:26:59,472 INFO  [main] liquibase.util : Total change sets:            6
+
+2023-10-27 12:26:59,473 INFO  [main] liquibase.util : Update summary generated
+2023-10-27 12:26:59,476 INFO  [main] liquibase.command : Update command completed successfully.
+2023-10-27 12:26:59,479 INFO  [main] liquibase.lockservice : Successfully released change log lock
+2023-10-27 12:26:59,479 INFO  [main] liquibase.command : Command execution complete
+2023-10-27 12:26:59,744 INFO  [main] org.hibernate.jpa.internal.util.LogHelper : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-27 12:26:59,836 INFO  [main] org.hibernate.Version : HHH000412: Hibernate ORM core version 6.2.7.Final
+2023-10-27 12:26:59,838 INFO  [main] org.hibernate.cfg.Environment : HHH000406: Using bytecode reflection optimizer
+2023-10-27 12:26:59,936 INFO  [main] org.hibernate.bytecode.internal.BytecodeProviderInitiator : HHH000021: Bytecode provider name : bytebuddy
+2023-10-27 12:27:00,037 INFO  [main] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-10-27 12:27:00,269 INFO  [main] org.hibernate.bytecode.internal.BytecodeProviderInitiator : HHH000021: Bytecode provider name : bytebuddy
+2023-10-27 12:27:00,875 INFO  [main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-27 12:27:00,877 INFO  [main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-27 12:27:01,853 INFO  [main] org.springframework.data.jpa.repository.query.QueryEnhancerFactory : Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-10-27 12:27:03,708 WARN  [main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-27 12:27:04,913 INFO  [main] de.telran.bankapp.controller.AccountControllerTest : Started AccountControllerTest in 8.751 seconds (process running for 9.59)
+2023-10-27 12:27:05,461 INFO  [SpringApplicationShutdownHook] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-10-27 12:27:05,463 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown initiated...
+2023-10-27 12:27:05,466 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown completed.
+2023-10-27 12:28:18,759 INFO  [main] de.telran.bankapp.controller.AccountControllerTest : Starting AccountControllerTest using Java 19.0.2 with PID 20796 (started by natal in D:\Natalia\TelRan\TestH2\BankApp)
+2023-10-27 12:28:18,772 INFO  [main] de.telran.bankapp.controller.AccountControllerTest : No active profile set, falling back to 1 default profile: "default"
+2023-10-27 12:28:19,330 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-10-27 12:28:19,331 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-10-27 12:28:19,356 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface de.telran.bankapp.repository.AccountRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-10-27 12:28:19,357 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface de.telran.bankapp.repository.AgreementRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-10-27 12:28:19,359 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface de.telran.bankapp.repository.ClientRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-10-27 12:28:19,360 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface de.telran.bankapp.repository.ManagerRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-10-27 12:28:19,361 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface de.telran.bankapp.repository.ProductRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-10-27 12:28:19,361 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 27 ms. Found 0 JDBC repository interfaces.
+2023-10-27 12:28:19,377 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-10-27 12:28:19,378 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-27 12:28:19,417 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 34 ms. Found 5 JPA repository interfaces.
+2023-10-27 12:28:19,976 INFO  [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Starting...
+2023-10-27 12:28:20,167 INFO  [main] com.zaxxer.hikari.pool.HikariPool : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@501957bf
+2023-10-27 12:28:20,168 INFO  [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Start completed.
+2023-10-27 12:28:20,449 INFO  [main] liquibase.database : Set default schema name to public
+2023-10-27 12:28:20,656 INFO  [main] liquibase.lockservice : Successfully acquired change log lock
+2023-10-27 12:28:20,663 INFO  [main] liquibase.command : Dropping Database Objects in schema: bank_test.public
+2023-10-27 12:28:20,848 WARN  [main] liquibase.executor : Löschvorgang löscht ebenfalls 2 weitere Objekte
+2023-10-27 12:28:20,852 WARN  [main] liquibase.executor : Löschvorgang löscht ebenfalls 3 weitere Objekte
+2023-10-27 12:28:20,856 WARN  [main] liquibase.executor : Löschvorgang löscht ebenfalls Constraint manager_id_in_product für Tabelle products
+2023-10-27 12:28:20,942 INFO  [main] liquibase.database : Successfully deleted all supported object types in schema bank_test.public.
+2023-10-27 12:28:20,948 WARN  [main] liquibase.lockservice : Failed to release change log lock
+2023-10-27 12:28:20,950 INFO  [main] liquibase.command : Command execution complete
+2023-10-27 12:28:21,342 INFO  [main] liquibase.changelog : Creating database history table with name: public.databasechangelog
+2023-10-27 12:28:21,359 INFO  [main] liquibase.changelog : Reading from public.databasechangelog
+2023-10-27 12:28:21,443 INFO  [main] liquibase.lockservice : Successfully acquired change log lock
+2023-10-27 12:28:21,451 INFO  [main] liquibase.command : Using deploymentId: 8402501450
+2023-10-27 12:28:21,454 INFO  [main] liquibase.changelog : Reading from public.databasechangelog
+2023-10-27 12:28:21,523 INFO  [main] liquibase.changelog : Table managers created
+2023-10-27 12:28:21,526 INFO  [main] liquibase.changelog : ChangeSet dbtest/changelog/changes/v0.0.1-SNAPSHOT/01-create-table-manager-changelog.xml::create managers table::n.kapinos ran successfully in 20ms
+2023-10-27 12:28:21,548 INFO  [main] liquibase.changelog : Table products created
+2023-10-27 12:28:21,548 INFO  [main] liquibase.changelog : ChangeSet dbtest/changelog/changes/v0.0.1-SNAPSHOT/02-create-table-product-changelog.xml::create products table::n.kapinos ran successfully in 13ms
+2023-10-27 12:28:21,571 INFO  [main] liquibase.changelog : Table clients created
+2023-10-27 12:28:21,572 INFO  [main] liquibase.changelog : ChangeSet dbtest/changelog/changes/v0.0.1-SNAPSHOT/03-create-table-client-changelog.xml::create clients table::n.kapinos ran successfully in 19ms
+2023-10-27 12:28:21,590 INFO  [main] liquibase.changelog : Table accounts created
+2023-10-27 12:28:21,591 INFO  [main] liquibase.changelog : ChangeSet dbtest/changelog/changes/v0.0.1-SNAPSHOT/04-create-table-account-changelog.xml::create accounts table::n.kapinos ran successfully in 15ms
+2023-10-27 12:28:21,607 INFO  [main] liquibase.changelog : Table agreements created
+2023-10-27 12:28:21,608 INFO  [main] liquibase.changelog : ChangeSet dbtest/changelog/changes/v0.0.1-SNAPSHOT/05-create-table-agreement-changelog.xml::create agreements table::n.kapinos ran successfully in 13ms
+2023-10-27 12:28:21,624 INFO  [main] liquibase.changelog : Table transactions created
+2023-10-27 12:28:21,625 INFO  [main] liquibase.changelog : ChangeSet dbtest/changelog/changes/v0.0.1-SNAPSHOT/06-create-table-transaction-changelog.xml::create transactions table::n.kapinos ran successfully in 13ms
+2023-10-27 12:28:21,646 INFO  [main] liquibase.changelog : New row inserted into managers
+2023-10-27 12:28:21,647 INFO  [main] liquibase.changelog : New row inserted into managers
+2023-10-27 12:28:21,648 INFO  [main] liquibase.changelog : New row inserted into managers
+2023-10-27 12:28:21,649 INFO  [main] liquibase.changelog : New row inserted into managers
+2023-10-27 12:28:21,650 INFO  [main] liquibase.changelog : ChangeSet dbtest/changelog/changes/v0.0.1-SNAPSHOT/01-insert_test_data_managers-changelog.xml::insert test data into managers table::n.kapinos ran successfully in 8ms
+2023-10-27 12:28:21,657 INFO  [main] liquibase.util : UPDATE SUMMARY
+2023-10-27 12:28:21,658 INFO  [main] liquibase.util : Run:                          7
+2023-10-27 12:28:21,658 INFO  [main] liquibase.util : Previously run:               0
+2023-10-27 12:28:21,658 INFO  [main] liquibase.util : Filtered out:                 0
+2023-10-27 12:28:21,658 INFO  [main] liquibase.util : -------------------------------
+2023-10-27 12:28:21,658 INFO  [main] liquibase.util : Total change sets:            7
+
+2023-10-27 12:28:21,659 INFO  [main] liquibase.util : Update summary generated
+2023-10-27 12:28:21,661 INFO  [main] liquibase.command : Update command completed successfully.
+2023-10-27 12:28:21,664 INFO  [main] liquibase.lockservice : Successfully released change log lock
+2023-10-27 12:28:21,665 INFO  [main] liquibase.command : Command execution complete
+2023-10-27 12:28:21,861 INFO  [main] org.hibernate.jpa.internal.util.LogHelper : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-27 12:28:21,950 INFO  [main] org.hibernate.Version : HHH000412: Hibernate ORM core version 6.2.7.Final
+2023-10-27 12:28:21,953 INFO  [main] org.hibernate.cfg.Environment : HHH000406: Using bytecode reflection optimizer
+2023-10-27 12:28:22,062 INFO  [main] org.hibernate.bytecode.internal.BytecodeProviderInitiator : HHH000021: Bytecode provider name : bytebuddy
+2023-10-27 12:28:22,155 INFO  [main] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-10-27 12:28:22,380 INFO  [main] org.hibernate.bytecode.internal.BytecodeProviderInitiator : HHH000021: Bytecode provider name : bytebuddy
+2023-10-27 12:28:23,050 INFO  [main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-27 12:28:23,052 INFO  [main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-27 12:28:23,846 INFO  [main] org.springframework.data.jpa.repository.query.QueryEnhancerFactory : Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-10-27 12:28:25,748 WARN  [main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-27 12:28:27,131 INFO  [main] de.telran.bankapp.controller.AccountControllerTest : Started AccountControllerTest in 8.731 seconds (process running for 9.619)
+2023-10-27 12:28:27,581 INFO  [SpringApplicationShutdownHook] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-10-27 12:28:27,584 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown initiated...
+2023-10-27 12:28:27,588 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown completed.

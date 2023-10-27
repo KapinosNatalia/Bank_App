@@ -1,6 +1,6 @@
 spring:
   main:
-    banner-mode: off
+    banner-mode: console
 
   h2:
     console.enabled: true
@@ -23,7 +23,7 @@ spring:
       ddl-auto: none
 
   liquibase:
-    change-log: classpath:/db/changelog/changelog-master.xml
+    change-log: classpath:/dbtest/changelog/changelog-master.xml
     drop-first: true
 
 logging:
@@ -32,7 +32,7 @@ logging:
     test: DEBUG
 
   file:
-    name: appBank.log
+    name: appBankTest.log
 
   pattern:
     console: "%clr(%d{yy-MM-dd E HH:mm:ss.SSS}){blue} %clr(%-5p) %clr(${PID}){faint} %clr(---){faint}
