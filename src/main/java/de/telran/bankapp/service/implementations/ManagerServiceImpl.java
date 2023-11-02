@@ -5,11 +5,10 @@ import de.telran.bankapp.entity.Manager;
 import de.telran.bankapp.entity.enums.ClientStatus;
 import de.telran.bankapp.entity.enums.ManagerStatus;
 import de.telran.bankapp.exceptions.ManagerCreationException;
-import de.telran.bankapp.exceptions.ManagerNotFoundException;
+import de.telran.bankapp.exceptions.EntityNotFoundException;
 import de.telran.bankapp.mapper.ManagerMapper;
 import de.telran.bankapp.repository.ManagerRepository;
 import de.telran.bankapp.service.interfaces.ManagerService;
-import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -30,7 +29,8 @@ public class ManagerServiceImpl implements ManagerService {
 
     @Override
     public ManagerDto getManagerByID(UUID id) {
-        Manager manager = managerRepository.getReferenceById(id);//.getById(id);
+        Manager manager = managerRepository.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException("Manager with id " + id));
         return managerMapper.toDto(manager);
     }
 
@@ -39,7 +39,7 @@ public class ManagerServiceImpl implements ManagerService {
         if (managerRepository.existsById(id)) {
             managerRepository.deleteById(id);
         } else {
-            throw new ManagerNotFoundException("with ID " + id);
+            throw new EntityNotFoundException("with ID " + id);
         }
     }
 
@@ -49,14 +49,14 @@ public class ManagerServiceImpl implements ManagerService {
             throw new ManagerCreationException("ID can´t be empty.");
         }
         UUID currentID = UUID.fromString(managerDto.getId());
-        if (managerRepository.existsById(currentID)) {
+        if (!managerRepository.existsById(currentID)) {
             String currentFirstName = managerDto.getFirstName();
             String currentLastName = managerDto.getLastName();
             ManagerStatus currentStatus = ManagerStatus.valueOf(managerDto.getStatus());
             Manager newManager = new Manager(currentID, currentFirstName, currentLastName, currentStatus);
             managerRepository.save(newManager);
         } else {
-            throw new ManagerCreationException("A manager with ID " + currentID + " already exists");
+            throw new ManagerCreationException("Manager with ID " + currentID + " already exists");
         }
     }
 
@@ -82,7 +82,7 @@ public class ManagerServiceImpl implements ManagerService {
             }
             managerRepository.save(manager);
         } else {
-            throw new ManagerNotFoundException("with ID " + currentID);
+            throw new EntityNotFoundException("with ID " + currentID);
         }
     }
 

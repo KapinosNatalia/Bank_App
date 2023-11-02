@@ -8,6 +8,6 @@ public class ManagerDto {
     String firstName;
     String lastName;
     String status;
-    String createdAt;
-    String updatedAt;
+    //String createdAt;
+    //String updatedAt;
 }

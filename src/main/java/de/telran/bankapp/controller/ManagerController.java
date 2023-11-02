@@ -1,7 +1,10 @@
 package de.telran.bankapp.controller;
 
+import de.telran.bankapp.dto.ErrorDto;
 import de.telran.bankapp.dto.ManagerDto;
 import de.telran.bankapp.entity.enums.ClientStatus;
+import de.telran.bankapp.exceptions.EntityNotFoundException;
+import de.telran.bankapp.exceptions.ManagerCreationException;
 import de.telran.bankapp.service.interfaces.ManagerService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -10,8 +13,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
+
+import static org.springframework.http.HttpStatus.BAD_REQUEST;
 
 @RestController
 @RequestMapping("/managers")
@@ -72,4 +78,5 @@ public class ManagerController {
     public ResponseEntity<List<ManagerDto>> getAllManagersByClientStatus(@PathVariable("status") ClientStatus status) {
         return ResponseEntity.ok(managerService.getAllManagersByClientStatus(status));
     }
+
 }

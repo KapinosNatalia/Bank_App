@@ -68,6 +68,9 @@ public class Account {
             cascade = {MERGE, PERSIST, REFRESH})
     private Set<Transaction> creditTransactions = new HashSet<>();
 
+    public Account(String uuid, Client client, String account1, AccountType accountType, AccountStatus accountStatus, int i, String eur) {
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
