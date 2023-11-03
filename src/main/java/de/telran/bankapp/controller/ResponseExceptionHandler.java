@@ -15,27 +15,25 @@ public class ResponseExceptionHandler {
     @ExceptionHandler(RuntimeException.class)
     public ResponseEntity<ErrorDto> handleRuntimeException(RuntimeException exception) {
         ErrorDto errorDto = new ErrorDto(
-                exception.getMessage(),
-                Arrays.toString(exception.getStackTrace()));
+                HttpStatus.INTERNAL_SERVER_ERROR.toString(),
+                exception.getMessage());
         return new ResponseEntity<>(errorDto, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
     @ExceptionHandler(ManagerCreationException.class)
     public ResponseEntity<ErrorDto> handleManagerCreationException(ManagerCreationException exception) {
-        return new ResponseEntity<>(
-                new ErrorDto(
-                        exception.getMessage(),
-                        Arrays.toString(exception.getStackTrace())
-                ), HttpStatus.BAD_REQUEST);
+        ErrorDto errorDto = new ErrorDto(
+                HttpStatus.BAD_REQUEST.toString(),
+                exception.getMessage());
+        return new ResponseEntity<>(errorDto, HttpStatus.BAD_REQUEST);
     }
 
     @ExceptionHandler(EntityNotFoundException.class)
     public ResponseEntity<ErrorDto> handleManagerNotFoundException(EntityNotFoundException exception) {
-        return new ResponseEntity<>(
-                new ErrorDto(
-                        exception.getMessage(),
-                        Arrays.toString(exception.getStackTrace())
-                ), HttpStatus.NO_CONTENT);
+        ErrorDto errorDto = new ErrorDto(
+                HttpStatus.BAD_REQUEST.toString(),
+                exception.getMessage());
+        return new ResponseEntity<>(errorDto, HttpStatus.BAD_REQUEST);
     }
 
 }

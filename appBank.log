@@ -1,0 +1,866 @@
+2023-11-04 00:27:42,473 INFO  [main] de.telran.bankapp.BankAppApplication : Starting BankAppApplication using Java 19.0.2 with PID 35024 (D:\Natalia\TelRan\TestH2\BankApp\target\classes started by natal in D:\Natalia\TelRan\TestH2\BankApp)
+2023-11-04 00:27:42,483 INFO  [main] de.telran.bankapp.BankAppApplication : No active profile set, falling back to 1 default profile: "default"
+2023-11-04 00:27:42,956 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-11-04 00:27:42,957 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-11-04 00:27:42,976 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface de.telran.bankapp.repository.AccountRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-11-04 00:27:42,977 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface de.telran.bankapp.repository.AgreementRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-11-04 00:27:42,978 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface de.telran.bankapp.repository.ClientRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-11-04 00:27:42,979 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface de.telran.bankapp.repository.ManagerRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-11-04 00:27:42,980 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface de.telran.bankapp.repository.ProductRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-11-04 00:27:42,981 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19 ms. Found 0 JDBC repository interfaces.
+2023-11-04 00:27:42,989 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-11-04 00:27:42,989 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-04 00:27:43,018 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 26 ms. Found 5 JPA repository interfaces.
+2023-11-04 00:27:43,514 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : Tomcat initialized with port(s): 8080 (http)
+2023-11-04 00:27:43,526 INFO  [main] org.apache.catalina.core.StandardService : Starting service [Tomcat]
+2023-11-04 00:27:43,526 INFO  [main] org.apache.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-11-04 00:27:43,587 INFO  [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext
+2023-11-04 00:27:43,587 INFO  [main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1070 ms
+2023-11-04 00:27:43,618 INFO  [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Starting...
+2023-11-04 00:27:43,760 INFO  [main] com.zaxxer.hikari.pool.HikariPool : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@11f23038
+2023-11-04 00:27:43,761 INFO  [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Start completed.
+2023-11-04 00:27:43,769 INFO  [main] org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5433/bank'
+2023-11-04 00:27:43,943 INFO  [main] liquibase.database : Set default schema name to public
+2023-11-04 00:27:44,036 INFO  [main] liquibase.lockservice : Successfully acquired change log lock
+2023-11-04 00:27:44,041 INFO  [main] liquibase.command : Dropping Database Objects in schema: bank.public
+2023-11-04 00:27:44,174 WARN  [main] liquibase.executor : Löschvorgang löscht ebenfalls 2 weitere Objekte
+2023-11-04 00:27:44,178 WARN  [main] liquibase.executor : Löschvorgang löscht ebenfalls 3 weitere Objekte
+2023-11-04 00:27:44,183 WARN  [main] liquibase.executor : Löschvorgang löscht ebenfalls Constraint manager_id_in_product für Tabelle products
+2023-11-04 00:27:44,266 INFO  [main] liquibase.database : Successfully deleted all supported object types in schema bank.public.
+2023-11-04 00:27:44,274 WARN  [main] liquibase.lockservice : Failed to release change log lock
+2023-11-04 00:27:44,276 INFO  [main] liquibase.command : Command execution complete
+2023-11-04 00:27:44,614 INFO  [main] liquibase.changelog : Creating database history table with name: public.databasechangelog
+2023-11-04 00:27:44,635 INFO  [main] liquibase.changelog : Reading from public.databasechangelog
+2023-11-04 00:27:44,691 INFO  [main] liquibase.lockservice : Successfully acquired change log lock
+2023-11-04 00:27:44,696 INFO  [main] liquibase.command : Using deploymentId: 9054064696
+2023-11-04 00:27:44,697 INFO  [main] liquibase.changelog : Reading from public.databasechangelog
+2023-11-04 00:27:44,748 INFO  [main] liquibase.changelog : Table managers created
+2023-11-04 00:27:44,749 INFO  [main] liquibase.changelog : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/01-create-table-manager-changelog.xml::create managers table::n.kapinos ran successfully in 10ms
+2023-11-04 00:27:44,761 INFO  [main] liquibase.changelog : Table products created
+2023-11-04 00:27:44,762 INFO  [main] liquibase.changelog : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/02-create-table-product-changelog.xml::create products table::n.kapinos ran successfully in 10ms
+2023-11-04 00:27:44,776 INFO  [main] liquibase.changelog : Table clients created
+2023-11-04 00:27:44,776 INFO  [main] liquibase.changelog : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/03-create-table-client-changelog.xml::create clients table::n.kapinos ran successfully in 12ms
+2023-11-04 00:27:44,787 INFO  [main] liquibase.changelog : Table accounts created
+2023-11-04 00:27:44,788 INFO  [main] liquibase.changelog : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/04-create-table-account-changelog.xml::create accounts table::n.kapinos ran successfully in 9ms
+2023-11-04 00:27:44,798 INFO  [main] liquibase.changelog : Table agreements created
+2023-11-04 00:27:44,799 INFO  [main] liquibase.changelog : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/05-create-table-agreement-changelog.xml::create agreements table::n.kapinos ran successfully in 9ms
+2023-11-04 00:27:44,811 INFO  [main] liquibase.changelog : Table transactions created
+2023-11-04 00:27:44,812 INFO  [main] liquibase.changelog : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/06-create-table-transaction-changelog.xml::create transactions table::n.kapinos ran successfully in 10ms
+2023-11-04 00:27:44,817 INFO  [main] liquibase.changelog : New row inserted into managers
+2023-11-04 00:27:44,818 INFO  [main] liquibase.changelog : New row inserted into managers
+2023-11-04 00:27:44,819 INFO  [main] liquibase.changelog : New row inserted into managers
+2023-11-04 00:27:44,820 INFO  [main] liquibase.changelog : New row inserted into managers
+2023-11-04 00:27:44,820 INFO  [main] liquibase.changelog : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/01-insert_test_data_managers-changelog.xml::insert test data into managers table::n.kapinos ran successfully in 4ms
+2023-11-04 00:27:44,829 INFO  [main] liquibase.changelog : New row inserted into products
+2023-11-04 00:27:44,830 INFO  [main] liquibase.changelog : New row inserted into products
+2023-11-04 00:27:44,832 INFO  [main] liquibase.changelog : New row inserted into products
+2023-11-04 00:27:44,833 INFO  [main] liquibase.changelog : New row inserted into products
+2023-11-04 00:27:44,833 INFO  [main] liquibase.changelog : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/02-insert_test_data_products-changelog.xml::insert test data into products table::n.kapinos ran successfully in 7ms
+2023-11-04 00:27:44,843 INFO  [main] liquibase.changelog : New row inserted into clients
+2023-11-04 00:27:44,845 INFO  [main] liquibase.changelog : New row inserted into clients
+2023-11-04 00:27:44,846 INFO  [main] liquibase.changelog : New row inserted into clients
+2023-11-04 00:27:44,848 INFO  [main] liquibase.changelog : New row inserted into clients
+2023-11-04 00:27:44,849 INFO  [main] liquibase.changelog : New row inserted into clients
+2023-11-04 00:27:44,849 INFO  [main] liquibase.changelog : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/03-insert_test_data_clients-changelog.xml::insert test data into clients table::n.kapinos ran successfully in 9ms
+2023-11-04 00:27:44,859 INFO  [main] liquibase.changelog : New row inserted into accounts
+2023-11-04 00:27:44,861 INFO  [main] liquibase.changelog : New row inserted into accounts
+2023-11-04 00:27:44,862 INFO  [main] liquibase.changelog : New row inserted into accounts
+2023-11-04 00:27:44,863 INFO  [main] liquibase.changelog : New row inserted into accounts
+2023-11-04 00:27:44,864 INFO  [main] liquibase.changelog : New row inserted into accounts
+2023-11-04 00:27:44,865 INFO  [main] liquibase.changelog : New row inserted into accounts
+2023-11-04 00:27:44,866 INFO  [main] liquibase.changelog : New row inserted into accounts
+2023-11-04 00:27:44,867 INFO  [main] liquibase.changelog : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/04-insert_test_data_accounts-changelog.xml::insert test data into accounts table::n.kapinos ran successfully in 11ms
+2023-11-04 00:27:44,874 INFO  [main] liquibase.changelog : New row inserted into agreements
+2023-11-04 00:27:44,875 INFO  [main] liquibase.changelog : New row inserted into agreements
+2023-11-04 00:27:44,876 INFO  [main] liquibase.changelog : New row inserted into agreements
+2023-11-04 00:27:44,877 INFO  [main] liquibase.changelog : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/05-insert_test_data_agreements-changelog.xml::insert test data into agreements table::n.kapinos ran successfully in 6ms
+2023-11-04 00:27:44,883 INFO  [main] liquibase.changelog : New row inserted into transactions
+2023-11-04 00:27:44,884 INFO  [main] liquibase.changelog : New row inserted into transactions
+2023-11-04 00:27:44,886 INFO  [main] liquibase.changelog : New row inserted into transactions
+2023-11-04 00:27:44,886 INFO  [main] liquibase.changelog : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/06-insert_test_data_transactions-changelog.xml::insert test data into transactions table::n.kapinos ran successfully in 5ms
+2023-11-04 00:27:44,889 INFO  [main] liquibase.util : UPDATE SUMMARY
+2023-11-04 00:27:44,889 INFO  [main] liquibase.util : Run:                         12
+2023-11-04 00:27:44,890 INFO  [main] liquibase.util : Previously run:               0
+2023-11-04 00:27:44,890 INFO  [main] liquibase.util : Filtered out:                 0
+2023-11-04 00:27:44,890 INFO  [main] liquibase.util : -------------------------------
+2023-11-04 00:27:44,890 INFO  [main] liquibase.util : Total change sets:           12
+
+2023-11-04 00:27:44,891 INFO  [main] liquibase.util : Update summary generated
+2023-11-04 00:27:44,892 INFO  [main] liquibase.command : Update command completed successfully.
+2023-11-04 00:27:44,894 INFO  [main] liquibase.lockservice : Successfully released change log lock
+2023-11-04 00:27:44,895 INFO  [main] liquibase.command : Command execution complete
+2023-11-04 00:27:44,961 INFO  [main] org.hibernate.jpa.internal.util.LogHelper : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-04 00:27:44,986 INFO  [main] org.hibernate.Version : HHH000412: Hibernate ORM core version 6.2.7.Final
+2023-11-04 00:27:44,987 INFO  [main] org.hibernate.cfg.Environment : HHH000406: Using bytecode reflection optimizer
+2023-11-04 00:27:45,065 INFO  [main] org.hibernate.bytecode.internal.BytecodeProviderInitiator : HHH000021: Bytecode provider name : bytebuddy
+2023-11-04 00:27:45,151 INFO  [main] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-04 00:27:45,346 INFO  [main] org.hibernate.bytecode.internal.BytecodeProviderInitiator : HHH000021: Bytecode provider name : bytebuddy
+2023-11-04 00:27:45,826 INFO  [main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-04 00:27:45,828 INFO  [main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-04 00:27:46,125 INFO  [main] org.springframework.data.jpa.repository.query.QueryEnhancerFactory : Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-11-04 00:27:46,837 WARN  [main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-04 00:27:47,384 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : Tomcat started on port(s): 8080 (http) with context path ''
+2023-11-04 00:27:47,389 INFO  [main] de.telran.bankapp.BankAppApplication : Started BankAppApplication in 5.213 seconds (process running for 5.651)
+2023-11-04 00:28:03,481 INFO  [http-nio-8080-exec-2] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-11-04 00:28:03,481 INFO  [http-nio-8080-exec-2] org.springframework.web.servlet.DispatcherServlet : Initializing Servlet 'dispatcherServlet'
+2023-11-04 00:28:03,483 INFO  [http-nio-8080-exec-2] org.springframework.web.servlet.DispatcherServlet : Completed initialization in 1 ms
+2023-11-04 00:28:03,511 INFO  [http-nio-8080-exec-2] de.telran.bankapp.aspect.LoggingAspect : 
+NEW REQUEST:
+IP : 0:0:0:0:0:0:0:1
+URL : http://localhost:8080/managers/523e4567-e89b-12d3-a456-010000000011
+HTTP_METHOD : GET
+CONTROLLER_METHOD : de.telran.bankapp.controller.ManagerController.getManagerByID
+2023-11-04 00:28:03,512 INFO  [http-nio-8080-exec-2] de.telran.bankapp.aspect.LoggingAspect : RUN SERVICE:
+SERVICE_METHOD : de.telran.bankapp.service.implementations.ManagerServiceImpl.getManagerByID
+2023-11-04 00:28:03,550 ERROR [http-nio-8080-exec-2] de.telran.bankapp.aspect.LoggingAspect : Request throw an exception. Cause - [523e4567-e89b-12d3-a456-010000000011]. Entity Manager with id 523e4567-e89b-12d3-a456-010000000011 is not found.
+2023-11-04 00:28:03,551 INFO  [http-nio-8080-exec-2] de.telran.bankapp.aspect.LoggingAspect : 
+NEW REQUEST:
+IP : 0:0:0:0:0:0:0:1
+URL : http://localhost:8080/managers/523e4567-e89b-12d3-a456-010000000011
+HTTP_METHOD : GET
+CONTROLLER_METHOD : de.telran.bankapp.controller.ResponseExceptionHandler.handleManagerNotFoundException
+2023-11-04 00:28:03,552 ERROR [http-nio-8080-exec-2] de.telran.bankapp.aspect.LoggingAspect : Request throw an exception. Cause - [de.telran.bankapp.exceptions.EntityNotFoundException: Entity Manager with id 523e4567-e89b-12d3-a456-010000000011 is not found.]. Cannot invoke "java.lang.Throwable.toString()" because the return value of "de.telran.bankapp.exceptions.EntityNotFoundException.getCause()" is null
+2023-11-04 00:28:03,552 WARN  [http-nio-8080-exec-2] org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver : Failure in @ExceptionHandler de.telran.bankapp.controller.ResponseExceptionHandler#handleManagerNotFoundException(EntityNotFoundException)
+java.lang.NullPointerException: Cannot invoke "java.lang.Throwable.toString()" because the return value of "de.telran.bankapp.exceptions.EntityNotFoundException.getCause()" is null
+	at de.telran.bankapp.controller.ResponseExceptionHandler.handleManagerNotFoundException(ResponseExceptionHandler.java:36)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.aspectj.AspectJAfterThrowingAdvice.invoke(AspectJAfterThrowingAdvice.java:64)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.framework.adapter.AfterReturningAdviceInterceptor.invoke(AfterReturningAdviceInterceptor.java:57)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor.invoke(MethodBeforeAdviceInterceptor.java:58)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at de.telran.bankapp.controller.ResponseExceptionHandler$$SpringCGLIB$$0.handleManagerNotFoundException(<generated>)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver.doResolveHandlerMethodException(ExceptionHandlerExceptionResolver.java:413)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodExceptionResolver.doResolveException(AbstractHandlerMethodExceptionResolver.java:74)
+	at org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.resolveException(AbstractHandlerExceptionResolver.java:141)
+	at org.springframework.web.servlet.handler.HandlerExceptionResolverComposite.resolveException(HandlerExceptionResolverComposite.java:80)
+	at org.springframework.web.servlet.DispatcherServlet.processHandlerException(DispatcherServlet.java:1341)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1152)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1098)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:166)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+2023-11-04 00:28:03,556 ERROR [http-nio-8080-exec-2] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet] : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: de.telran.bankapp.exceptions.EntityNotFoundException: Entity Manager with id 523e4567-e89b-12d3-a456-010000000011 is not found.] with root cause
+de.telran.bankapp.exceptions.EntityNotFoundException: Entity Manager with id 523e4567-e89b-12d3-a456-010000000011 is not found.
+	at de.telran.bankapp.service.implementations.ManagerServiceImpl.lambda$getManagerByID$0(ManagerServiceImpl.java:33)
+	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
+	at de.telran.bankapp.service.implementations.ManagerServiceImpl.getManagerByID(ManagerServiceImpl.java:33)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor.invoke(MethodBeforeAdviceInterceptor.java:58)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at de.telran.bankapp.service.implementations.ManagerServiceImpl$$SpringCGLIB$$0.getManagerByID(<generated>)
+	at de.telran.bankapp.controller.ManagerController.getManagerByID(ManagerController.java:40)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.aspectj.AspectJAfterThrowingAdvice.invoke(AspectJAfterThrowingAdvice.java:64)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.framework.adapter.AfterReturningAdviceInterceptor.invoke(AfterReturningAdviceInterceptor.java:57)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor.invoke(MethodBeforeAdviceInterceptor.java:58)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at de.telran.bankapp.controller.ManagerController$$SpringCGLIB$$0.getManagerByID(<generated>)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:166)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+2023-11-04 00:29:30,035 INFO  [SpringApplicationShutdownHook] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-04 00:29:30,037 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown initiated...
+2023-11-04 00:29:30,039 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown completed.
+2023-11-04 00:29:34,269 INFO  [main] de.telran.bankapp.BankAppApplication : Starting BankAppApplication using Java 19.0.2 with PID 2588 (D:\Natalia\TelRan\TestH2\BankApp\target\classes started by natal in D:\Natalia\TelRan\TestH2\BankApp)
+2023-11-04 00:29:34,275 INFO  [main] de.telran.bankapp.BankAppApplication : No active profile set, falling back to 1 default profile: "default"
+2023-11-04 00:29:34,773 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-11-04 00:29:34,773 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-11-04 00:29:34,795 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface de.telran.bankapp.repository.AccountRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-11-04 00:29:34,796 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface de.telran.bankapp.repository.AgreementRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-11-04 00:29:34,797 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface de.telran.bankapp.repository.ClientRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-11-04 00:29:34,797 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface de.telran.bankapp.repository.ManagerRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-11-04 00:29:34,798 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface de.telran.bankapp.repository.ProductRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-11-04 00:29:34,799 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 22 ms. Found 0 JDBC repository interfaces.
+2023-11-04 00:29:34,805 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-11-04 00:29:34,806 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-04 00:29:34,836 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 28 ms. Found 5 JPA repository interfaces.
+2023-11-04 00:29:35,306 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : Tomcat initialized with port(s): 8080 (http)
+2023-11-04 00:29:35,312 INFO  [main] org.apache.catalina.core.StandardService : Starting service [Tomcat]
+2023-11-04 00:29:35,312 INFO  [main] org.apache.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-11-04 00:29:35,373 INFO  [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext
+2023-11-04 00:29:35,373 INFO  [main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1066 ms
+2023-11-04 00:29:35,411 INFO  [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Starting...
+2023-11-04 00:29:35,527 INFO  [main] com.zaxxer.hikari.pool.HikariPool : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@14de1901
+2023-11-04 00:29:35,530 INFO  [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Start completed.
+2023-11-04 00:29:35,537 INFO  [main] org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5433/bank'
+2023-11-04 00:29:35,712 INFO  [main] liquibase.database : Set default schema name to public
+2023-11-04 00:29:35,806 INFO  [main] liquibase.lockservice : Successfully acquired change log lock
+2023-11-04 00:29:35,810 INFO  [main] liquibase.command : Dropping Database Objects in schema: bank.public
+2023-11-04 00:29:35,928 WARN  [main] liquibase.executor : Löschvorgang löscht ebenfalls 2 weitere Objekte
+2023-11-04 00:29:35,932 WARN  [main] liquibase.executor : Löschvorgang löscht ebenfalls 3 weitere Objekte
+2023-11-04 00:29:35,936 WARN  [main] liquibase.executor : Löschvorgang löscht ebenfalls Constraint manager_id_in_product für Tabelle products
+2023-11-04 00:29:36,021 INFO  [main] liquibase.database : Successfully deleted all supported object types in schema bank.public.
+2023-11-04 00:29:36,029 WARN  [main] liquibase.lockservice : Failed to release change log lock
+2023-11-04 00:29:36,031 INFO  [main] liquibase.command : Command execution complete
+2023-11-04 00:29:36,381 INFO  [main] liquibase.changelog : Creating database history table with name: public.databasechangelog
+2023-11-04 00:29:36,391 INFO  [main] liquibase.changelog : Reading from public.databasechangelog
+2023-11-04 00:29:36,440 INFO  [main] liquibase.lockservice : Successfully acquired change log lock
+2023-11-04 00:29:36,444 INFO  [main] liquibase.command : Using deploymentId: 9054176444
+2023-11-04 00:29:36,446 INFO  [main] liquibase.changelog : Reading from public.databasechangelog
+2023-11-04 00:29:36,495 INFO  [main] liquibase.changelog : Table managers created
+2023-11-04 00:29:36,496 INFO  [main] liquibase.changelog : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/01-create-table-manager-changelog.xml::create managers table::n.kapinos ran successfully in 10ms
+2023-11-04 00:29:36,511 INFO  [main] liquibase.changelog : Table products created
+2023-11-04 00:29:36,512 INFO  [main] liquibase.changelog : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/02-create-table-product-changelog.xml::create products table::n.kapinos ran successfully in 9ms
+2023-11-04 00:29:36,525 INFO  [main] liquibase.changelog : Table clients created
+2023-11-04 00:29:36,525 INFO  [main] liquibase.changelog : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/03-create-table-client-changelog.xml::create clients table::n.kapinos ran successfully in 11ms
+2023-11-04 00:29:36,537 INFO  [main] liquibase.changelog : Table accounts created
+2023-11-04 00:29:36,538 INFO  [main] liquibase.changelog : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/04-create-table-account-changelog.xml::create accounts table::n.kapinos ran successfully in 9ms
+2023-11-04 00:29:36,550 INFO  [main] liquibase.changelog : Table agreements created
+2023-11-04 00:29:36,552 INFO  [main] liquibase.changelog : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/05-create-table-agreement-changelog.xml::create agreements table::n.kapinos ran successfully in 11ms
+2023-11-04 00:29:36,563 INFO  [main] liquibase.changelog : Table transactions created
+2023-11-04 00:29:36,563 INFO  [main] liquibase.changelog : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/06-create-table-transaction-changelog.xml::create transactions table::n.kapinos ran successfully in 9ms
+2023-11-04 00:29:36,569 INFO  [main] liquibase.changelog : New row inserted into managers
+2023-11-04 00:29:36,570 INFO  [main] liquibase.changelog : New row inserted into managers
+2023-11-04 00:29:36,571 INFO  [main] liquibase.changelog : New row inserted into managers
+2023-11-04 00:29:36,572 INFO  [main] liquibase.changelog : New row inserted into managers
+2023-11-04 00:29:36,572 INFO  [main] liquibase.changelog : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/01-insert_test_data_managers-changelog.xml::insert test data into managers table::n.kapinos ran successfully in 5ms
+2023-11-04 00:29:36,579 INFO  [main] liquibase.changelog : New row inserted into products
+2023-11-04 00:29:36,580 INFO  [main] liquibase.changelog : New row inserted into products
+2023-11-04 00:29:36,581 INFO  [main] liquibase.changelog : New row inserted into products
+2023-11-04 00:29:36,582 INFO  [main] liquibase.changelog : New row inserted into products
+2023-11-04 00:29:36,582 INFO  [main] liquibase.changelog : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/02-insert_test_data_products-changelog.xml::insert test data into products table::n.kapinos ran successfully in 6ms
+2023-11-04 00:29:36,590 INFO  [main] liquibase.changelog : New row inserted into clients
+2023-11-04 00:29:36,591 INFO  [main] liquibase.changelog : New row inserted into clients
+2023-11-04 00:29:36,592 INFO  [main] liquibase.changelog : New row inserted into clients
+2023-11-04 00:29:36,593 INFO  [main] liquibase.changelog : New row inserted into clients
+2023-11-04 00:29:36,594 INFO  [main] liquibase.changelog : New row inserted into clients
+2023-11-04 00:29:36,594 INFO  [main] liquibase.changelog : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/03-insert_test_data_clients-changelog.xml::insert test data into clients table::n.kapinos ran successfully in 7ms
+2023-11-04 00:29:36,604 INFO  [main] liquibase.changelog : New row inserted into accounts
+2023-11-04 00:29:36,605 INFO  [main] liquibase.changelog : New row inserted into accounts
+2023-11-04 00:29:36,606 INFO  [main] liquibase.changelog : New row inserted into accounts
+2023-11-04 00:29:36,608 INFO  [main] liquibase.changelog : New row inserted into accounts
+2023-11-04 00:29:36,609 INFO  [main] liquibase.changelog : New row inserted into accounts
+2023-11-04 00:29:36,610 INFO  [main] liquibase.changelog : New row inserted into accounts
+2023-11-04 00:29:36,611 INFO  [main] liquibase.changelog : New row inserted into accounts
+2023-11-04 00:29:36,611 INFO  [main] liquibase.changelog : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/04-insert_test_data_accounts-changelog.xml::insert test data into accounts table::n.kapinos ran successfully in 10ms
+2023-11-04 00:29:36,618 INFO  [main] liquibase.changelog : New row inserted into agreements
+2023-11-04 00:29:36,619 INFO  [main] liquibase.changelog : New row inserted into agreements
+2023-11-04 00:29:36,620 INFO  [main] liquibase.changelog : New row inserted into agreements
+2023-11-04 00:29:36,621 INFO  [main] liquibase.changelog : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/05-insert_test_data_agreements-changelog.xml::insert test data into agreements table::n.kapinos ran successfully in 6ms
+2023-11-04 00:29:36,627 INFO  [main] liquibase.changelog : New row inserted into transactions
+2023-11-04 00:29:36,628 INFO  [main] liquibase.changelog : New row inserted into transactions
+2023-11-04 00:29:36,629 INFO  [main] liquibase.changelog : New row inserted into transactions
+2023-11-04 00:29:36,629 INFO  [main] liquibase.changelog : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/06-insert_test_data_transactions-changelog.xml::insert test data into transactions table::n.kapinos ran successfully in 5ms
+2023-11-04 00:29:36,632 INFO  [main] liquibase.util : UPDATE SUMMARY
+2023-11-04 00:29:36,633 INFO  [main] liquibase.util : Run:                         12
+2023-11-04 00:29:36,633 INFO  [main] liquibase.util : Previously run:               0
+2023-11-04 00:29:36,633 INFO  [main] liquibase.util : Filtered out:                 0
+2023-11-04 00:29:36,633 INFO  [main] liquibase.util : -------------------------------
+2023-11-04 00:29:36,634 INFO  [main] liquibase.util : Total change sets:           12
+
+2023-11-04 00:29:36,634 INFO  [main] liquibase.util : Update summary generated
+2023-11-04 00:29:36,635 INFO  [main] liquibase.command : Update command completed successfully.
+2023-11-04 00:29:36,638 INFO  [main] liquibase.lockservice : Successfully released change log lock
+2023-11-04 00:29:36,639 INFO  [main] liquibase.command : Command execution complete
+2023-11-04 00:29:36,714 INFO  [main] org.hibernate.jpa.internal.util.LogHelper : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-04 00:29:36,739 INFO  [main] org.hibernate.Version : HHH000412: Hibernate ORM core version 6.2.7.Final
+2023-11-04 00:29:36,741 INFO  [main] org.hibernate.cfg.Environment : HHH000406: Using bytecode reflection optimizer
+2023-11-04 00:29:36,813 INFO  [main] org.hibernate.bytecode.internal.BytecodeProviderInitiator : HHH000021: Bytecode provider name : bytebuddy
+2023-11-04 00:29:36,906 INFO  [main] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-04 00:29:37,091 INFO  [main] org.hibernate.bytecode.internal.BytecodeProviderInitiator : HHH000021: Bytecode provider name : bytebuddy
+2023-11-04 00:29:37,574 INFO  [main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-04 00:29:37,576 INFO  [main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-04 00:29:37,890 INFO  [main] org.springframework.data.jpa.repository.query.QueryEnhancerFactory : Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-11-04 00:29:38,641 WARN  [main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-04 00:29:39,205 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : Tomcat started on port(s): 8080 (http) with context path ''
+2023-11-04 00:29:39,211 INFO  [main] de.telran.bankapp.BankAppApplication : Started BankAppApplication in 5.229 seconds (process running for 5.617)
+2023-11-04 00:29:46,238 INFO  [http-nio-8080-exec-7] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-11-04 00:29:46,238 INFO  [http-nio-8080-exec-7] org.springframework.web.servlet.DispatcherServlet : Initializing Servlet 'dispatcherServlet'
+2023-11-04 00:29:46,240 INFO  [http-nio-8080-exec-7] org.springframework.web.servlet.DispatcherServlet : Completed initialization in 2 ms
+2023-11-04 00:29:46,266 INFO  [http-nio-8080-exec-7] de.telran.bankapp.aspect.LoggingAspect : 
+NEW REQUEST:
+IP : 0:0:0:0:0:0:0:1
+URL : http://localhost:8080/managers/523e4567-e89b-12d3-a456-010000000011
+HTTP_METHOD : GET
+CONTROLLER_METHOD : de.telran.bankapp.controller.ManagerController.getManagerByID
+2023-11-04 00:29:46,266 INFO  [http-nio-8080-exec-7] de.telran.bankapp.aspect.LoggingAspect : RUN SERVICE:
+SERVICE_METHOD : de.telran.bankapp.service.implementations.ManagerServiceImpl.getManagerByID
+2023-11-04 00:29:46,300 ERROR [http-nio-8080-exec-7] de.telran.bankapp.aspect.LoggingAspect : Request throw an exception. Cause - [523e4567-e89b-12d3-a456-010000000011]. Entity Manager with id 523e4567-e89b-12d3-a456-010000000011 is not found.
+2023-11-04 00:29:46,302 INFO  [http-nio-8080-exec-7] de.telran.bankapp.aspect.LoggingAspect : 
+NEW REQUEST:
+IP : 0:0:0:0:0:0:0:1
+URL : http://localhost:8080/managers/523e4567-e89b-12d3-a456-010000000011
+HTTP_METHOD : GET
+CONTROLLER_METHOD : de.telran.bankapp.controller.ResponseExceptionHandler.handleManagerNotFoundException
+2023-11-04 00:29:46,304 INFO  [http-nio-8080-exec-7] de.telran.bankapp.aspect.LoggingAspect : 
+Return value: <400 BAD_REQUEST Bad Request,de.telran.bankapp.dto.ErrorDto@6f7901b9,[]>
+END OF REQUEST
+2023-11-04 00:29:54,777 INFO  [SpringApplicationShutdownHook] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-04 00:29:54,778 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown initiated...
+2023-11-04 00:29:54,781 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown completed.
+2023-11-04 00:30:02,240 INFO  [main] de.telran.bankapp.BankAppApplication : Starting BankAppApplication using Java 19.0.2 with PID 29008 (D:\Natalia\TelRan\TestH2\BankApp\target\classes started by natal in D:\Natalia\TelRan\TestH2\BankApp)
+2023-11-04 00:30:02,248 INFO  [main] de.telran.bankapp.BankAppApplication : No active profile set, falling back to 1 default profile: "default"
+2023-11-04 00:30:02,768 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-11-04 00:30:02,769 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-11-04 00:30:02,794 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface de.telran.bankapp.repository.AccountRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-11-04 00:30:02,795 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface de.telran.bankapp.repository.AgreementRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-11-04 00:30:02,796 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface de.telran.bankapp.repository.ClientRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-11-04 00:30:02,797 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface de.telran.bankapp.repository.ManagerRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-11-04 00:30:02,798 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface de.telran.bankapp.repository.ProductRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-11-04 00:30:02,798 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 26 ms. Found 0 JDBC repository interfaces.
+2023-11-04 00:30:02,806 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-11-04 00:30:02,806 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-04 00:30:02,841 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 32 ms. Found 5 JPA repository interfaces.
+2023-11-04 00:30:03,369 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : Tomcat initialized with port(s): 8080 (http)
+2023-11-04 00:30:03,377 INFO  [main] org.apache.catalina.core.StandardService : Starting service [Tomcat]
+2023-11-04 00:30:03,378 INFO  [main] org.apache.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-11-04 00:30:03,445 INFO  [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext
+2023-11-04 00:30:03,446 INFO  [main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1165 ms
+2023-11-04 00:30:03,484 INFO  [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Starting...
+2023-11-04 00:30:03,614 INFO  [main] com.zaxxer.hikari.pool.HikariPool : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@3e6ec74
+2023-11-04 00:30:03,616 INFO  [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Start completed.
+2023-11-04 00:30:03,626 INFO  [main] org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5433/bank'
+2023-11-04 00:30:03,810 INFO  [main] liquibase.database : Set default schema name to public
+2023-11-04 00:30:03,915 INFO  [main] liquibase.lockservice : Successfully acquired change log lock
+2023-11-04 00:30:03,919 INFO  [main] liquibase.command : Dropping Database Objects in schema: bank.public
+2023-11-04 00:30:04,051 WARN  [main] liquibase.executor : Löschvorgang löscht ebenfalls 2 weitere Objekte
+2023-11-04 00:30:04,056 WARN  [main] liquibase.executor : Löschvorgang löscht ebenfalls 3 weitere Objekte
+2023-11-04 00:30:04,060 WARN  [main] liquibase.executor : Löschvorgang löscht ebenfalls Constraint manager_id_in_product für Tabelle products
+2023-11-04 00:30:04,146 INFO  [main] liquibase.database : Successfully deleted all supported object types in schema bank.public.
+2023-11-04 00:30:04,154 WARN  [main] liquibase.lockservice : Failed to release change log lock
+2023-11-04 00:30:04,156 INFO  [main] liquibase.command : Command execution complete
+2023-11-04 00:30:04,547 INFO  [main] liquibase.changelog : Creating database history table with name: public.databasechangelog
+2023-11-04 00:30:04,570 INFO  [main] liquibase.changelog : Reading from public.databasechangelog
+2023-11-04 00:30:04,630 INFO  [main] liquibase.lockservice : Successfully acquired change log lock
+2023-11-04 00:30:04,636 INFO  [main] liquibase.command : Using deploymentId: 9054204635
+2023-11-04 00:30:04,637 INFO  [main] liquibase.changelog : Reading from public.databasechangelog
+2023-11-04 00:30:04,698 INFO  [main] liquibase.changelog : Table managers created
+2023-11-04 00:30:04,699 INFO  [main] liquibase.changelog : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/01-create-table-manager-changelog.xml::create managers table::n.kapinos ran successfully in 12ms
+2023-11-04 00:30:04,714 INFO  [main] liquibase.changelog : Table products created
+2023-11-04 00:30:04,715 INFO  [main] liquibase.changelog : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/02-create-table-product-changelog.xml::create products table::n.kapinos ran successfully in 11ms
+2023-11-04 00:30:04,731 INFO  [main] liquibase.changelog : Table clients created
+2023-11-04 00:30:04,731 INFO  [main] liquibase.changelog : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/03-create-table-client-changelog.xml::create clients table::n.kapinos ran successfully in 13ms
+2023-11-04 00:30:04,746 INFO  [main] liquibase.changelog : Table accounts created
+2023-11-04 00:30:04,747 INFO  [main] liquibase.changelog : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/04-create-table-account-changelog.xml::create accounts table::n.kapinos ran successfully in 12ms
+2023-11-04 00:30:04,761 INFO  [main] liquibase.changelog : Table agreements created
+2023-11-04 00:30:04,761 INFO  [main] liquibase.changelog : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/05-create-table-agreement-changelog.xml::create agreements table::n.kapinos ran successfully in 11ms
+2023-11-04 00:30:04,776 INFO  [main] liquibase.changelog : Table transactions created
+2023-11-04 00:30:04,777 INFO  [main] liquibase.changelog : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/06-create-table-transaction-changelog.xml::create transactions table::n.kapinos ran successfully in 12ms
+2023-11-04 00:30:04,784 INFO  [main] liquibase.changelog : New row inserted into managers
+2023-11-04 00:30:04,785 INFO  [main] liquibase.changelog : New row inserted into managers
+2023-11-04 00:30:04,787 INFO  [main] liquibase.changelog : New row inserted into managers
+2023-11-04 00:30:04,788 INFO  [main] liquibase.changelog : New row inserted into managers
+2023-11-04 00:30:04,788 INFO  [main] liquibase.changelog : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/01-insert_test_data_managers-changelog.xml::insert test data into managers table::n.kapinos ran successfully in 7ms
+2023-11-04 00:30:04,800 INFO  [main] liquibase.changelog : New row inserted into products
+2023-11-04 00:30:04,802 INFO  [main] liquibase.changelog : New row inserted into products
+2023-11-04 00:30:04,803 INFO  [main] liquibase.changelog : New row inserted into products
+2023-11-04 00:30:04,804 INFO  [main] liquibase.changelog : New row inserted into products
+2023-11-04 00:30:04,805 INFO  [main] liquibase.changelog : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/02-insert_test_data_products-changelog.xml::insert test data into products table::n.kapinos ran successfully in 8ms
+2023-11-04 00:30:04,815 INFO  [main] liquibase.changelog : New row inserted into clients
+2023-11-04 00:30:04,816 INFO  [main] liquibase.changelog : New row inserted into clients
+2023-11-04 00:30:04,818 INFO  [main] liquibase.changelog : New row inserted into clients
+2023-11-04 00:30:04,819 INFO  [main] liquibase.changelog : New row inserted into clients
+2023-11-04 00:30:04,820 INFO  [main] liquibase.changelog : New row inserted into clients
+2023-11-04 00:30:04,821 INFO  [main] liquibase.changelog : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/03-insert_test_data_clients-changelog.xml::insert test data into clients table::n.kapinos ran successfully in 10ms
+2023-11-04 00:30:04,833 INFO  [main] liquibase.changelog : New row inserted into accounts
+2023-11-04 00:30:04,835 INFO  [main] liquibase.changelog : New row inserted into accounts
+2023-11-04 00:30:04,836 INFO  [main] liquibase.changelog : New row inserted into accounts
+2023-11-04 00:30:04,837 INFO  [main] liquibase.changelog : New row inserted into accounts
+2023-11-04 00:30:04,838 INFO  [main] liquibase.changelog : New row inserted into accounts
+2023-11-04 00:30:04,839 INFO  [main] liquibase.changelog : New row inserted into accounts
+2023-11-04 00:30:04,840 INFO  [main] liquibase.changelog : New row inserted into accounts
+2023-11-04 00:30:04,840 INFO  [main] liquibase.changelog : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/04-insert_test_data_accounts-changelog.xml::insert test data into accounts table::n.kapinos ran successfully in 10ms
+2023-11-04 00:30:04,848 INFO  [main] liquibase.changelog : New row inserted into agreements
+2023-11-04 00:30:04,850 INFO  [main] liquibase.changelog : New row inserted into agreements
+2023-11-04 00:30:04,853 INFO  [main] liquibase.changelog : New row inserted into agreements
+2023-11-04 00:30:04,853 INFO  [main] liquibase.changelog : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/05-insert_test_data_agreements-changelog.xml::insert test data into agreements table::n.kapinos ran successfully in 8ms
+2023-11-04 00:30:04,860 INFO  [main] liquibase.changelog : New row inserted into transactions
+2023-11-04 00:30:04,861 INFO  [main] liquibase.changelog : New row inserted into transactions
+2023-11-04 00:30:04,862 INFO  [main] liquibase.changelog : New row inserted into transactions
+2023-11-04 00:30:04,862 INFO  [main] liquibase.changelog : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/06-insert_test_data_transactions-changelog.xml::insert test data into transactions table::n.kapinos ran successfully in 5ms
+2023-11-04 00:30:04,865 INFO  [main] liquibase.util : UPDATE SUMMARY
+2023-11-04 00:30:04,865 INFO  [main] liquibase.util : Run:                         12
+2023-11-04 00:30:04,866 INFO  [main] liquibase.util : Previously run:               0
+2023-11-04 00:30:04,866 INFO  [main] liquibase.util : Filtered out:                 0
+2023-11-04 00:30:04,866 INFO  [main] liquibase.util : -------------------------------
+2023-11-04 00:30:04,866 INFO  [main] liquibase.util : Total change sets:           12
+
+2023-11-04 00:30:04,867 INFO  [main] liquibase.util : Update summary generated
+2023-11-04 00:30:04,868 INFO  [main] liquibase.command : Update command completed successfully.
+2023-11-04 00:30:04,870 INFO  [main] liquibase.lockservice : Successfully released change log lock
+2023-11-04 00:30:04,870 INFO  [main] liquibase.command : Command execution complete
+2023-11-04 00:30:04,937 INFO  [main] org.hibernate.jpa.internal.util.LogHelper : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-04 00:30:04,973 INFO  [main] org.hibernate.Version : HHH000412: Hibernate ORM core version 6.2.7.Final
+2023-11-04 00:30:04,974 INFO  [main] org.hibernate.cfg.Environment : HHH000406: Using bytecode reflection optimizer
+2023-11-04 00:30:05,088 INFO  [main] org.hibernate.bytecode.internal.BytecodeProviderInitiator : HHH000021: Bytecode provider name : bytebuddy
+2023-11-04 00:30:05,185 INFO  [main] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-04 00:30:05,414 INFO  [main] org.hibernate.bytecode.internal.BytecodeProviderInitiator : HHH000021: Bytecode provider name : bytebuddy
+2023-11-04 00:30:06,007 INFO  [main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-04 00:30:06,009 INFO  [main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-04 00:30:06,344 INFO  [main] org.springframework.data.jpa.repository.query.QueryEnhancerFactory : Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-11-04 00:30:07,218 WARN  [main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-04 00:30:07,848 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : Tomcat started on port(s): 8080 (http) with context path ''
+2023-11-04 00:30:07,855 INFO  [main] de.telran.bankapp.BankAppApplication : Started BankAppApplication in 5.942 seconds (process running for 6.422)
+2023-11-04 00:30:09,654 INFO  [http-nio-8080-exec-2] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-11-04 00:30:09,655 INFO  [http-nio-8080-exec-2] org.springframework.web.servlet.DispatcherServlet : Initializing Servlet 'dispatcherServlet'
+2023-11-04 00:30:09,656 INFO  [http-nio-8080-exec-2] org.springframework.web.servlet.DispatcherServlet : Completed initialization in 1 ms
+2023-11-04 00:30:09,686 INFO  [http-nio-8080-exec-2] de.telran.bankapp.aspect.LoggingAspect : 
+NEW REQUEST:
+IP : 0:0:0:0:0:0:0:1
+URL : http://localhost:8080/managers/523e4567-e89b-12d3-a456-010000000011
+HTTP_METHOD : GET
+CONTROLLER_METHOD : de.telran.bankapp.controller.ManagerController.getManagerByID
+2023-11-04 00:30:09,686 INFO  [http-nio-8080-exec-2] de.telran.bankapp.aspect.LoggingAspect : RUN SERVICE:
+SERVICE_METHOD : de.telran.bankapp.service.implementations.ManagerServiceImpl.getManagerByID
+2023-11-04 00:30:09,732 ERROR [http-nio-8080-exec-2] de.telran.bankapp.aspect.LoggingAspect : Request throw an exception. Cause - [523e4567-e89b-12d3-a456-010000000011]. Entity Manager with id 523e4567-e89b-12d3-a456-010000000011 is not found.
+2023-11-04 00:30:09,734 INFO  [http-nio-8080-exec-2] de.telran.bankapp.aspect.LoggingAspect : 
+NEW REQUEST:
+IP : 0:0:0:0:0:0:0:1
+URL : http://localhost:8080/managers/523e4567-e89b-12d3-a456-010000000011
+HTTP_METHOD : GET
+CONTROLLER_METHOD : de.telran.bankapp.controller.ResponseExceptionHandler.handleManagerNotFoundException
+2023-11-04 00:33:58,997 WARN  [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3m55s280ms256µs500ns).
+2023-11-04 00:33:59,005 INFO  [http-nio-8080-exec-2] de.telran.bankapp.aspect.LoggingAspect : 
+Return value: <400 BAD_REQUEST Bad Request,de.telran.bankapp.dto.ErrorDto@2295115d,[]>
+END OF REQUEST
+2023-11-04 00:33:59,142 INFO  [SpringApplicationShutdownHook] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-04 00:33:59,143 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown initiated...
+2023-11-04 00:33:59,145 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown completed.
+2023-11-04 00:34:02,599 INFO  [main] de.telran.bankapp.BankAppApplication : Starting BankAppApplication using Java 19.0.2 with PID 28052 (D:\Natalia\TelRan\TestH2\BankApp\target\classes started by natal in D:\Natalia\TelRan\TestH2\BankApp)
+2023-11-04 00:34:02,606 INFO  [main] de.telran.bankapp.BankAppApplication : No active profile set, falling back to 1 default profile: "default"
+2023-11-04 00:34:03,068 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-11-04 00:34:03,069 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-11-04 00:34:03,088 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface de.telran.bankapp.repository.AccountRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-11-04 00:34:03,089 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface de.telran.bankapp.repository.AgreementRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-11-04 00:34:03,090 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface de.telran.bankapp.repository.ClientRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-11-04 00:34:03,090 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface de.telran.bankapp.repository.ManagerRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-11-04 00:34:03,091 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface de.telran.bankapp.repository.ProductRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-11-04 00:34:03,091 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20 ms. Found 0 JDBC repository interfaces.
+2023-11-04 00:34:03,097 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-11-04 00:34:03,098 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-04 00:34:03,122 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 21 ms. Found 5 JPA repository interfaces.
+2023-11-04 00:34:03,571 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : Tomcat initialized with port(s): 8080 (http)
+2023-11-04 00:34:03,577 INFO  [main] org.apache.catalina.core.StandardService : Starting service [Tomcat]
+2023-11-04 00:34:03,578 INFO  [main] org.apache.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-11-04 00:34:03,637 INFO  [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext
+2023-11-04 00:34:03,638 INFO  [main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1004 ms
+2023-11-04 00:34:03,672 INFO  [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Starting...
+2023-11-04 00:34:03,770 INFO  [main] com.zaxxer.hikari.pool.HikariPool : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@34a20f16
+2023-11-04 00:34:03,771 INFO  [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Start completed.
+2023-11-04 00:34:03,779 INFO  [main] org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5433/bank'
+2023-11-04 00:34:03,949 INFO  [main] liquibase.database : Set default schema name to public
+2023-11-04 00:34:04,041 INFO  [main] liquibase.lockservice : Successfully acquired change log lock
+2023-11-04 00:34:04,045 INFO  [main] liquibase.command : Dropping Database Objects in schema: bank.public
+2023-11-04 00:34:04,173 WARN  [main] liquibase.executor : Löschvorgang löscht ebenfalls 2 weitere Objekte
+2023-11-04 00:34:04,176 WARN  [main] liquibase.executor : Löschvorgang löscht ebenfalls 3 weitere Objekte
+2023-11-04 00:34:04,181 WARN  [main] liquibase.executor : Löschvorgang löscht ebenfalls Constraint manager_id_in_product für Tabelle products
+2023-11-04 00:34:04,263 INFO  [main] liquibase.database : Successfully deleted all supported object types in schema bank.public.
+2023-11-04 00:34:04,270 WARN  [main] liquibase.lockservice : Failed to release change log lock
+2023-11-04 00:34:04,272 INFO  [main] liquibase.command : Command execution complete
+2023-11-04 00:34:04,618 INFO  [main] liquibase.changelog : Creating database history table with name: public.databasechangelog
+2023-11-04 00:34:04,638 INFO  [main] liquibase.changelog : Reading from public.databasechangelog
+2023-11-04 00:34:04,691 INFO  [main] liquibase.lockservice : Successfully acquired change log lock
+2023-11-04 00:34:04,696 INFO  [main] liquibase.command : Using deploymentId: 9054444696
+2023-11-04 00:34:04,697 INFO  [main] liquibase.changelog : Reading from public.databasechangelog
+2023-11-04 00:34:04,753 INFO  [main] liquibase.changelog : Table managers created
+2023-11-04 00:34:04,754 INFO  [main] liquibase.changelog : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/01-create-table-manager-changelog.xml::create managers table::n.kapinos ran successfully in 11ms
+2023-11-04 00:34:04,767 INFO  [main] liquibase.changelog : Table products created
+2023-11-04 00:34:04,767 INFO  [main] liquibase.changelog : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/02-create-table-product-changelog.xml::create products table::n.kapinos ran successfully in 9ms
+2023-11-04 00:34:04,781 INFO  [main] liquibase.changelog : Table clients created
+2023-11-04 00:34:04,781 INFO  [main] liquibase.changelog : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/03-create-table-client-changelog.xml::create clients table::n.kapinos ran successfully in 11ms
+2023-11-04 00:34:04,793 INFO  [main] liquibase.changelog : Table accounts created
+2023-11-04 00:34:04,794 INFO  [main] liquibase.changelog : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/04-create-table-account-changelog.xml::create accounts table::n.kapinos ran successfully in 10ms
+2023-11-04 00:34:04,806 INFO  [main] liquibase.changelog : Table agreements created
+2023-11-04 00:34:04,807 INFO  [main] liquibase.changelog : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/05-create-table-agreement-changelog.xml::create agreements table::n.kapinos ran successfully in 11ms
+2023-11-04 00:34:04,819 INFO  [main] liquibase.changelog : Table transactions created
+2023-11-04 00:34:04,820 INFO  [main] liquibase.changelog : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/06-create-table-transaction-changelog.xml::create transactions table::n.kapinos ran successfully in 10ms
+2023-11-04 00:34:04,825 INFO  [main] liquibase.changelog : New row inserted into managers
+2023-11-04 00:34:04,826 INFO  [main] liquibase.changelog : New row inserted into managers
+2023-11-04 00:34:04,827 INFO  [main] liquibase.changelog : New row inserted into managers
+2023-11-04 00:34:04,828 INFO  [main] liquibase.changelog : New row inserted into managers
+2023-11-04 00:34:04,829 INFO  [main] liquibase.changelog : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/01-insert_test_data_managers-changelog.xml::insert test data into managers table::n.kapinos ran successfully in 6ms
+2023-11-04 00:34:04,837 INFO  [main] liquibase.changelog : New row inserted into products
+2023-11-04 00:34:04,839 INFO  [main] liquibase.changelog : New row inserted into products
+2023-11-04 00:34:04,840 INFO  [main] liquibase.changelog : New row inserted into products
+2023-11-04 00:34:04,841 INFO  [main] liquibase.changelog : New row inserted into products
+2023-11-04 00:34:04,841 INFO  [main] liquibase.changelog : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/02-insert_test_data_products-changelog.xml::insert test data into products table::n.kapinos ran successfully in 6ms
+2023-11-04 00:34:04,849 INFO  [main] liquibase.changelog : New row inserted into clients
+2023-11-04 00:34:04,851 INFO  [main] liquibase.changelog : New row inserted into clients
+2023-11-04 00:34:04,853 INFO  [main] liquibase.changelog : New row inserted into clients
+2023-11-04 00:34:04,854 INFO  [main] liquibase.changelog : New row inserted into clients
+2023-11-04 00:34:04,854 INFO  [main] liquibase.changelog : New row inserted into clients
+2023-11-04 00:34:04,855 INFO  [main] liquibase.changelog : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/03-insert_test_data_clients-changelog.xml::insert test data into clients table::n.kapinos ran successfully in 9ms
+2023-11-04 00:34:04,865 INFO  [main] liquibase.changelog : New row inserted into accounts
+2023-11-04 00:34:04,866 INFO  [main] liquibase.changelog : New row inserted into accounts
+2023-11-04 00:34:04,867 INFO  [main] liquibase.changelog : New row inserted into accounts
+2023-11-04 00:34:04,868 INFO  [main] liquibase.changelog : New row inserted into accounts
+2023-11-04 00:34:04,869 INFO  [main] liquibase.changelog : New row inserted into accounts
+2023-11-04 00:34:04,870 INFO  [main] liquibase.changelog : New row inserted into accounts
+2023-11-04 00:34:04,871 INFO  [main] liquibase.changelog : New row inserted into accounts
+2023-11-04 00:34:04,871 INFO  [main] liquibase.changelog : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/04-insert_test_data_accounts-changelog.xml::insert test data into accounts table::n.kapinos ran successfully in 9ms
+2023-11-04 00:34:04,878 INFO  [main] liquibase.changelog : New row inserted into agreements
+2023-11-04 00:34:04,879 INFO  [main] liquibase.changelog : New row inserted into agreements
+2023-11-04 00:34:04,880 INFO  [main] liquibase.changelog : New row inserted into agreements
+2023-11-04 00:34:04,881 INFO  [main] liquibase.changelog : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/05-insert_test_data_agreements-changelog.xml::insert test data into agreements table::n.kapinos ran successfully in 6ms
+2023-11-04 00:34:04,887 INFO  [main] liquibase.changelog : New row inserted into transactions
+2023-11-04 00:34:04,888 INFO  [main] liquibase.changelog : New row inserted into transactions
+2023-11-04 00:34:04,889 INFO  [main] liquibase.changelog : New row inserted into transactions
+2023-11-04 00:34:04,890 INFO  [main] liquibase.changelog : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/06-insert_test_data_transactions-changelog.xml::insert test data into transactions table::n.kapinos ran successfully in 6ms
+2023-11-04 00:34:04,893 INFO  [main] liquibase.util : UPDATE SUMMARY
+2023-11-04 00:34:04,893 INFO  [main] liquibase.util : Run:                         12
+2023-11-04 00:34:04,893 INFO  [main] liquibase.util : Previously run:               0
+2023-11-04 00:34:04,893 INFO  [main] liquibase.util : Filtered out:                 0
+2023-11-04 00:34:04,893 INFO  [main] liquibase.util : -------------------------------
+2023-11-04 00:34:04,894 INFO  [main] liquibase.util : Total change sets:           12
+
+2023-11-04 00:34:04,894 INFO  [main] liquibase.util : Update summary generated
+2023-11-04 00:34:04,895 INFO  [main] liquibase.command : Update command completed successfully.
+2023-11-04 00:34:04,897 INFO  [main] liquibase.lockservice : Successfully released change log lock
+2023-11-04 00:34:04,898 INFO  [main] liquibase.command : Command execution complete
+2023-11-04 00:34:04,964 INFO  [main] org.hibernate.jpa.internal.util.LogHelper : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-04 00:34:04,991 INFO  [main] org.hibernate.Version : HHH000412: Hibernate ORM core version 6.2.7.Final
+2023-11-04 00:34:04,992 INFO  [main] org.hibernate.cfg.Environment : HHH000406: Using bytecode reflection optimizer
+2023-11-04 00:34:05,073 INFO  [main] org.hibernate.bytecode.internal.BytecodeProviderInitiator : HHH000021: Bytecode provider name : bytebuddy
+2023-11-04 00:34:05,152 INFO  [main] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-04 00:34:05,334 INFO  [main] org.hibernate.bytecode.internal.BytecodeProviderInitiator : HHH000021: Bytecode provider name : bytebuddy
+2023-11-04 00:34:05,804 INFO  [main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-04 00:34:05,806 INFO  [main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-04 00:34:06,100 INFO  [main] org.springframework.data.jpa.repository.query.QueryEnhancerFactory : Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-11-04 00:34:06,825 WARN  [main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-04 00:34:07,357 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : Tomcat started on port(s): 8080 (http) with context path ''
+2023-11-04 00:34:07,363 INFO  [main] de.telran.bankapp.BankAppApplication : Started BankAppApplication in 5.063 seconds (process running for 5.439)
+2023-11-04 00:34:13,521 INFO  [http-nio-8080-exec-1] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-11-04 00:34:13,521 INFO  [http-nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet : Initializing Servlet 'dispatcherServlet'
+2023-11-04 00:34:13,522 INFO  [http-nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet : Completed initialization in 1 ms
+2023-11-04 00:34:13,549 INFO  [http-nio-8080-exec-1] de.telran.bankapp.aspect.LoggingAspect : 
+NEW REQUEST:
+IP : 0:0:0:0:0:0:0:1
+URL : http://localhost:8080/managers/523e4567-e89b-12d3-a456-010000000011
+HTTP_METHOD : GET
+CONTROLLER_METHOD : de.telran.bankapp.controller.ManagerController.getManagerByID
+2023-11-04 00:34:13,549 INFO  [http-nio-8080-exec-1] de.telran.bankapp.aspect.LoggingAspect : RUN SERVICE:
+SERVICE_METHOD : de.telran.bankapp.service.implementations.ManagerServiceImpl.getManagerByID
+2023-11-04 00:34:13,586 ERROR [http-nio-8080-exec-1] de.telran.bankapp.aspect.LoggingAspect : Request throw an exception. Cause - [523e4567-e89b-12d3-a456-010000000011]. Entity Manager with id 523e4567-e89b-12d3-a456-010000000011 is not found.
+2023-11-04 00:34:13,588 INFO  [http-nio-8080-exec-1] de.telran.bankapp.aspect.LoggingAspect : 
+NEW REQUEST:
+IP : 0:0:0:0:0:0:0:1
+URL : http://localhost:8080/managers/523e4567-e89b-12d3-a456-010000000011
+HTTP_METHOD : GET
+CONTROLLER_METHOD : de.telran.bankapp.controller.ResponseExceptionHandler.handleManagerNotFoundException
+2023-11-04 00:34:13,590 INFO  [http-nio-8080-exec-1] de.telran.bankapp.aspect.LoggingAspect : 
+Return value: <400 BAD_REQUEST Bad Request,de.telran.bankapp.dto.ErrorDto@329833f1,[]>
+END OF REQUEST
+2023-11-04 00:36:57,971 INFO  [SpringApplicationShutdownHook] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-04 00:36:57,973 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown initiated...
+2023-11-04 00:36:57,975 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown completed.
+2023-11-04 00:37:01,457 INFO  [main] de.telran.bankapp.BankAppApplication : Starting BankAppApplication using Java 19.0.2 with PID 23088 (D:\Natalia\TelRan\TestH2\BankApp\target\classes started by natal in D:\Natalia\TelRan\TestH2\BankApp)
+2023-11-04 00:37:01,465 INFO  [main] de.telran.bankapp.BankAppApplication : No active profile set, falling back to 1 default profile: "default"
+2023-11-04 00:37:01,944 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-11-04 00:37:01,945 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-11-04 00:37:01,965 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface de.telran.bankapp.repository.AccountRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-11-04 00:37:01,966 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface de.telran.bankapp.repository.AgreementRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-11-04 00:37:01,967 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface de.telran.bankapp.repository.ClientRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-11-04 00:37:01,968 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface de.telran.bankapp.repository.ManagerRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-11-04 00:37:01,969 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface de.telran.bankapp.repository.ProductRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-11-04 00:37:01,969 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 21 ms. Found 0 JDBC repository interfaces.
+2023-11-04 00:37:01,974 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-11-04 00:37:01,975 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-04 00:37:02,002 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 25 ms. Found 5 JPA repository interfaces.
+2023-11-04 00:37:02,465 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : Tomcat initialized with port(s): 8080 (http)
+2023-11-04 00:37:02,472 INFO  [main] org.apache.catalina.core.StandardService : Starting service [Tomcat]
+2023-11-04 00:37:02,472 INFO  [main] org.apache.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-11-04 00:37:02,532 INFO  [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext
+2023-11-04 00:37:02,533 INFO  [main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1038 ms
+2023-11-04 00:37:02,566 INFO  [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Starting...
+2023-11-04 00:37:02,669 INFO  [main] com.zaxxer.hikari.pool.HikariPool : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@515ab3f2
+2023-11-04 00:37:02,670 INFO  [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Start completed.
+2023-11-04 00:37:02,678 INFO  [main] org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5433/bank'
+2023-11-04 00:37:02,847 INFO  [main] liquibase.database : Set default schema name to public
+2023-11-04 00:37:02,951 INFO  [main] liquibase.lockservice : Successfully acquired change log lock
+2023-11-04 00:37:02,956 INFO  [main] liquibase.command : Dropping Database Objects in schema: bank.public
+2023-11-04 00:37:03,078 WARN  [main] liquibase.executor : Löschvorgang löscht ebenfalls 2 weitere Objekte
+2023-11-04 00:37:03,082 WARN  [main] liquibase.executor : Löschvorgang löscht ebenfalls 3 weitere Objekte
+2023-11-04 00:37:03,088 WARN  [main] liquibase.executor : Löschvorgang löscht ebenfalls Constraint manager_id_in_product für Tabelle products
+2023-11-04 00:37:03,170 INFO  [main] liquibase.database : Successfully deleted all supported object types in schema bank.public.
+2023-11-04 00:37:03,178 WARN  [main] liquibase.lockservice : Failed to release change log lock
+2023-11-04 00:37:03,181 INFO  [main] liquibase.command : Command execution complete
+2023-11-04 00:37:03,521 INFO  [main] liquibase.changelog : Creating database history table with name: public.databasechangelog
+2023-11-04 00:37:03,534 INFO  [main] liquibase.changelog : Reading from public.databasechangelog
+2023-11-04 00:37:03,584 INFO  [main] liquibase.lockservice : Successfully acquired change log lock
+2023-11-04 00:37:03,589 INFO  [main] liquibase.command : Using deploymentId: 9054623589
+2023-11-04 00:37:03,590 INFO  [main] liquibase.changelog : Reading from public.databasechangelog
+2023-11-04 00:37:03,641 INFO  [main] liquibase.changelog : Table managers created
+2023-11-04 00:37:03,642 INFO  [main] liquibase.changelog : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/01-create-table-manager-changelog.xml::create managers table::n.kapinos ran successfully in 10ms
+2023-11-04 00:37:03,655 INFO  [main] liquibase.changelog : Table products created
+2023-11-04 00:37:03,656 INFO  [main] liquibase.changelog : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/02-create-table-product-changelog.xml::create products table::n.kapinos ran successfully in 10ms
+2023-11-04 00:37:03,670 INFO  [main] liquibase.changelog : Table clients created
+2023-11-04 00:37:03,671 INFO  [main] liquibase.changelog : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/03-create-table-client-changelog.xml::create clients table::n.kapinos ran successfully in 11ms
+2023-11-04 00:37:03,682 INFO  [main] liquibase.changelog : Table accounts created
+2023-11-04 00:37:03,682 INFO  [main] liquibase.changelog : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/04-create-table-account-changelog.xml::create accounts table::n.kapinos ran successfully in 9ms
+2023-11-04 00:37:03,693 INFO  [main] liquibase.changelog : Table agreements created
+2023-11-04 00:37:03,694 INFO  [main] liquibase.changelog : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/05-create-table-agreement-changelog.xml::create agreements table::n.kapinos ran successfully in 9ms
+2023-11-04 00:37:03,706 INFO  [main] liquibase.changelog : Table transactions created
+2023-11-04 00:37:03,707 INFO  [main] liquibase.changelog : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/06-create-table-transaction-changelog.xml::create transactions table::n.kapinos ran successfully in 9ms
+2023-11-04 00:37:03,712 INFO  [main] liquibase.changelog : New row inserted into managers
+2023-11-04 00:37:03,713 INFO  [main] liquibase.changelog : New row inserted into managers
+2023-11-04 00:37:03,713 INFO  [main] liquibase.changelog : New row inserted into managers
+2023-11-04 00:37:03,714 INFO  [main] liquibase.changelog : New row inserted into managers
+2023-11-04 00:37:03,715 INFO  [main] liquibase.changelog : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/01-insert_test_data_managers-changelog.xml::insert test data into managers table::n.kapinos ran successfully in 4ms
+2023-11-04 00:37:03,720 INFO  [main] liquibase.changelog : New row inserted into products
+2023-11-04 00:37:03,721 INFO  [main] liquibase.changelog : New row inserted into products
+2023-11-04 00:37:03,722 INFO  [main] liquibase.changelog : New row inserted into products
+2023-11-04 00:37:03,723 INFO  [main] liquibase.changelog : New row inserted into products
+2023-11-04 00:37:03,723 INFO  [main] liquibase.changelog : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/02-insert_test_data_products-changelog.xml::insert test data into products table::n.kapinos ran successfully in 5ms
+2023-11-04 00:37:03,731 INFO  [main] liquibase.changelog : New row inserted into clients
+2023-11-04 00:37:03,732 INFO  [main] liquibase.changelog : New row inserted into clients
+2023-11-04 00:37:03,733 INFO  [main] liquibase.changelog : New row inserted into clients
+2023-11-04 00:37:03,734 INFO  [main] liquibase.changelog : New row inserted into clients
+2023-11-04 00:37:03,735 INFO  [main] liquibase.changelog : New row inserted into clients
+2023-11-04 00:37:03,735 INFO  [main] liquibase.changelog : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/03-insert_test_data_clients-changelog.xml::insert test data into clients table::n.kapinos ran successfully in 7ms
+2023-11-04 00:37:03,746 INFO  [main] liquibase.changelog : New row inserted into accounts
+2023-11-04 00:37:03,748 INFO  [main] liquibase.changelog : New row inserted into accounts
+2023-11-04 00:37:03,749 INFO  [main] liquibase.changelog : New row inserted into accounts
+2023-11-04 00:37:03,749 INFO  [main] liquibase.changelog : New row inserted into accounts
+2023-11-04 00:37:03,750 INFO  [main] liquibase.changelog : New row inserted into accounts
+2023-11-04 00:37:03,751 INFO  [main] liquibase.changelog : New row inserted into accounts
+2023-11-04 00:37:03,752 INFO  [main] liquibase.changelog : New row inserted into accounts
+2023-11-04 00:37:03,752 INFO  [main] liquibase.changelog : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/04-insert_test_data_accounts-changelog.xml::insert test data into accounts table::n.kapinos ran successfully in 10ms
+2023-11-04 00:37:03,759 INFO  [main] liquibase.changelog : New row inserted into agreements
+2023-11-04 00:37:03,761 INFO  [main] liquibase.changelog : New row inserted into agreements
+2023-11-04 00:37:03,762 INFO  [main] liquibase.changelog : New row inserted into agreements
+2023-11-04 00:37:03,763 INFO  [main] liquibase.changelog : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/05-insert_test_data_agreements-changelog.xml::insert test data into agreements table::n.kapinos ran successfully in 6ms
+2023-11-04 00:37:03,769 INFO  [main] liquibase.changelog : New row inserted into transactions
+2023-11-04 00:37:03,770 INFO  [main] liquibase.changelog : New row inserted into transactions
+2023-11-04 00:37:03,772 INFO  [main] liquibase.changelog : New row inserted into transactions
+2023-11-04 00:37:03,773 INFO  [main] liquibase.changelog : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/06-insert_test_data_transactions-changelog.xml::insert test data into transactions table::n.kapinos ran successfully in 5ms
+2023-11-04 00:37:03,775 INFO  [main] liquibase.util : UPDATE SUMMARY
+2023-11-04 00:37:03,776 INFO  [main] liquibase.util : Run:                         12
+2023-11-04 00:37:03,776 INFO  [main] liquibase.util : Previously run:               0
+2023-11-04 00:37:03,776 INFO  [main] liquibase.util : Filtered out:                 0
+2023-11-04 00:37:03,776 INFO  [main] liquibase.util : -------------------------------
+2023-11-04 00:37:03,776 INFO  [main] liquibase.util : Total change sets:           12
+
+2023-11-04 00:37:03,777 INFO  [main] liquibase.util : Update summary generated
+2023-11-04 00:37:03,778 INFO  [main] liquibase.command : Update command completed successfully.
+2023-11-04 00:37:03,780 INFO  [main] liquibase.lockservice : Successfully released change log lock
+2023-11-04 00:37:03,780 INFO  [main] liquibase.command : Command execution complete
+2023-11-04 00:37:03,855 INFO  [main] org.hibernate.jpa.internal.util.LogHelper : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-04 00:37:03,879 INFO  [main] org.hibernate.Version : HHH000412: Hibernate ORM core version 6.2.7.Final
+2023-11-04 00:37:03,880 INFO  [main] org.hibernate.cfg.Environment : HHH000406: Using bytecode reflection optimizer
+2023-11-04 00:37:03,957 INFO  [main] org.hibernate.bytecode.internal.BytecodeProviderInitiator : HHH000021: Bytecode provider name : bytebuddy
+2023-11-04 00:37:04,043 INFO  [main] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-04 00:37:04,219 INFO  [main] org.hibernate.bytecode.internal.BytecodeProviderInitiator : HHH000021: Bytecode provider name : bytebuddy
+2023-11-04 00:37:04,680 INFO  [main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-04 00:37:04,681 INFO  [main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-04 00:37:04,963 INFO  [main] org.springframework.data.jpa.repository.query.QueryEnhancerFactory : Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-11-04 00:37:05,719 WARN  [main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-04 00:37:06,288 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : Tomcat started on port(s): 8080 (http) with context path ''
+2023-11-04 00:37:06,294 INFO  [main] de.telran.bankapp.BankAppApplication : Started BankAppApplication in 5.126 seconds (process running for 5.504)
+2023-11-04 00:37:12,376 INFO  [http-nio-8080-exec-3] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-11-04 00:37:12,376 INFO  [http-nio-8080-exec-3] org.springframework.web.servlet.DispatcherServlet : Initializing Servlet 'dispatcherServlet'
+2023-11-04 00:37:12,377 INFO  [http-nio-8080-exec-3] org.springframework.web.servlet.DispatcherServlet : Completed initialization in 1 ms
+2023-11-04 00:37:12,402 INFO  [http-nio-8080-exec-3] de.telran.bankapp.aspect.LoggingAspect : 
+NEW REQUEST:
+IP : 0:0:0:0:0:0:0:1
+URL : http://localhost:8080/managers/523e4567-e89b-12d3-a456-010000000011
+HTTP_METHOD : GET
+CONTROLLER_METHOD : de.telran.bankapp.controller.ManagerController.getManagerByID
+2023-11-04 00:37:12,402 INFO  [http-nio-8080-exec-3] de.telran.bankapp.aspect.LoggingAspect : RUN SERVICE:
+SERVICE_METHOD : de.telran.bankapp.service.implementations.ManagerServiceImpl.getManagerByID
+2023-11-04 00:37:12,438 ERROR [http-nio-8080-exec-3] de.telran.bankapp.aspect.LoggingAspect : Request throw an exception. Cause - [523e4567-e89b-12d3-a456-010000000011]. Entity Manager with id 523e4567-e89b-12d3-a456-010000000011 is not found.
+2023-11-04 00:37:12,439 INFO  [http-nio-8080-exec-3] de.telran.bankapp.aspect.LoggingAspect : 
+NEW REQUEST:
+IP : 0:0:0:0:0:0:0:1
+URL : http://localhost:8080/managers/523e4567-e89b-12d3-a456-010000000011
+HTTP_METHOD : GET
+CONTROLLER_METHOD : de.telran.bankapp.controller.ResponseExceptionHandler.handleManagerNotFoundException
+2023-11-04 00:37:12,441 INFO  [http-nio-8080-exec-3] de.telran.bankapp.aspect.LoggingAspect : 
+Return value: <400 BAD_REQUEST Bad Request,de.telran.bankapp.dto.ErrorDto@20f69ff7,[]>
+END OF REQUEST
+2023-11-04 00:37:29,018 WARN  [http-nio-8080-exec-4] org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'PUT' is not supported]
+2023-11-04 00:37:36,321 INFO  [http-nio-8080-exec-6] de.telran.bankapp.aspect.LoggingAspect : 
+NEW REQUEST:
+IP : 0:0:0:0:0:0:0:1
+URL : http://localhost:8080/managers
+HTTP_METHOD : PUT
+CONTROLLER_METHOD : de.telran.bankapp.controller.ManagerController.updateManager
+2023-11-04 00:37:36,322 INFO  [http-nio-8080-exec-6] de.telran.bankapp.aspect.LoggingAspect : RUN SERVICE:
+SERVICE_METHOD : de.telran.bankapp.service.implementations.ManagerServiceImpl.updateManager
+2023-11-04 00:37:36,358 ERROR [http-nio-8080-exec-6] de.telran.bankapp.aspect.LoggingAspect : Request throw an exception. Cause - [ManagerDto(id=523e4567-e89b-12d3-a456-010000000011, firstName=Johan, lastName=Boss, status=FIRED)]. Entity with ID 523e4567-e89b-12d3-a456-010000000011 is not found.
+2023-11-04 00:37:36,358 INFO  [http-nio-8080-exec-6] de.telran.bankapp.aspect.LoggingAspect : 
+NEW REQUEST:
+IP : 0:0:0:0:0:0:0:1
+URL : http://localhost:8080/managers
+HTTP_METHOD : PUT
+CONTROLLER_METHOD : de.telran.bankapp.controller.ResponseExceptionHandler.handleManagerNotFoundException
+2023-11-04 00:37:36,358 INFO  [http-nio-8080-exec-6] de.telran.bankapp.aspect.LoggingAspect : 
+Return value: <400 BAD_REQUEST Bad Request,de.telran.bankapp.dto.ErrorDto@6f3552e7,[]>
+END OF REQUEST
+2023-11-04 00:37:45,678 INFO  [http-nio-8080-exec-10] de.telran.bankapp.aspect.LoggingAspect : 
+NEW REQUEST:
+IP : 0:0:0:0:0:0:0:1
+URL : http://localhost:8080/managers
+HTTP_METHOD : POST
+CONTROLLER_METHOD : de.telran.bankapp.controller.ManagerController.createManager
+2023-11-04 00:37:45,679 INFO  [http-nio-8080-exec-10] de.telran.bankapp.aspect.LoggingAspect : RUN SERVICE:
+SERVICE_METHOD : de.telran.bankapp.service.implementations.ManagerServiceImpl.createManager
+2023-11-04 00:37:45,751 INFO  [http-nio-8080-exec-10] de.telran.bankapp.aspect.LoggingAspect : 
+Return value: <201 CREATED Created,[]>
+END OF REQUEST
+2023-11-04 00:38:00,105 INFO  [http-nio-8080-exec-7] de.telran.bankapp.aspect.LoggingAspect : 
+NEW REQUEST:
+IP : 0:0:0:0:0:0:0:1
+URL : http://localhost:8080/managers
+HTTP_METHOD : GET
+CONTROLLER_METHOD : de.telran.bankapp.controller.ManagerController.getAllManagers
+2023-11-04 00:38:00,106 INFO  [http-nio-8080-exec-7] de.telran.bankapp.aspect.LoggingAspect : RUN SERVICE:
+SERVICE_METHOD : de.telran.bankapp.service.implementations.ManagerServiceImpl.getAllManagers
+2023-11-04 00:38:00,127 INFO  [http-nio-8080-exec-7] de.telran.bankapp.aspect.LoggingAspect : 
+Return value: <200 OK OK,[ManagerDto(id=523e4567-e89b-12d3-a456-010000000001, firstName=James, lastName=Smith, status=WORKING), ManagerDto(id=523e4567-e89b-12d3-a456-010000000002, firstName=Carlos, lastName=Garcia, status=WORKING), ManagerDto(id=523e4567-e89b-12d3-a456-010000000003, firstName=Anna, lastName=Lee, status=FIRED), ManagerDto(id=523e4567-e89b-12d3-a456-010000000077, firstName=Anna, lastName=Lee, status=FIRED), ManagerDto(id=523e4567-e89b-12d3-a456-010000000011, firstName=Johan, lastName=Boss, status=FIRED)],[]>
+END OF REQUEST
+2023-11-04 00:38:18,452 INFO  [http-nio-8080-exec-8] de.telran.bankapp.aspect.LoggingAspect : 
+NEW REQUEST:
+IP : 0:0:0:0:0:0:0:1
+URL : http://localhost:8080/managers/523e4567-e89b-12d3-a456-010000000011
+HTTP_METHOD : DELETE
+CONTROLLER_METHOD : de.telran.bankapp.controller.ManagerController.deleteManagerByID
+2023-11-04 00:38:18,453 INFO  [http-nio-8080-exec-8] de.telran.bankapp.aspect.LoggingAspect : RUN SERVICE:
+SERVICE_METHOD : de.telran.bankapp.service.implementations.ManagerServiceImpl.deleteManagerByID
+2023-11-04 00:38:18,483 INFO  [http-nio-8080-exec-8] de.telran.bankapp.aspect.LoggingAspect : 
+Return value: <204 NO_CONTENT No Content,[]>
+END OF REQUEST
+2023-11-04 00:38:21,711 INFO  [http-nio-8080-exec-9] de.telran.bankapp.aspect.LoggingAspect : 
+NEW REQUEST:
+IP : 0:0:0:0:0:0:0:1
+URL : http://localhost:8080/managers/523e4567-e89b-12d3-a456-010000000011
+HTTP_METHOD : DELETE
+CONTROLLER_METHOD : de.telran.bankapp.controller.ManagerController.deleteManagerByID
+2023-11-04 00:38:21,712 INFO  [http-nio-8080-exec-9] de.telran.bankapp.aspect.LoggingAspect : RUN SERVICE:
+SERVICE_METHOD : de.telran.bankapp.service.implementations.ManagerServiceImpl.deleteManagerByID
+2023-11-04 00:38:21,714 ERROR [http-nio-8080-exec-9] de.telran.bankapp.aspect.LoggingAspect : Request throw an exception. Cause - [523e4567-e89b-12d3-a456-010000000011]. Entity with ID 523e4567-e89b-12d3-a456-010000000011 is not found.
+2023-11-04 00:38:21,714 INFO  [http-nio-8080-exec-9] de.telran.bankapp.aspect.LoggingAspect : 
+NEW REQUEST:
+IP : 0:0:0:0:0:0:0:1
+URL : http://localhost:8080/managers/523e4567-e89b-12d3-a456-010000000011
+HTTP_METHOD : DELETE
+CONTROLLER_METHOD : de.telran.bankapp.controller.ResponseExceptionHandler.handleManagerNotFoundException
+2023-11-04 00:38:21,714 INFO  [http-nio-8080-exec-9] de.telran.bankapp.aspect.LoggingAspect : 
+Return value: <400 BAD_REQUEST Bad Request,de.telran.bankapp.dto.ErrorDto@77ff3587,[]>
+END OF REQUEST
+2023-11-04 00:38:48,293 INFO  [SpringApplicationShutdownHook] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-04 00:38:48,295 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown initiated...
+2023-11-04 00:38:48,297 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown completed.

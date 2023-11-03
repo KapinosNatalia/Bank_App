@@ -21,5 +21,21 @@
             <column name="created_at" value="2023-03-12"/>
             <column name="updated_at" value="2023-03-12"/>
         </insert>
+        <insert tableName="managers">
+            <column name="id" value="523e4567-e89b-12d3-a456-010000000003"/>
+            <column name="first_name" value="Anna"/>
+            <column name="last_name" value="Lee"/>
+            <column name="status" value="FIRED"/>
+            <column name="created_at" value="2022-05-06"/>
+            <column name="updated_at" value="2023-02-28"/>
+        </insert>
+        <insert tableName="managers">
+            <column name="id" value="523e4567-e89b-12d3-a456-010000000077"/>
+            <column name="first_name" value="Anna"/>
+            <column name="last_name" value="Lee"/>
+            <column name="status" value="FIRED"/>
+            <column name="created_at" value="2022-05-06"/>
+            <column name="updated_at" value="2023-02-28"/>
+        </insert>
     </changeSet>
 </databaseChangeLog>
