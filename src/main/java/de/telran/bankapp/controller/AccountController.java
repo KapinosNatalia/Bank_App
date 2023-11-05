@@ -2,6 +2,7 @@ package de.telran.bankapp.controller;
 
 import de.telran.bankapp.dto.AccountDto;
 import de.telran.bankapp.dto.ClientDto;
+import de.telran.bankapp.entity.enums.AccountStatus;
 import de.telran.bankapp.service.interfaces.AccountService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -26,6 +27,12 @@ public class AccountController {
     @Operation(summary = "Get list of all accounts")
     public ResponseEntity<List<AccountDto>> getAllAccounts() {
         return ResponseEntity.ok(accountService.getAllAccounts());
+    }
+
+    @GetMapping("/{status}")
+    @Operation(summary = "Get list of accounts by Status")
+    public ResponseEntity<List<AccountDto>> getAccountsByStatus(@PathVariable("status") AccountStatus status) {
+        return ResponseEntity.ok(accountService.getAccountsByStatus(status));
     }
 
     @DeleteMapping("/delete-accounts-without-transactions-and-created-earlier-than")

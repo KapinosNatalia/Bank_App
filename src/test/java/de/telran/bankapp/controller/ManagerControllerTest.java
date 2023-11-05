@@ -44,8 +44,7 @@ class ManagerControllerTest {
 
         // then
         Assertions.assertEquals(200, managerGetResult.getResponse().getStatus());
-        Set<ManagerDto> managerDtoSet = objectMapper.readValue(managerGetResult.getResponse().getContentAsString(), new TypeReference<>() {
-        });
+        Set<ManagerDto> managerDtoSet = objectMapper.readValue(managerGetResult.getResponse().getContentAsString(), new TypeReference<>() {});
         Assertions.assertEquals(4, managerDtoSet.size());
     }
 

@@ -1,38 +1,34 @@
 package de.telran.bankapp.controller;
 
-import de.telran.bankapp.entity.Account;
-import de.telran.bankapp.entity.Client;
-import de.telran.bankapp.entity.enums.AccountStatus;
-import de.telran.bankapp.entity.enums.AccountType;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import de.telran.bankapp.dto.AccountDto;
+import de.telran.bankapp.dto.ClientDto;
 import de.telran.bankapp.repository.AccountRepository;
-import io.restassured.RestAssured;
-import io.restassured.http.ContentType;
-import lombok.RequiredArgsConstructor;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
+import org.jetbrains.annotations.NotNull;
+import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.web.server.LocalServerPort;
-import org.springframework.test.context.DynamicPropertyRegistry;
-import org.springframework.test.context.DynamicPropertySource;
-import org.testcontainers.containers.PostgreSQLContainer;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.MvcResult;
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Set;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.hasSize;
-import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
+@AutoConfigureMockMvc
 class AccountControllerTest {
-    @Mock
-    Client client;
+    @Autowired
+    private MockMvc mockMvc;
+
+    @Autowired
+    private ObjectMapper objectMapper;
 //
 //    @LocalServerPort
 //    private Integer port;
@@ -69,7 +65,19 @@ class AccountControllerTest {
 //    }
 
     @Test
-    void shouldGetAllAccounts() {
+    void shouldGetAllAccounts() throws Exception {
+
+        // when
+        MvcResult accountsGetResult = mockMvc.perform(MockMvcRequestBuilders.get("/accounts")
+                        //.with(httpBasic("user", "password"))
+                )
+                .andReturn();
+
+        // then
+        Assertions.assertEquals(200, accountsGetResult.getResponse().getStatus());
+        Set<AccountDto> accountDtoSet = objectMapper.readValue(accountsGetResult.getResponse().getContentAsString(), new TypeReference<>() {
+        });
+        Assertions.assertEquals(7, accountDtoSet.size());
 //        List<Account> accounts = List.of(
 //          new Account("523e4567-e89b-12d3-a456-040000000001", client, "account1", AccountType.CURRENT, AccountStatus.ACTIVE, 1000, "EUR"),
 //          new Account("523e4567-e89b-12d3-a456-040000000002", client, "account2", AccountType.CURRENT, AccountStatus.ACTIVE, 2000, "EUR")
@@ -85,6 +93,65 @@ class AccountControllerTest {
     }
 
     @Test
-    void markForDeletionAccountsWithoutTransactionsAndCreatedEarlierThan() {
+    void markForDeletionAccountsWithoutTransactionsAndCreatedEarlierThan() throws Exception {
+        // given
+        LocalDateTime date = LocalDateTime.of(2023, 1, 1, 0, 0);
+        MvcResult accountsBeforeDeleteResult = mockMvc.perform(MockMvcRequestBuilders.get("/accounts/FOR_DELETION")
+                        //.with(httpBasic("user", "password"))
+                )
+                .andReturn();
+        List<ClientDto> exceptedClientDtoList = getClientDtoList();
+
+        // when
+        MvcResult accountsDeleteResult = mockMvc.perform(MockMvcRequestBuilders.delete("/accounts/delete-accounts-without-transactions-and-created-earlier-than")
+                        //.with(httpBasic("user", "password"))
+                        .param("date", date.toString())
+                )
+                .andReturn();
+        List<ClientDto> clientDtoList = objectMapper.readValue(accountsDeleteResult.getResponse().getContentAsString(), new TypeReference<>() {});
+
+        MvcResult accountsAfterDeleteResult = mockMvc.perform(MockMvcRequestBuilders.get("/accounts/FOR_DELETION")
+                        //.with(httpBasic("user", "password"))
+                )
+                .andReturn();
+
+        // then
+        Assertions.assertEquals(200, accountsBeforeDeleteResult.getResponse().getStatus());
+        Set<AccountDto> accountDtoSet = objectMapper.readValue(accountsBeforeDeleteResult.getResponse().getContentAsString(), new TypeReference<>() {});
+        Assertions.assertEquals(0, accountDtoSet.size());
+
+        Assertions.assertEquals(200, accountsDeleteResult.getResponse().getStatus());
+        Assertions.assertEquals(exceptedClientDtoList, clientDtoList);
+        Assertions.assertEquals(200, accountsAfterDeleteResult.getResponse().getStatus());
+        accountDtoSet = objectMapper.readValue(accountsAfterDeleteResult.getResponse().getContentAsString(), new TypeReference<>() {});
+        Assertions.assertEquals(2, accountDtoSet.size());
+        List<String> uuidList = accountDtoSet.stream()
+                        .map(AccountDto::getId)
+                                .toList();
+        Assertions.assertTrue(uuidList.contains("523e4567-e89b-12d3-a456-040000000003") && uuidList.contains("523e4567-e89b-12d3-a456-040000000006"));
+
+
+    }
+
+    @NotNull
+    private static List<ClientDto> getClientDtoList() {
+        ClientDto clientDto1 = new ClientDto(
+                "523e4567-e89b-12d3-a456-030000000001",
+                "Lukas",
+                "Muller",
+                "lukas.muller@web.de",
+                "Lansstrasse 81, D-11179 Berlin, Germany",
+                "+49 30 5684962"
+        );
+        ClientDto clientDto2 = new ClientDto(
+                "523e4567-e89b-12d3-a456-030000000003",
+                "Lena",
+                "Weber",
+                "lena.weber@yahoo.de",
+                "Hauptstrasse 25, D-50667 Koln, Germany",
+                "+49 221 9876543"
+        );
+        List<ClientDto> exceptedClientDtoList = List.of(clientDto1, clientDto2);
+        return exceptedClientDtoList;
     }
 }

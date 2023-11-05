@@ -27,7 +27,7 @@ public class ClientServiceImpl implements ClientService {
 
     @Override
     public List<ClientWithAccountDto> getClientsAndAccountsWithBalanceMoreThan(BigDecimal amount) {
-        List<Account> accountsWithBalanceMoreThen = accountRepository.getAccountsWithBalanceMoreOrEqualThan(amount);
+        List<Account> accountsWithBalanceMoreThen = accountRepository.getAccountByBalanceIsGreaterThanEqual(amount);
         return accountsWithBalanceMoreThen.stream()
                 .map(clientMapper::clientWithAccountToDto)
                 .toList();

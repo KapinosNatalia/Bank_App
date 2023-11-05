@@ -16,7 +16,7 @@
     <include file="/dbtest/changelog/changes/v0.0.1-SNAPSHOT/02-insert_test_data_products-changelog.xml"/>
     <include file="/dbtest/changelog/changes/v0.0.1-SNAPSHOT/03-insert_test_data_clients-changelog.xml"/>
     <include file="/dbtest/changelog/changes/v0.0.1-SNAPSHOT/04-insert_test_data_accounts-changelog.xml"/>
-<!--    <include file="/dbtest/changelog/changes/v0.0.1-SNAPSHOT/05-insert_test_data_agreements-changelog.xml"/>-->
-<!--    <include file="/dbtest/changelog/changes/v0.0.1-SNAPSHOT/06-insert_test_data_transactions-changelog.xml"/>-->
+    <include file="/dbtest/changelog/changes/v0.0.1-SNAPSHOT/05-insert_test_data_agreements-changelog.xml"/>
+    <include file="/dbtest/changelog/changes/v0.0.1-SNAPSHOT/06-insert_test_data_transactions-changelog.xml"/>
 
 </databaseChangeLog>

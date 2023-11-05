@@ -11,9 +11,9 @@
             <column name="status" value="REGULAR"/>
             <column name="tax_code" value="133/8150/8159"/>
             <column name="first_name" value="Lukas"/>
-            <column name="last_name" value="Müller"/>
+            <column name="last_name" value="Muller"/>
             <column name="email" value="lukas.muller@web.de"/>
-            <column name="address" value="Lansstraße 81, D-11179 Berlin, Germany"/>
+            <column name="address" value="Lansstrasse 81, D-11179 Berlin, Germany"/>
             <column name="phone" value="+49 30 5684962"/>
             <column name="created_at" value="2023-01-20 10:35"/>
             <column name="updated_at" value="2023-01-20 10:35"/>
@@ -26,7 +26,7 @@
             <column name="first_name" value="Markus"/>
             <column name="last_name" value="Schmidt"/>
             <column name="email" value="markus.schmidt@gmx.de"/>
-            <column name="address" value="Musterstraße 17, D-80331 München, Germany"/>
+            <column name="address" value="Musterstrasse 17, D-80331 Munchen, Germany"/>
             <column name="phone" value="+49 89 1234567"/>
             <column name="created_at" value="2023-02-15 10:48"/>
             <column name="updated_at" value="2023-04-05 17:23"/>
@@ -39,7 +39,7 @@
             <column name="first_name" value="Lena"/>
             <column name="last_name" value="Weber"/>
             <column name="email" value="lena.weber@yahoo.de"/>
-            <column name="address" value="Hauptstraße 25, D-50667 Köln, Germany"/>
+            <column name="address" value="Hauptstrasse 25, D-50667 Koln, Germany"/>
             <column name="phone" value="+49 221 9876543"/>
             <column name="created_at" value="2023-03-02 14:05"/>
             <column name="updated_at" value="2023-03-02 14:05"/>
@@ -52,7 +52,7 @@
             <column name="first_name" value="Sara"/>
             <column name="last_name" value="Fischer"/>
             <column name="email" value="sara.fischer@outlook.de"/>
-            <column name="address" value="Schillerstraße 12, D-70173 Stuttgart, Germany"/>
+            <column name="address" value="Schillerstrasse 12, D-70173 Stuttgart, Germany"/>
             <column name="phone" value="+49 711 4567890"/>
             <column name="created_at" value="2023-04-01 12:33"/>
             <column name="updated_at" value="2023-04-24 16:07"/>

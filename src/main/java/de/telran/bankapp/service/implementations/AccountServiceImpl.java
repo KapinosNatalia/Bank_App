@@ -30,6 +30,12 @@ public class AccountServiceImpl implements AccountService {
     }
 
     @Override
+    public List<AccountDto> getAccountsByStatus(AccountStatus status) {
+        List<Account> accountList = accountRepository.getAccountsByStatusIs(status);
+        return accountMapper.toDtoList(accountList);
+    }
+
+    @Override
     public List<ClientDto> markForDeletionAccountsWithoutTransactionsAndCreatedEarlierThan(LocalDateTime date) {
         List<Account> accountList = accountRepository.getAccountsWithoutTransactionsAndCreatedEarlierThan(date, AccountStatus.FOR_DELETION);
         List<Client> clientList = new ArrayList<>();
