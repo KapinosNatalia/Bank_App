@@ -30,8 +30,8 @@ public class ProductController {
 
     @GetMapping("/{productId}")
     @Operation(summary = "Get product by ID")
-    public Product getProduct(@PathVariable("productId") UUID productId) {
-        return productService.getProductById(productId);
+    public ResponseEntity<ProductDto> getProduct(@PathVariable("productId") UUID productId) {
+        return ResponseEntity.ok(productService.getProductById(productId));
     }
 
     @GetMapping("/find-all-products-where-agreement-quantity-more-than/{quantity}")

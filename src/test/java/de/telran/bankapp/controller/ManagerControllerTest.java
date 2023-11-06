@@ -90,7 +90,7 @@ class ManagerControllerTest {
     }
 
     @Test
-    void shouldReceiveCreationException() throws Exception {
+    void shouldReceiveCreationExceptionAlreadyExist() throws Exception {
         // given
         ManagerDto managerDto = new ManagerDto("523e4567-e89b-12d3-a456-010000000001",
                 "John",
@@ -119,12 +119,34 @@ class ManagerControllerTest {
     }
 
     @Test
+    void shouldReceiveCreationExceptionIDIsEmpty() throws Exception {
+        // given
+        ManagerDto managerDto = new ManagerDto("",
+                "John",
+                "Smith",
+                "WORKING");
+
+        String managerStr = objectMapper.writeValueAsString(managerDto);
+
+        // when
+        MvcResult managerCreationResult = mockMvc.perform(MockMvcRequestBuilders.post("/managers")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        //.with(httpBasic("user", "password"))
+                        //.with(csrf())
+                        .content(managerStr))
+                .andReturn();
+
+        // then
+        Assertions.assertEquals(400, managerCreationResult.getResponse().getStatus());
+    }
+
+    @Test
     void shouldUpdateManager() throws Exception {
         // given
         ManagerDto managerDto = new ManagerDto("523e4567-e89b-12d3-a456-010000000001",
                 "NewFirstName",
                 "NewLastName",
-                "WORKING");
+                "FIRED");
         String managerStr = objectMapper.writeValueAsString(managerDto);
 
         // when
@@ -146,6 +168,39 @@ class ManagerControllerTest {
         ManagerDto receivedManagerDto = objectMapper.readValue(receivedManagerJson, ManagerDto.class);
         Assertions.assertEquals(managerDto.getLastName(), receivedManagerDto.getLastName());
         Assertions.assertEquals(managerDto.getFirstName(), receivedManagerDto.getFirstName());
+    }
+
+    @Test
+    void shouldReceiveExceptionUpdateManager() throws Exception {
+        // given
+        ManagerDto managerDto1 = new ManagerDto("523e4567-e89b-12d3-a456-010000000018",
+                "NewFirstName",
+                "NewLastName",
+                "WORKING");
+        String managerStr1 = objectMapper.writeValueAsString(managerDto1);
+        ManagerDto managerDto2 = new ManagerDto("",
+                "NewFirstName",
+                "NewLastName",
+                "WORKING");
+        String managerStr2 = objectMapper.writeValueAsString(managerDto2);
+
+        // when
+        MvcResult managerUpdateResult1 = mockMvc.perform(MockMvcRequestBuilders.put("/managers")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        //.with(httpBasic("user", "password"))
+                        //.with(csrf())
+                        .content(managerStr1))
+                .andReturn();
+        MvcResult managerUpdateResult2 = mockMvc.perform(MockMvcRequestBuilders.put("/managers")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        //.with(httpBasic("user", "password"))
+                        //.with(csrf())
+                        .content(managerStr2))
+                .andReturn();
+
+        // then
+        Assertions.assertEquals(400, managerUpdateResult1.getResponse().getStatus());
+        Assertions.assertEquals(400, managerUpdateResult2.getResponse().getStatus());
     }
 
     @Test
@@ -177,6 +232,31 @@ class ManagerControllerTest {
         // then
         Assertions.assertEquals(201, managerCreationResult.getResponse().getStatus());
         Assertions.assertEquals(204, managerDeletionResult.getResponse().getStatus());
+        Assertions.assertEquals(400, managerGetResult.getResponse().getStatus());
+    }
+
+    @Test
+    void shouldReceiveExceptionDeleteManagerByID() throws Exception {
+        // given
+        ManagerDto managerDto = new ManagerDto("523e4567-e89b-12d3-a456-010000000018",
+                "John",
+                "Smith",
+                "WORKING");
+        String managerStr = objectMapper.writeValueAsString(managerDto);
+
+        // when
+        MvcResult managerGetResult = mockMvc.perform(MockMvcRequestBuilders.get("/managers/" + managerDto.getId())
+                        //.with(httpBasic("user", "password"))
+                )
+                .andReturn();
+        MvcResult managerDeletionResult = mockMvc.perform(MockMvcRequestBuilders.delete("/managers/" + managerDto.getId())
+                        //.with(httpBasic("user", "password"))
+                        //.with(csrf())
+                )
+                .andReturn();
+
+        // then
+        Assertions.assertEquals(400, managerDeletionResult.getResponse().getStatus());
         Assertions.assertEquals(400, managerGetResult.getResponse().getStatus());
     }
 

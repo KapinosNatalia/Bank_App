@@ -144,6 +144,8 @@
 						<exclude>de/telran/bankapp/aspect/*</exclude>
 						<exclude>de/telran/bankapp/dto/*</exclude>
 						<exclude>de/telran/bankapp/entity/**</exclude>
+						<exclude>de/telran/bankapp/exceptions/**</exclude>
+						<exclude>de/telran/bankapp/BankAppApplication.class</exclude>
 					</excludes>
 				</configuration>
 				<executions>

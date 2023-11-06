@@ -3,7 +3,9 @@ package de.telran.bankapp.controller;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import de.telran.bankapp.dto.ClientDto;
+import de.telran.bankapp.dto.ClientWithAccountDto;
 import de.telran.bankapp.dto.ProductDto;
+import de.telran.bankapp.dto.ProductWithManagerAndQuantityDto;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +16,7 @@ import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
 import java.util.Set;
+import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -42,10 +45,76 @@ class ClientControllerTest {
     }
 
     @Test
-    void getClientsWithBalanceMoreThan() {
+    void shouldGetClientsWithBalanceMoreThan() throws Exception {
+        //given
+        Set<ClientDto> expectedClientList = Set.of(
+                new ClientDto(
+                        "523e4567-e89b-12d3-a456-030000000002",
+                        "Markus",
+                        "Schmidt",
+                        "markus.schmidt@gmx.de",
+                        "Musterstrasse 17, D-80331 Munchen, Germany",
+                        "+49 89 1234567"
+                ),
+                new ClientDto(
+                        "523e4567-e89b-12d3-a456-030000000003",
+                        "Lena",
+                        "Weber",
+                        "lena.weber@yahoo.de",
+                        "Hauptstrasse 25, D-50667 Koln, Germany",
+                        "+49 221 9876543"
+                )
+        );
+
+        //when
+        MvcResult clientListGetResult = mockMvc.perform(MockMvcRequestBuilders.get("/clients/with-balance-more-than/100000")
+                        //.with(httpBasic("user", "password"))
+                )
+                .andReturn();
+
+        //then
+        Assertions.assertEquals(200, clientListGetResult.getResponse().getStatus());
+        Set<ClientDto> clientList = objectMapper.readValue(clientListGetResult.getResponse().getContentAsString(), new TypeReference<>() {});
+        Assertions.assertEquals(expectedClientList, clientList);
     }
 
     @Test
-    void getClientsAndAccountsWithBalanceMoreThan() {
+    void shouldGetClientsAndAccountsWithBalanceMoreThan() throws Exception {
+        //given
+        Set<ClientWithAccountDto> expectedClientList = Set.of(
+                new ClientWithAccountDto(
+                        "523e4567-e89b-12d3-a456-030000000002",
+                        "Markus",
+                        "Schmidt",
+                        "markus.schmidt@gmx.de",
+                        "Musterstrasse 17, D-80331 Munchen, Germany",
+                        "+49 89 1234567",
+                        "523e4567-e89b-12d3-a456-040000000004",
+                        "DE33 2004 1144 0199 9999 00",
+                        "250000.00"
+                ),
+                new ClientWithAccountDto(
+                        "523e4567-e89b-12d3-a456-030000000003",
+                        "Lena",
+                        "Weber",
+                        "lena.weber@yahoo.de",
+                        "Hauptstrasse 25, D-50667 Koln, Germany",
+                        "+49 221 9876543",
+                        "523e4567-e89b-12d3-a456-040000000005",
+                        "DE45 7002 0270 0015 7695 53",
+                        "153256.00"
+                )
+        );
+
+        //when
+        MvcResult clientListGetResult = mockMvc.perform(MockMvcRequestBuilders.get("/clients/clients-accounts-with-balance-more-than/100000")
+                        //.with(httpBasic("user", "password"))
+                )
+                .andReturn();
+
+        //then
+        Assertions.assertEquals(200, clientListGetResult.getResponse().getStatus());
+        Set<ClientWithAccountDto> clientList = objectMapper.readValue(clientListGetResult.getResponse().getContentAsString(), new TypeReference<>() {});
+        Assertions.assertEquals(expectedClientList, clientList);
     }
 }
