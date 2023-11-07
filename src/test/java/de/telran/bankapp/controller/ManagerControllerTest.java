@@ -26,7 +26,9 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 @AutoConfigureMockMvc
-//@Sql()
+@Sql("/db/drop_scheme.sql")
+@Sql("/db/create_scheme.sql")
+@Sql("/db/insert_test_data.sql")
 class ManagerControllerTest {
     @Autowired
     private MockMvc mockMvc;

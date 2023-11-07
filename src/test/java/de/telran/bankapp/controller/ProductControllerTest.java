@@ -12,6 +12,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
@@ -24,6 +25,9 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 @AutoConfigureMockMvc
+@Sql("/db/drop_scheme.sql")
+@Sql("/db/create_scheme.sql")
+@Sql("/db/insert_test_data.sql")
 class ProductControllerTest {
     @Autowired
     private MockMvc mockMvc;
@@ -153,6 +157,6 @@ class ProductControllerTest {
         //then
         Assertions.assertEquals(200, productListGetResult.getResponse().getStatus());
         Set<ProductWithManagerAndQuantityDto> productList = objectMapper.readValue(productListGetResult.getResponse().getContentAsString(), new TypeReference<>() {});
-        //Assertions.assertEquals(expectedProductList, productList);
+        Assertions.assertEquals(expectedProductList, productList);
     }
 }

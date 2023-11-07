@@ -20,13 +20,14 @@ spring:
     driver-class-name: org.h2.Driver
 
   jpa:
-    spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
+    database-platform: org.hibernate.dialect.H2Dialect
     hibernate:
       ddl-auto: none
 
   liquibase:
-    change-log: classpath:/dbtest/changelog/changelog-master.xml
-    drop-first: true
+#    change-log: classpath:/dbtest/changelog123/changelog-master.xml
+#    drop-first: true
+    enabled: false
 
 logging:
   level:
