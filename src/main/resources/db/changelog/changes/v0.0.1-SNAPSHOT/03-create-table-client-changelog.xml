@@ -32,6 +32,9 @@
             <column name="email" type="varchar(32)">
                 <constraints nullable="false" unique="false"/>
             </column>
+            <column name="pass" type="varchar(60)">
+                <constraints nullable="false" unique="false"/>
+            </column>
             <column name="address" type="varchar(128)">
                 <constraints nullable="false" unique="false"/>
             </column>

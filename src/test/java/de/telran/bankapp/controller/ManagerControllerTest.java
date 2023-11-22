@@ -13,6 +13,7 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.security.test.context.support.WithUserDetails;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
@@ -37,6 +38,7 @@ class ManagerControllerTest {
     private ObjectMapper objectMapper;
 
     @Test
+    @WithUserDetails("vip@gmail.com")
     void shouldGetAllManagers() throws Exception {
         // when
         MvcResult managerGetResult = mockMvc.perform(MockMvcRequestBuilders.get("/managers")
@@ -51,6 +53,7 @@ class ManagerControllerTest {
     }
 
     @Test
+    @WithUserDetails("vip@gmail.com")
     void shouldCreateManager() throws Exception {
         // given
         ManagerDto managerDto = new ManagerDto("523e4567-e89b-12d3-a456-010000000011",
@@ -92,6 +95,7 @@ class ManagerControllerTest {
     }
 
     @Test
+    @WithUserDetails("vip@gmail.com")
     void shouldReceiveCreationExceptionAlreadyExist() throws Exception {
         // given
         ManagerDto managerDto = new ManagerDto("523e4567-e89b-12d3-a456-010000000001",
@@ -121,6 +125,7 @@ class ManagerControllerTest {
     }
 
     @Test
+    @WithUserDetails("vip@gmail.com")
     void shouldReceiveCreationExceptionIDIsEmpty() throws Exception {
         // given
         ManagerDto managerDto = new ManagerDto("",
@@ -143,6 +148,7 @@ class ManagerControllerTest {
     }
 
     @Test
+    @WithUserDetails("vip@gmail.com")
     void shouldUpdateManager() throws Exception {
         // given
         ManagerDto managerDto = new ManagerDto("523e4567-e89b-12d3-a456-010000000001",
@@ -173,6 +179,7 @@ class ManagerControllerTest {
     }
 
     @Test
+    @WithUserDetails("vip@gmail.com")
     void shouldReceiveExceptionUpdateManager() throws Exception {
         // given
         ManagerDto managerDto1 = new ManagerDto("523e4567-e89b-12d3-a456-010000000018",
@@ -206,6 +213,7 @@ class ManagerControllerTest {
     }
 
     @Test
+    @WithUserDetails("vip@gmail.com")
     void shouldDeleteManagerByID() throws Exception {
         // given
         ManagerDto managerDto = new ManagerDto("523e4567-e89b-12d3-a456-010000000011",
@@ -238,6 +246,7 @@ class ManagerControllerTest {
     }
 
     @Test
+    @WithUserDetails("vip@gmail.com")
     void shouldReceiveExceptionDeleteManagerByID() throws Exception {
         // given
         ManagerDto managerDto = new ManagerDto("523e4567-e89b-12d3-a456-010000000018",
@@ -263,6 +272,7 @@ class ManagerControllerTest {
     }
 
     @Test
+    @WithUserDetails("vip@gmail.com")
     void shouldGetAllManagersByClientStatus() throws Exception {
         // given
         String status = "VIP";

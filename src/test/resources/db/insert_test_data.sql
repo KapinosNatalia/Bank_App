@@ -12,13 +12,13 @@ VALUES
     ('523e4567-e89b-12d3-a456-020000000003', '523e4567-e89b-12d3-a456-010000000003', 'Deposit up to 100.000 EUR', 'ACTIVE', 'EUR', '10.0', '1000000', '2023-03-01', '2023-03-01'),
     ('523e4567-e89b-12d3-a456-020000000004', '523e4567-e89b-12d3-a456-010000000002', 'Current account EUR', 'ACTIVE', 'EUR', '0.0', '0', '2022-03-01', '2022-03-01');
 
-INSERT INTO CLIENTS (ID, MANAGER_ID, STATUS, TAX_CODE, FIRST_NAME, LAST_NAME, EMAIL, ADDRESS, PHONE, CREATED_AT, UPDATED_AT)
+INSERT INTO CLIENTS (ID, MANAGER_ID, STATUS, TAX_CODE, FIRST_NAME, LAST_NAME, EMAIL, PASS, ADDRESS, PHONE, CREATED_AT, UPDATED_AT)
 VALUES
-    ('523e4567-e89b-12d3-a456-030000000001', '523e4567-e89b-12d3-a456-010000000001', 'REGULAR', '133/8150/8159', 'Lukas', 'Muller', 'lukas.muller@web.de', 'Lansstrasse 81, D-11179 Berlin, Germany', '+49 30 5684962', '2023-01-20 10:35', '2023-01-20 10:35'),
-    ('523e4567-e89b-12d3-a456-030000000002', '523e4567-e89b-12d3-a456-010000000002', 'REGULAR', '513/3081/5081', 'Markus', 'Schmidt', 'markus.schmidt@gmx.de', 'Musterstrasse 17, D-80331 Munchen, Germany', '+49 89 1234567', '2023-02-15 10:48', '2023-04-05 17:23'),
-    ('523e4567-e89b-12d3-a456-030000000003', '523e4567-e89b-12d3-a456-010000000001', 'REGULAR', '241/5678/9012', 'Lena', 'Weber', 'lena.weber@yahoo.de', 'Hauptstrasse 25, D-50667 Koln, Germany', '+49 221 9876543', '2023-03-02 14:05', '2023-03-02 14:05'),
-    ('523e4567-e89b-12d3-a456-030000000004', '523e4567-e89b-12d3-a456-010000000003', 'VIP',     '312/4927/3045', 'Sara', 'Fischer', 'sara.fischer@outlook.de', 'Schillerstrasse 12, D-70173 Stuttgart, Germany', '+49 711 4567890', '2023-04-01 12:33', '2023-04-24 16:07'),
-    ('523e4567-e89b-12d3-a456-030000000005', '523e4567-e89b-12d3-a456-010000000001', 'VIP',     '152/8436/7190', 'Laura', 'Klein', 'laura.klein@gmail.com', 'Goetheplatz 5, D-60311 Frankfurt am Main, Germany', '+49 69 8765432', '2023-04-04 15:23', '2023-04-04 15:23');
+    ('523e4567-e89b-12d3-a456-030000000001', '523e4567-e89b-12d3-a456-010000000001', 'REGULAR', '133/8150/8159', 'Lukas', 'Muller', 'regular@gmail.com', '$2a$12$RbbNrGI9ubI1s0F3rc2pKeEBH314OYZyumTvLfrTD38iVYYqxBQBK', 'Lansstrasse 81, D-11179 Berlin, Germany', '+49 30 5684962', '2023-01-20 10:35', '2023-01-20 10:35'),
+    ('523e4567-e89b-12d3-a456-030000000002', '523e4567-e89b-12d3-a456-010000000002', 'REGULAR', '513/3081/5081', 'Markus', 'Schmidt', 'markus.schmidt@gmx.de', '$2a$12$ypW/zN.RqqoYW3AkCL06uOEcOGxyqvy.Scbzs5ebxkb7Ef.cW7KEG', 'Musterstrasse 17, D-80331 Munchen, Germany', '+49 89 1234567', '2023-02-15 10:48', '2023-04-05 17:23'),
+    ('523e4567-e89b-12d3-a456-030000000003', '523e4567-e89b-12d3-a456-010000000001', 'REGULAR', '241/5678/9012', 'Lena', 'Weber', 'lena.weber@yahoo.de', '$2a$12$ypW/zN.RqqoYW3AkCL06uOEcOGxyqvy.Scbzs5ebxkb7Ef.cW7KEG', 'Hauptstrasse 25, D-50667 Koln, Germany', '+49 221 9876543', '2023-03-02 14:05', '2023-03-02 14:05'),
+    ('523e4567-e89b-12d3-a456-030000000004', '523e4567-e89b-12d3-a456-010000000003', 'VIP',     '312/4927/3045', 'Sara', 'Fischer', 'sara.fischer@outlook.de', '$2a$12$ypW/zN.RqqoYW3AkCL06uOEcOGxyqvy.Scbzs5ebxkb7Ef.cW7KEG', 'Schillerstrasse 12, D-70173 Stuttgart, Germany', '+49 711 4567890', '2023-04-01 12:33', '2023-04-24 16:07'),
+    ('523e4567-e89b-12d3-a456-030000000005', '523e4567-e89b-12d3-a456-010000000001', 'VIP',     '152/8436/7190', 'Laura', 'Klein', 'vip@gmail.com', '$2a$12$ORhWEsepUMQMZRfcHNrhYeEXBrxW6CyBNBj3fFfVERsOGaM5h39CK', 'Goetheplatz 5, D-60311 Frankfurt am Main, Germany', '+49 69 8765432', '2023-04-04 15:23', '2023-04-04 15:23');
 
 INSERT INTO ACCOUNTS (ID, CLIENT_ID, NAME, TYPE, STATUS, BALANCE, CURRENCY_CODE, CREATED_AT, UPDATED_AT)
 VALUES

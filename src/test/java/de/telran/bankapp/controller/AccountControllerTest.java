@@ -10,6 +10,7 @@ import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.security.test.context.support.WithUserDetails;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
@@ -69,6 +70,7 @@ class AccountControllerTest {
 //    }
 
     @Test
+    @WithUserDetails("vip@gmail.com")
     void shouldGetAllAccounts() throws Exception {
 
         // when
@@ -97,6 +99,7 @@ class AccountControllerTest {
     }
 
     @Test
+    @WithUserDetails("vip@gmail.com")
     void markForDeletionAccountsWithoutTransactionsAndCreatedEarlierThan() throws Exception {
         // given
         LocalDateTime date = LocalDateTime.of(2023, 1, 1, 0, 0);
@@ -143,7 +146,7 @@ class AccountControllerTest {
                 "523e4567-e89b-12d3-a456-030000000001",
                 "Lukas",
                 "Muller",
-                "lukas.muller@web.de",
+                "regular@gmail.com",
                 "Lansstrasse 81, D-11179 Berlin, Germany",
                 "+49 30 5684962"
         );

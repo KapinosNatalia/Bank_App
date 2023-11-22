@@ -12,6 +12,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.security.test.context.support.WithUserDetails;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
@@ -39,6 +40,7 @@ class ProductControllerTest {
     private ProductRepository productRepository;
 
     @Test
+    @WithUserDetails("vip@gmail.com")
     void shouldGetAllProducts() throws Exception {
         // when
         MvcResult productsGetResult = mockMvc.perform(MockMvcRequestBuilders.get("/products")
@@ -54,6 +56,7 @@ class ProductControllerTest {
     }
 
     @Test
+    @WithUserDetails("vip@gmail.com")
     void shouldGetProduct() throws Exception {
         //given
         ProductDto expectedProductDto = new ProductDto(
@@ -80,6 +83,7 @@ class ProductControllerTest {
     }
 
     @Test
+    @WithUserDetails("vip@gmail.com")
     void shouldGetProductNotFoundException() throws Exception {
         //given
         String productID = "523e4567-e89b-12d3-a456-020000000011";
@@ -95,6 +99,7 @@ class ProductControllerTest {
     }
 
     @Test
+    @WithUserDetails("vip@gmail.com")
     void shouldFindAllProductsWhereAgreementsQuantityMoreThan() throws Exception {
         //given
         List<ProductWithManagerAndQuantityDto> expectedProductList = List.of(
@@ -119,6 +124,7 @@ class ProductControllerTest {
     }
 
     @Test
+    @WithUserDetails("vip@gmail.com")
     void shouldGetProductsWithQuantityOfUsing() throws Exception {
         //given
         Set<ProductWithManagerAndQuantityDto> expectedProductList = Set.of(

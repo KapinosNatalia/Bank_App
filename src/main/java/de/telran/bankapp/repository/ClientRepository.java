@@ -11,4 +11,6 @@ import java.util.UUID;
 public interface ClientRepository extends JpaRepository<Client, UUID> {
     @Query("SELECT c FROM Client c JOIN Account a ON c.id = a.client.id AND a.balance >= :amount")
     List<Client> getClientsWithBalanceMoreOrEqualThan(BigDecimal amount);
+
+    Client findClientByEmail(String email);
 }

@@ -31,6 +31,7 @@ CREATE TABLE IF NOT EXISTS clients
     first_name  varchar(32),
     last_name   varchar(32),
     email       varchar(32),
+    pass        varchar(60),
     address     varchar(128),
     phone       varchar(32),
     created_at  timestamp,

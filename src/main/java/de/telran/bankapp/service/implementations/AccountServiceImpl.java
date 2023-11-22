@@ -12,6 +12,7 @@ import de.telran.bankapp.service.interfaces.AccountService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -36,6 +37,7 @@ public class AccountServiceImpl implements AccountService {
     }
 
     @Override
+    @Transactional
     public List<ClientDto> markForDeletionAccountsWithoutTransactionsAndCreatedEarlierThan(LocalDateTime date) {
         List<Account> accountList = accountRepository.getAccountsWithoutTransactionsAndCreatedEarlierThan(date, AccountStatus.FOR_DELETION);
         List<Client> clientList = new ArrayList<>();

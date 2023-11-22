@@ -26,15 +26,15 @@ spring:
     change-log: classpath:/db/changelog/changelog-master.xml
     drop-first: true
 
-logging:
-  level:
-    root: INFO
-    test: DEBUG
-
-  file:
-    name: appBank.log
-
-  pattern:
-    console: "%clr(%d{yy-MM-dd E HH:mm:ss.SSS}){blue} %clr(%-5p) %clr(${PID}){faint} %clr(---){faint}
-    %clr([%8.15t]){cyan} %clr(%-40.40logger{0}){blue} %clr(:){red} %clr(%m){faint}%n"
-    file: "%d %-5level [%thread] %logger : %msg%n"
+#logging:
+#  level:
+#    root: INFO
+#    test: DEBUG
+#
+#  file:
+#    name: appBank.log
+#
+#  pattern:
+#    console: "%clr(%d{yy-MM-dd E HH:mm:ss.SSS}){blue} %clr(%-5p) %clr(${PID}){faint} %clr(---){faint}
+#    %clr([%8.15t]){cyan} %clr(%-40.40logger{0}){blue} %clr(:){red} %clr(%m){faint}%n"
+#    file: "%d %-5level [%thread] %logger : %msg%n"

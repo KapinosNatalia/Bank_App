@@ -11,6 +11,7 @@ import de.telran.bankapp.repository.ManagerRepository;
 import de.telran.bankapp.service.interfaces.ManagerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.UUID;
@@ -35,6 +36,7 @@ public class ManagerServiceImpl implements ManagerService {
     }
 
     @Override
+    @Transactional
     public void deleteManagerByID(UUID id) {
         if (managerRepository.existsById(id)) {
             managerRepository.deleteById(id);
@@ -44,6 +46,7 @@ public class ManagerServiceImpl implements ManagerService {
     }
 
     @Override
+    @Transactional
     public void createManager(ManagerDto managerDto) {
         if (managerDto.getId().isEmpty()) {
             throw new ManagerCreationException("ID can´t be empty.");
@@ -61,6 +64,7 @@ public class ManagerServiceImpl implements ManagerService {
     }
 
     @Override
+    @Transactional
     public void updateManager(ManagerDto managerDto) {
         if (managerDto.getId().isEmpty()) {
             throw new ManagerCreationException("ID can´t be empty.");
