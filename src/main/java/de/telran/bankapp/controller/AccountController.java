@@ -5,6 +5,7 @@ import de.telran.bankapp.dto.ClientDto;
 import de.telran.bankapp.entity.enums.AccountStatus;
 import de.telran.bankapp.service.interfaces.AccountService;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -20,6 +21,7 @@ import java.util.List;
 @Tag(name = "Account controller API", description = "With this controller you can get a list of all accounts or delete " +
         "accounts for which there were no transactions and those created before a specific date. As a response," +
         " you will receive a list of clients (owners of these accounts) with their contact information")
+@SecurityRequirement(name = "Bearer Authentication")
 public class AccountController {
     private final AccountService accountService;
 

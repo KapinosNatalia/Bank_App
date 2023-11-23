@@ -3,6 +3,7 @@ package de.telran.bankapp.controller;
 import de.telran.bankapp.dto.AgreementDto;
 import de.telran.bankapp.service.interfaces.AgreementService;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +17,7 @@ import java.util.List;
 @RequestMapping("/agreements")
 @RequiredArgsConstructor
 @Tag(name = "Agreement controller API", description = "With this controller you can get a list of all agreements")
+@SecurityRequirement(name = "Bearer Authentication")
 public class AgreementController {
     private final AgreementService agreementService;
 

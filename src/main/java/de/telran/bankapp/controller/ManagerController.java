@@ -28,12 +28,12 @@ import static org.springframework.http.HttpStatus.BAD_REQUEST;
 @Tag(name = "Manager controller API", description = "With this controller you can get list of all managers," +
         " get only one manager by ID, create, update and delete manager by ID," +
         " and get a list of managers who accompany clients with a certain status")
+@SecurityRequirement(name = "Bearer Authentication")
 public class ManagerController {
     private final ManagerService managerService;
 
     @GetMapping
     @Operation(summary = "Get list of all managers")
-    @SecurityRequirement(name = "Bearer Authentication")
     @Secured("ROLE_VIP")
     public ResponseEntity<List<ManagerDto>> getAllManagers() {
         return ResponseEntity.ok(managerService.getAllManagers());
@@ -41,7 +41,6 @@ public class ManagerController {
 
     @GetMapping("/{managerID}")
     @Operation(summary = "Get manager by ID")
-    @SecurityRequirement(name = "Bearer Authentication")
     public ResponseEntity<ManagerDto> getManagerByID(@PathVariable("managerID") UUID managerID) {
         return ResponseEntity.ok(managerService.getManagerByID(managerID));
     }
@@ -54,7 +53,6 @@ public class ManagerController {
             "        \"lastName\": Rider\n" +
             "        \"status\": \"FIRED\",\n" +
             "    }")
-    @SecurityRequirement(name = "Bearer Authentication")
     public ResponseEntity<Void> createManager(@RequestBody ManagerDto managerDto) {
         managerService.createManager(managerDto);
         return new ResponseEntity<>(HttpStatus.CREATED);
@@ -68,7 +66,6 @@ public class ManagerController {
             "        \"lastName\": Rider\n" +
             "        \"status\": \"FIRED\",\n" +
             "    }")
-    @SecurityRequirement(name = "Bearer Authentication")
     public ResponseEntity<Void> updateManager(@RequestBody ManagerDto managerDto) {
         managerService.updateManager(managerDto);
         return new ResponseEntity<>(HttpStatus.OK);
@@ -76,7 +73,6 @@ public class ManagerController {
 
     @DeleteMapping ("/{managerID}")
     @Operation(summary = "Delete manager by ID")
-    @SecurityRequirement(name = "Bearer Authentication")
     public ResponseEntity<Void> deleteManagerByID(@PathVariable("managerID") UUID managerID) {
         managerService.deleteManagerByID(managerID);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
@@ -84,7 +80,6 @@ public class ManagerController {
 
     @GetMapping("/get-all-by-clients-status/{status}")
     @Operation(summary = "Get a list of managers who accompany clients with a certain status")
-    @SecurityRequirement(name = "Bearer Authentication")
     public ResponseEntity<List<ManagerDto>> getAllManagersByClientStatus(@PathVariable("status") ClientStatus status) {
         return ResponseEntity.ok(managerService.getAllManagersByClientStatus(status));
     }

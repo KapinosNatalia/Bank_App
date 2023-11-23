@@ -5,6 +5,7 @@ import de.telran.bankapp.dto.ProductWithManagerAndQuantityDto;
 import de.telran.bankapp.entity.Product;
 import de.telran.bankapp.service.interfaces.ProductService;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -19,6 +20,7 @@ import java.util.UUID;
 @Tag(name = "Product controller API", description = "With this controller you can get a list of all products," +
         " get product by ID, a list of products for which more than {quantity} contracts have been created " +
         "and a list of products with the amount of their use")
+@SecurityRequirement(name = "Bearer Authentication")
 public class ProductController {
     private final ProductService productService;
 
