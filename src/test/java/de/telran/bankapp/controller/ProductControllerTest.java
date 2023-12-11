@@ -2,12 +2,16 @@ package de.telran.bankapp.controller;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.zaxxer.hikari.HikariConfig;
+import com.zaxxer.hikari.HikariDataSource;
+import de.telran.bankapp.config.TestConfig;
 import de.telran.bankapp.dto.ClientDto;
 import de.telran.bankapp.dto.ProductDto;
 import de.telran.bankapp.dto.ProductWithManagerAndQuantityDto;
 import de.telran.bankapp.entity.Product;
 import de.telran.bankapp.repository.ProductRepository;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -17,6 +21,10 @@ import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+import org.testcontainers.containers.PostgreSQLContainer;
+import org.testcontainers.containers.wait.strategy.Wait;
+import org.testcontainers.junit.jupiter.Container;
+import org.testcontainers.junit.jupiter.Testcontainers;
 
 import java.util.List;
 import java.util.Set;
@@ -24,12 +32,14 @@ import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@SpringBootTest
+@Testcontainers
+@SpringBootTest(classes = TestConfig.class)
 @AutoConfigureMockMvc
-@Sql("/db/drop_scheme.sql")
-@Sql("/db/create_scheme.sql")
-@Sql("/db/insert_test_data.sql")
+//@Sql("/db/drop_scheme.sql")
+//@Sql("/db/create_scheme.sql")
+//@Sql("/db/insert_test_data.sql")
 class ProductControllerTest {
+
     @Autowired
     private MockMvc mockMvc;
 
@@ -163,6 +173,7 @@ class ProductControllerTest {
         //then
         Assertions.assertEquals(200, productListGetResult.getResponse().getStatus());
         Set<ProductWithManagerAndQuantityDto> productList = objectMapper.readValue(productListGetResult.getResponse().getContentAsString(), new TypeReference<>() {});
-        Assertions.assertEquals(expectedProductList, productList);
+        //Assertions.assertEquals(expectedProductList, productList);
+        Assertions.assertTrue(expectedProductList.containsAll(productList) && productList.containsAll(expectedProductList));
     }
 }

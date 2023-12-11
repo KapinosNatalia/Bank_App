@@ -39,9 +39,9 @@ public class AccountController {
 
     @DeleteMapping("/delete-accounts-without-transactions-and-created-earlier-than")
     @Operation(summary = "Delete (change status) accounts for which there were no transactions and those created before a specific date",
-            description = "As a response, you will receive a list of clients (owners of these accounts) with their contact information." +
+            description = "As a response, you will receive a list of accounts with their owners." +
                     " The 'date' parameter is passed as a query params")
-    public ResponseEntity<List<ClientDto>> markForDeletionAccountsWithoutTransactionsAndCreatedEarlierThan(@RequestParam("date")
+    public ResponseEntity<List<AccountDto>> markForDeletionAccountsWithoutTransactionsAndCreatedEarlierThan(@RequestParam("date")
           @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime date) {
         return ResponseEntity.ok(accountService.markForDeletionAccountsWithoutTransactionsAndCreatedEarlierThan(date));
     }

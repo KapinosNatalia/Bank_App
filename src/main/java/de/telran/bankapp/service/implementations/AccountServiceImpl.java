@@ -38,16 +38,8 @@ public class AccountServiceImpl implements AccountService {
 
     @Override
     @Transactional
-    public List<ClientDto> markForDeletionAccountsWithoutTransactionsAndCreatedEarlierThan(LocalDateTime date) {
-        List<Account> accountList = accountRepository.getAccountsWithoutTransactionsAndCreatedEarlierThan(date, AccountStatus.FOR_DELETION);
-        List<Client> clientList = new ArrayList<>();
-        for (Account account: accountList) {
-            account.setStatus(AccountStatus.FOR_DELETION);
-            accountRepository.save(account);
-            if (!clientList.contains(account.getClient())) {
-                clientList.add(account.getClient());
-            }
-        }
-        return clientMapper.toDtoList(clientList);
+    public List<AccountDto> markForDeletionAccountsWithoutTransactionsAndCreatedEarlierThan(LocalDateTime date) {
+        List<Account> accountList = accountRepository.getAccountsWithoutTransactionsAndCreatedEarlierThan(date.toLocalDate().toString(), AccountStatus.FOR_DELETION.name());
+        return accountMapper.toDtoList(accountList);
     }
 }

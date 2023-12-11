@@ -1,32 +1,17 @@
 spring:
   main:
-    banner-mode: console
-
-  h2:
-    console.enabled: true
+    banner-mode: off
 
   sql:
     init:
       mode: always
 
   datasource:
-#    url: ${datasource.url}
-#    username: ${datasource.username}
-#    password: ${datasource.password}
-#    driverClassName: org.postgresql.Driver
-    url: jdbc:h2:file:/data/bank_test;AUTO_SERVER=TRUE
-    username: sa
-    password: password
-    driver-class-name: org.h2.Driver
+    driverClassName: org.postgresql.Driver
 
   jpa:
-    database-platform: org.hibernate.dialect.H2Dialect
-    hibernate:
-      ddl-auto: none
 
   liquibase:
-#    change-log: classpath:/dbtest/changelog123/changelog-master.xml
-#    drop-first: true
     enabled: false
 
 logging:

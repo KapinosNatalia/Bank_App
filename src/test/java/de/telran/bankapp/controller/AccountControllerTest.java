@@ -2,6 +2,7 @@ package de.telran.bankapp.controller;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import de.telran.bankapp.config.TestConfig;
 import de.telran.bankapp.dto.AccountDto;
 import de.telran.bankapp.dto.ClientDto;
 import de.telran.bankapp.repository.AccountRepository;
@@ -15,7 +16,9 @@ import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+import org.testcontainers.junit.jupiter.Testcontainers;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Set;
@@ -23,11 +26,13 @@ import java.util.Set;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.hasSize;
 
-@SpringBootTest
+@Testcontainers
+@SpringBootTest(classes = TestConfig.class)
 @AutoConfigureMockMvc
-@Sql("/db/drop_scheme.sql")
-@Sql("/db/create_scheme.sql")
-@Sql("/db/insert_test_data.sql")
+//@Sql("/db/drop_scheme.sql")
+//@Sql("/db/create_scheme.sql")
+//@Sql("/db/insert_test_data.sql")
+//@Sql("/db/create_function.sql")
 class AccountControllerTest {
     @Autowired
     private MockMvc mockMvc;
@@ -107,15 +112,16 @@ class AccountControllerTest {
                         //.with(httpBasic("user", "password"))
                 )
                 .andReturn();
-        List<ClientDto> exceptedClientDtoList = getClientDtoList();
+        List<AccountDto> exceptedAccountDtoList = getAccountDtoList();
 
         // when
         MvcResult accountsDeleteResult = mockMvc.perform(MockMvcRequestBuilders.delete("/accounts/delete-accounts-without-transactions-and-created-earlier-than")
                         //.with(httpBasic("user", "password"))
-                        .param("date", date.toString())
+                        //.param("date", date.toString())
+                        .param("date", "2023-01-01T00:00:00")
                 )
                 .andReturn();
-        List<ClientDto> clientDtoList = objectMapper.readValue(accountsDeleteResult.getResponse().getContentAsString(), new TypeReference<>() {});
+        List<AccountDto> accountDtoList = objectMapper.readValue(accountsDeleteResult.getResponse().getContentAsString(), new TypeReference<>() {});
 
         MvcResult accountsAfterDeleteResult = mockMvc.perform(MockMvcRequestBuilders.get("/accounts/FOR_DELETION")
                         //.with(httpBasic("user", "password"))
@@ -128,7 +134,7 @@ class AccountControllerTest {
         Assertions.assertEquals(0, accountDtoSet.size());
 
         Assertions.assertEquals(200, accountsDeleteResult.getResponse().getStatus());
-        Assertions.assertEquals(exceptedClientDtoList, clientDtoList);
+        Assertions.assertEquals(exceptedAccountDtoList, accountDtoList);
         Assertions.assertEquals(200, accountsAfterDeleteResult.getResponse().getStatus());
         accountDtoSet = objectMapper.readValue(accountsAfterDeleteResult.getResponse().getContentAsString(), new TypeReference<>() {});
         Assertions.assertEquals(2, accountDtoSet.size());
@@ -141,7 +147,7 @@ class AccountControllerTest {
     }
 
     @NotNull
-    private static List<ClientDto> getClientDtoList() {
+    private static List<AccountDto> getAccountDtoList() {
         ClientDto clientDto1 = new ClientDto(
                 "523e4567-e89b-12d3-a456-030000000001",
                 "Lukas",
@@ -158,7 +164,30 @@ class AccountControllerTest {
                 "Hauptstrasse 25, D-50667 Koln, Germany",
                 "+49 221 9876543"
         );
-        List<ClientDto> exceptedClientDtoList = List.of(clientDto1, clientDto2);
-        return exceptedClientDtoList;
+        AccountDto accountDto1 = new AccountDto(
+                "523e4567-e89b-12d3-a456-040000000003",
+                clientDto1,
+                "DE71 5123 0800 0000 6830 99",
+                "CURRENT",
+                "FOR_DELETION",
+                BigDecimal.valueOf(0.00).movePointLeft(1),
+                "EUR",
+                "2022-08-06T10:35:00",
+                "2022-08-06T10:35:00"
+        );
+        AccountDto accountDto2 = new AccountDto(
+                "523e4567-e89b-12d3-a456-040000000006",
+                clientDto2,
+                "DE98 5001 0517 5407 3249 31",
+                "CURRENT",
+                "FOR_DELETION",
+                BigDecimal.valueOf(0.00).movePointLeft(1),
+                "EUR",
+                "2022-12-06T10:35:00",
+                "2022-12-06T10:35:00"
+        );
+
+        List<AccountDto> exceptedAccountDtoList = List.of(accountDto1, accountDto2);
+        return exceptedAccountDtoList;
     }
 }

@@ -2,6 +2,7 @@ package de.telran.bankapp.controller;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import de.telran.bankapp.config.TestConfig;
 import de.telran.bankapp.dto.ClientDto;
 import de.telran.bankapp.dto.ClientWithAccountDto;
 import de.telran.bankapp.dto.ProductDto;
@@ -16,17 +17,19 @@ import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+import org.testcontainers.junit.jupiter.Testcontainers;
 
 import java.util.Set;
 import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@SpringBootTest
+@Testcontainers
+@SpringBootTest(classes = TestConfig.class)
 @AutoConfigureMockMvc
-@Sql("/db/drop_scheme.sql")
-@Sql("/db/create_scheme.sql")
-@Sql("/db/insert_test_data.sql")
+//@Sql("/db/drop_scheme.sql")
+//@Sql("/db/create_scheme.sql")
+//@Sql("/db/insert_test_data.sql")
 class ClientControllerTest {
     @Autowired
     private MockMvc mockMvc;

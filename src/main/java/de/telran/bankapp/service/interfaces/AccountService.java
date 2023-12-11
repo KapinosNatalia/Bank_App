@@ -12,5 +12,5 @@ public interface AccountService {
 
     List<AccountDto> getAccountsByStatus(AccountStatus status);
 
-    List<ClientDto> markForDeletionAccountsWithoutTransactionsAndCreatedEarlierThan(LocalDateTime date);
+    List<AccountDto> markForDeletionAccountsWithoutTransactionsAndCreatedEarlierThan(LocalDateTime date);
 }

@@ -18,4 +18,5 @@ public interface ManagerService {
     void updateManager(ManagerDto managerDto);
 
     List<ManagerDto> getAllManagersByClientStatus(ClientStatus status);
+
 }

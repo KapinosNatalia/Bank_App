@@ -4,12 +4,12 @@
         xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
 
-    <changeSet author="n.kapinos" id="drop accounts table">
+    <changeSet author="n.kapinos" id="drop transactions table">
         <preConditions onFail="MARK_RAN">
-            <tableExists tableName="accounts"/>
+            <tableExists tableName="transactions"/>
         </preConditions>
         <rollback>
-            <dropTable tableName="accounts"/>
+            <dropTable tableName="transactions"/>
         </rollback>
     </changeSet>
 
@@ -22,21 +22,21 @@
         </rollback>
     </changeSet>
 
+    <changeSet author="n.kapinos" id="drop accounts table">
+        <preConditions onFail="MARK_RAN">
+            <tableExists tableName="accounts"/>
+        </preConditions>
+        <rollback>
+            <dropTable tableName="accounts"/>
+        </rollback>
+    </changeSet>
+
     <changeSet author="n.kapinos" id="drop clients table">
         <preConditions onFail="MARK_RAN">
             <tableExists tableName="clients"/>
         </preConditions>
         <rollback>
             <dropTable tableName="clients"/>
-        </rollback>
-    </changeSet>
-
-    <changeSet author="n.kapinos" id="drop managers table">
-        <preConditions onFail="MARK_RAN">
-            <tableExists tableName="managers"/>
-        </preConditions>
-        <rollback>
-            <dropTable tableName="managers"/>
         </rollback>
     </changeSet>
 
@@ -49,12 +49,30 @@
         </rollback>
     </changeSet>
 
-    <changeSet author="n.kapinos" id="drop transactions table">
+    <changeSet author="n.kapinos" id="drop managers table">
         <preConditions onFail="MARK_RAN">
-            <tableExists tableName="transactions"/>
+            <tableExists tableName="managers"/>
         </preConditions>
         <rollback>
-            <dropTable tableName="transactions"/>
+            <dropTable tableName="managers"/>
+        </rollback>
+    </changeSet>
+
+    <changeSet author="n.kapinos" id="drop databasechangelog table">
+        <preConditions onFail="MARK_RAN">
+            <tableExists tableName="databasechangelog"/>
+        </preConditions>
+        <rollback>
+            <dropTable tableName="databasechangelog"/>
+        </rollback>
+    </changeSet>
+
+    <changeSet author="n.kapinos" id="drop databasechangeloglock table">
+        <preConditions onFail="MARK_RAN">
+            <tableExists tableName="databasechangeloglock"/>
+        </preConditions>
+        <rollback>
+            <dropTable tableName="databasechangeloglock"/>
         </rollback>
     </changeSet>
 

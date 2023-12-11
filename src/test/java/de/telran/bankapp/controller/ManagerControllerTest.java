@@ -3,10 +3,14 @@ package de.telran.bankapp.controller;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.zaxxer.hikari.HikariConfig;
+import com.zaxxer.hikari.HikariDataSource;
+import de.telran.bankapp.config.TestConfig;
 import de.telran.bankapp.dto.ManagerDto;
 import de.telran.bankapp.exceptions.ManagerCreationException;
 import de.telran.bankapp.mapper.ManagerMapper;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -18,6 +22,9 @@ import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+import org.testcontainers.containers.PostgreSQLContainer;
+import org.testcontainers.junit.jupiter.Container;
+import org.testcontainers.junit.jupiter.Testcontainers;
 
 import java.util.List;
 import java.util.Set;
@@ -25,11 +32,12 @@ import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@SpringBootTest
+@Testcontainers
+@SpringBootTest(classes = TestConfig.class)
 @AutoConfigureMockMvc
-@Sql("/db/drop_scheme.sql")
-@Sql("/db/create_scheme.sql")
-@Sql("/db/insert_test_data.sql")
+//@Sql("/db/drop_scheme.sql")
+//@Sql("/db/create_scheme.sql")
+//@Sql("/db/insert_test_data.sql")
 class ManagerControllerTest {
     @Autowired
     private MockMvc mockMvc;
@@ -156,6 +164,11 @@ class ManagerControllerTest {
                 "NewLastName",
                 "FIRED");
         String managerStr = objectMapper.writeValueAsString(managerDto);
+        ManagerDto managerDto1 = new ManagerDto("523e4567-e89b-12d3-a456-010000000001",
+                "James",
+                "Smith",
+                "WORKING");
+        String managerStr1 = objectMapper.writeValueAsString(managerDto1);
 
         // when
         MvcResult managerUpdateResult = mockMvc.perform(MockMvcRequestBuilders.put("/managers")
@@ -168,6 +181,13 @@ class ManagerControllerTest {
                 //.with(httpBasic("user", "password"))
                 //.with(csrf())
                 ).andReturn();
+
+        mockMvc.perform(MockMvcRequestBuilders.put("/managers")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        //.with(httpBasic("user", "password"))
+                        //.with(csrf())
+                        .content(managerStr1))
+                .andReturn();
 
         // then
         Assertions.assertEquals(200, managerUpdateResult.getResponse().getStatus());

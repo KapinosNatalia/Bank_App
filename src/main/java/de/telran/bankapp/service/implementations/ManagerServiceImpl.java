@@ -1,5 +1,6 @@
 package de.telran.bankapp.service.implementations;
 
+import de.telran.bankapp.dto.AccountDto;
 import de.telran.bankapp.dto.ManagerDto;
 import de.telran.bankapp.entity.Manager;
 import de.telran.bankapp.entity.enums.ClientStatus;
@@ -27,6 +28,13 @@ public class ManagerServiceImpl implements ManagerService {
         List<Manager> list = managerRepository.findAll();
         return managerMapper.toDtoList(list);
     }
+
+//    @Override
+//    public ManagerDto getManagerByID(UUID id) {
+//        Manager manager = managerRepository.findById(id)
+//                .orElseThrow(() -> new EntityNotFoundException("Manager with id " + id));
+//        return managerMapper.toDto(manager);
+//    }
 
     @Override
     public ManagerDto getManagerByID(UUID id) {
@@ -94,4 +102,5 @@ public class ManagerServiceImpl implements ManagerService {
     public List<ManagerDto> getAllManagersByClientStatus(ClientStatus status) {
         return managerMapper.toDtoList(managerRepository.getAllManagersByClientStatus(status));
     }
+
 }
