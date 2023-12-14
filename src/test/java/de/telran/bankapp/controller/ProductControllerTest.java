@@ -24,9 +24,6 @@ import java.util.UUID;
 @Testcontainers
 @SpringBootTest(classes = TestConfig.class)
 @AutoConfigureMockMvc
-//@Sql("/db/drop_scheme.sql")
-//@Sql("/db/create_scheme.sql")
-//@Sql("/db/insert_test_data.sql")
 class ProductControllerTest {
 
     @Autowired
@@ -149,7 +146,6 @@ class ProductControllerTest {
         //then
         Assertions.assertEquals(200, productListGetResult.getResponse().getStatus());
         Set<ProductWithManagerAndQuantityDto> productList = objectMapper.readValue(productListGetResult.getResponse().getContentAsString(), new TypeReference<>() {});
-        //Assertions.assertEquals(expectedProductList, productList);
         Assertions.assertTrue(expectedProductList.containsAll(productList) && productList.containsAll(expectedProductList));
     }
 }

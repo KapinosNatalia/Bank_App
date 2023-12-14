@@ -21,9 +21,6 @@ import java.util.Set;
 @Testcontainers
 @SpringBootTest(classes = TestConfig.class)
 @AutoConfigureMockMvc
-//@Sql("/db/drop_scheme.sql")
-//@Sql("/db/create_scheme.sql")
-//@Sql("/db/insert_test_data.sql")
 class ClientControllerTest {
     @Autowired
     private MockMvc mockMvc;
