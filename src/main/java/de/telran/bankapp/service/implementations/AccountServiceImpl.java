@@ -1,21 +1,16 @@
 package de.telran.bankapp.service.implementations;
 
 import de.telran.bankapp.dto.AccountDto;
-import de.telran.bankapp.dto.ClientDto;
 import de.telran.bankapp.entity.Account;
-import de.telran.bankapp.entity.Client;
 import de.telran.bankapp.entity.enums.AccountStatus;
 import de.telran.bankapp.mapper.AccountMapper;
-import de.telran.bankapp.mapper.ClientMapper;
 import de.telran.bankapp.repository.AccountRepository;
 import de.telran.bankapp.service.interfaces.AccountService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -23,7 +18,6 @@ import java.util.List;
 public class AccountServiceImpl implements AccountService {
     private final AccountRepository accountRepository;
     private final AccountMapper accountMapper;
-    private final ClientMapper clientMapper;
 
     @Override
     public List<AccountDto> getAllAccounts() {

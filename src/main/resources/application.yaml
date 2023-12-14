@@ -2,8 +2,8 @@ spring:
   main:
     banner-mode: off
 
-  h2:
-    console.enabled: true
+#  h2:
+#    console.enabled: true
 
   sql:
     init:
@@ -16,25 +16,22 @@ spring:
     driverClassName: org.postgresql.Driver
 
   jpa:
-#     show-sql: true
-#    spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
-#     defer-datasource-initialization: true
     hibernate:
       ddl-auto: none
 
   liquibase:
     change-log: classpath:/db/changelog/changelog-master.xml
-#    drop-first: true
+    drop-first: true
 
-#logging:
-#  level:
-#    root: INFO
-#    test: DEBUG
-#
-#  file:
-#    name: appBank.log
-#
-#  pattern:
-#    console: "%clr(%d{yy-MM-dd E HH:mm:ss.SSS}){blue} %clr(%-5p) %clr(${PID}){faint} %clr(---){faint}
-#    %clr([%8.15t]){cyan} %clr(%-40.40logger{0}){blue} %clr(:){red} %clr(%m){faint}%n"
-#    file: "%d %-5level [%thread] %logger : %msg%n"
+logging:
+  level:
+    root: INFO
+    test: DEBUG
+
+  file:
+    name: appBank.log
+
+  pattern:
+    console: "%clr(%d{yy-MM-dd E HH:mm:ss.SSS}){blue} %clr(%-5p) %clr(${PID}){faint} %clr(---){faint}
+    %clr([%8.15t]){cyan} %clr(%-40.40logger{0}){blue} %clr(:){red} %clr(%m){faint}%n"
+    file: "%d %-5level [%thread] %logger : %msg%n"

@@ -22,7 +22,6 @@ import static jakarta.persistence.CascadeType.*;
 @Setter
 public class Manager {
     @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private UUID id;
 
@@ -49,12 +48,6 @@ public class Manager {
             orphanRemoval = true,
             cascade = {MERGE, PERSIST, REFRESH})
     private Set<Product> products = new HashSet<>();
-//
-//    @OneToMany(mappedBy = "manager",
-//            fetch = FetchType.LAZY,
-//            orphanRemoval = true,
-//            cascade = {MERGE, PERSIST, REFRESH})
-//    private Set<Client> clients = new HashSet<>();
 
 
     public Manager(UUID id, String firstName, String lastName, ManagerStatus status) {

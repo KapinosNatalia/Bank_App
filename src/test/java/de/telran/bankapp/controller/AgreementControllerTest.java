@@ -4,22 +4,18 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import de.telran.bankapp.config.TestConfig;
 import de.telran.bankapp.dto.AgreementDto;
-import de.telran.bankapp.dto.ProductDto;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.test.context.support.WithUserDetails;
-import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.testcontainers.junit.jupiter.Testcontainers;
 
 import java.util.Set;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 @Testcontainers
 @SpringBootTest(classes = TestConfig.class)
@@ -38,9 +34,7 @@ class AgreementControllerTest {
     @WithUserDetails("vip@gmail.com")
     void shouldGetAllAgreements() throws Exception {
         // when
-        MvcResult agreementsGetResult = mockMvc.perform(MockMvcRequestBuilders.get("/agreements")
-                        //.with(httpBasic("user", "password"))
-                )
+        MvcResult agreementsGetResult = mockMvc.perform(MockMvcRequestBuilders.get("/agreements"))
                 .andReturn();
 
         // then

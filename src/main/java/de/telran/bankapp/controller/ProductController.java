@@ -2,7 +2,6 @@ package de.telran.bankapp.controller;
 
 import de.telran.bankapp.dto.ProductDto;
 import de.telran.bankapp.dto.ProductWithManagerAndQuantityDto;
-import de.telran.bankapp.entity.Product;
 import de.telran.bankapp.service.interfaces.ProductService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;

@@ -2,8 +2,7 @@ package de.telran.bankapp.security;
 
 import de.telran.bankapp.entity.Client;
 import de.telran.bankapp.service.interfaces.ClientService;
-import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -15,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/auth")
-//@RequiredArgsConstructor
+@Tag(name = "Authentication controller")
 public class AuthController {
     private final AuthenticationManager authenticationManager;
     private final JwtUtil jwtUtil;
@@ -44,10 +43,5 @@ public class AuthController {
             ErrorResponse errorResponse = new ErrorResponse(HttpStatus.BAD_REQUEST, ex.getMessage());
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorResponse);
         }
-    }
-
-    @GetMapping("/login")
-    public ResponseEntity<Void> getLogin() {
-        return new ResponseEntity<>(HttpStatus.OK);
     }
 }

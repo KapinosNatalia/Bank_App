@@ -12,19 +12,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.test.context.support.WithUserDetails;
-import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.testcontainers.junit.jupiter.Testcontainers;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Set;
-
-import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.hasSize;
 
 @Testcontainers
 @SpringBootTest(classes = TestConfig.class)
@@ -39,49 +34,17 @@ class AccountControllerTest {
 
     @Autowired
     private ObjectMapper objectMapper;
-//
-//    @LocalServerPort
-//    private Integer port;
-
-//    static PostgreSQLContainer<?> postgres = new PostgreSQLContainer<>(
-//            "postgres:15-alpine"
-//    );
-//
-//    @BeforeAll
-//    static void beforeAll() {
-//        postgres.start();
-//    }
-//
-//    @AfterAll
-//    static void afterAll() {
-//        postgres.stop();
-//    }
-//
-//    @DynamicPropertySource
-//    static void configureProperties(DynamicPropertyRegistry registry) {
-//        registry.add("spring.datasource.url", postgres::getJdbcUrl);
-//        registry.add("spring.datasource.username", postgres::getUsername);
-//        registry.add("spring.datasource.password", postgres::getPassword);
-//    }
 
 
     @Autowired
     AccountRepository accountRepository;
-
-//    @BeforeEach
-//    void setUp() {
-//        RestAssured.baseURI = "http://localhost:" + port;
-//        accountRepository.deleteAll();
-//    }
 
     @Test
     @WithUserDetails("vip@gmail.com")
     void shouldGetAllAccounts() throws Exception {
 
         // when
-        MvcResult accountsGetResult = mockMvc.perform(MockMvcRequestBuilders.get("/accounts")
-                        //.with(httpBasic("user", "password"))
-                )
+        MvcResult accountsGetResult = mockMvc.perform(MockMvcRequestBuilders.get("/accounts"))
                 .andReturn();
 
         // then
@@ -89,43 +52,24 @@ class AccountControllerTest {
         Set<AccountDto> accountDtoSet = objectMapper.readValue(accountsGetResult.getResponse().getContentAsString(), new TypeReference<>() {
         });
         Assertions.assertEquals(7, accountDtoSet.size());
-//        List<Account> accounts = List.of(
-//          new Account("523e4567-e89b-12d3-a456-040000000001", client, "account1", AccountType.CURRENT, AccountStatus.ACTIVE, 1000, "EUR"),
-//          new Account("523e4567-e89b-12d3-a456-040000000002", client, "account2", AccountType.CURRENT, AccountStatus.ACTIVE, 2000, "EUR")
-//        );
-//        accountRepository.saveAll(accounts);
-//        given()
-//                .contentType(ContentType.JSON)
-//                .when()
-//                .get("/accounts")
-//                .then()
-//                .statusCode(200)
-//                .body(".", hasSize(2));
     }
 
     @Test
     @WithUserDetails("vip@gmail.com")
     void markForDeletionAccountsWithoutTransactionsAndCreatedEarlierThan() throws Exception {
         // given
-        LocalDateTime date = LocalDateTime.of(2023, 1, 1, 0, 0);
-        MvcResult accountsBeforeDeleteResult = mockMvc.perform(MockMvcRequestBuilders.get("/accounts/FOR_DELETION")
-                        //.with(httpBasic("user", "password"))
-                )
+        MvcResult accountsBeforeDeleteResult = mockMvc.perform(MockMvcRequestBuilders.get("/accounts/FOR_DELETION"))
                 .andReturn();
         List<AccountDto> exceptedAccountDtoList = getAccountDtoList();
 
         // when
         MvcResult accountsDeleteResult = mockMvc.perform(MockMvcRequestBuilders.delete("/accounts/delete-accounts-without-transactions-and-created-earlier-than")
-                        //.with(httpBasic("user", "password"))
-                        //.param("date", date.toString())
                         .param("date", "2023-01-01T00:00:00")
                 )
                 .andReturn();
         List<AccountDto> accountDtoList = objectMapper.readValue(accountsDeleteResult.getResponse().getContentAsString(), new TypeReference<>() {});
 
-        MvcResult accountsAfterDeleteResult = mockMvc.perform(MockMvcRequestBuilders.get("/accounts/FOR_DELETION")
-                        //.with(httpBasic("user", "password"))
-                )
+        MvcResult accountsAfterDeleteResult = mockMvc.perform(MockMvcRequestBuilders.get("/accounts/FOR_DELETION"))
                 .andReturn();
 
         // then
@@ -187,7 +131,6 @@ class AccountControllerTest {
                 "2022-12-06T10:35:00"
         );
 
-        List<AccountDto> exceptedAccountDtoList = List.of(accountDto1, accountDto2);
-        return exceptedAccountDtoList;
+        return List.of(accountDto1, accountDto2);
     }
 }

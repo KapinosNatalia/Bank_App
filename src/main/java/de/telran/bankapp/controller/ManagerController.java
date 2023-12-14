@@ -1,26 +1,19 @@
 package de.telran.bankapp.controller;
 
-import de.telran.bankapp.dto.ErrorDto;
 import de.telran.bankapp.dto.ManagerDto;
 import de.telran.bankapp.entity.enums.ClientStatus;
-import de.telran.bankapp.exceptions.EntityNotFoundException;
-import de.telran.bankapp.exceptions.ManagerCreationException;
 import de.telran.bankapp.service.interfaces.ManagerService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import jakarta.annotation.security.RolesAllowed;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
-
-import static org.springframework.http.HttpStatus.BAD_REQUEST;
 
 @RestController
 @RequestMapping("/managers")
@@ -34,7 +27,7 @@ public class ManagerController {
 
     @GetMapping
     @Operation(summary = "Get list of all managers")
-    @Secured("ROLE_VIP")
+    //@Secured("ROLE_VIP")
     public ResponseEntity<List<ManagerDto>> getAllManagers() {
         return ResponseEntity.ok(managerService.getAllManagers());
     }

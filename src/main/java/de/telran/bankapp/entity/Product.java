@@ -56,12 +56,6 @@ public class Product {
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 
-//    @OneToMany(mappedBy = "product",
-//            fetch = FetchType.LAZY,
-//            orphanRemoval = true,
-//            cascade = {MERGE, PERSIST, REFRESH})
-//    private Set<Agreement> agreements = new HashSet<>();
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

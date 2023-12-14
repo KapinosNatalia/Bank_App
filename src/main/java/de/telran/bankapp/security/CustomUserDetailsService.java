@@ -3,7 +3,6 @@ package de.telran.bankapp.security;
 import de.telran.bankapp.entity.Client;
 import de.telran.bankapp.repository.ClientRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;

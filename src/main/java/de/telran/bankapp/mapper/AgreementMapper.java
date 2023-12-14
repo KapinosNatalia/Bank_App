@@ -1,8 +1,6 @@
 package de.telran.bankapp.mapper;
 
-import de.telran.bankapp.dto.AccountDto;
 import de.telran.bankapp.dto.AgreementDto;
-import de.telran.bankapp.entity.Account;
 import de.telran.bankapp.entity.Agreement;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;

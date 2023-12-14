@@ -1,7 +1,6 @@
 package de.telran.bankapp.controller;
 
 import de.telran.bankapp.dto.AccountDto;
-import de.telran.bankapp.dto.ClientDto;
 import de.telran.bankapp.entity.enums.AccountStatus;
 import de.telran.bankapp.service.interfaces.AccountService;
 import io.swagger.v3.oas.annotations.Operation;

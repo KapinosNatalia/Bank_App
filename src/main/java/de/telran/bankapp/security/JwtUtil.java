@@ -6,7 +6,6 @@ import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Component;
 
 import javax.naming.AuthenticationException;
-import java.net.http.HttpRequest;
 import java.util.Date;
 import java.util.List;
 import java.util.concurrent.TimeUnit;

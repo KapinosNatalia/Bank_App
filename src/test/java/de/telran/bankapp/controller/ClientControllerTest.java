@@ -5,24 +5,18 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import de.telran.bankapp.config.TestConfig;
 import de.telran.bankapp.dto.ClientDto;
 import de.telran.bankapp.dto.ClientWithAccountDto;
-import de.telran.bankapp.dto.ProductDto;
-import de.telran.bankapp.dto.ProductWithManagerAndQuantityDto;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.test.context.support.WithUserDetails;
-import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.testcontainers.junit.jupiter.Testcontainers;
 
 import java.util.Set;
-import java.util.UUID;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 @Testcontainers
 @SpringBootTest(classes = TestConfig.class)
@@ -41,9 +35,7 @@ class ClientControllerTest {
     @WithUserDetails("vip@gmail.com")
     void shouldGetAllClients() throws Exception {
         // when
-        MvcResult clientsGetResult = mockMvc.perform(MockMvcRequestBuilders.get("/clients")
-                        //.with(httpBasic("user", "password"))
-                )
+        MvcResult clientsGetResult = mockMvc.perform(MockMvcRequestBuilders.get("/clients"))
                 .andReturn();
 
         // then
@@ -77,9 +69,7 @@ class ClientControllerTest {
         );
 
         //when
-        MvcResult clientListGetResult = mockMvc.perform(MockMvcRequestBuilders.get("/clients/with-balance-more-than/100000")
-                        //.with(httpBasic("user", "password"))
-                )
+        MvcResult clientListGetResult = mockMvc.perform(MockMvcRequestBuilders.get("/clients/with-balance-more-than/100000"))
                 .andReturn();
 
         //then
@@ -118,9 +108,7 @@ class ClientControllerTest {
         );
 
         //when
-        MvcResult clientListGetResult = mockMvc.perform(MockMvcRequestBuilders.get("/clients/clients-accounts-with-balance-more-than/100000")
-                        //.with(httpBasic("user", "password"))
-                )
+        MvcResult clientListGetResult = mockMvc.perform(MockMvcRequestBuilders.get("/clients/clients-accounts-with-balance-more-than/100000"))
                 .andReturn();
 
         //then

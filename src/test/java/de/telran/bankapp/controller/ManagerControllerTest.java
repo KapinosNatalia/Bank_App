@@ -1,36 +1,23 @@
 package de.telran.bankapp.controller;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.zaxxer.hikari.HikariConfig;
-import com.zaxxer.hikari.HikariDataSource;
 import de.telran.bankapp.config.TestConfig;
 import de.telran.bankapp.dto.ManagerDto;
-import de.telran.bankapp.exceptions.ManagerCreationException;
-import de.telran.bankapp.mapper.ManagerMapper;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.security.test.context.support.WithUserDetails;
-import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-import org.testcontainers.containers.PostgreSQLContainer;
-import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
 
-import java.util.List;
 import java.util.Set;
 import java.util.UUID;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 @Testcontainers
 @SpringBootTest(classes = TestConfig.class)
@@ -49,9 +36,7 @@ class ManagerControllerTest {
     @WithUserDetails("vip@gmail.com")
     void shouldGetAllManagers() throws Exception {
         // when
-        MvcResult managerGetResult = mockMvc.perform(MockMvcRequestBuilders.get("/managers")
-                        //.with(httpBasic("user", "password"))
-                )
+        MvcResult managerGetResult = mockMvc.perform(MockMvcRequestBuilders.get("/managers"))
                 .andReturn();
 
         // then
@@ -74,21 +59,15 @@ class ManagerControllerTest {
         // when
         MvcResult managerCreationResult = mockMvc.perform(MockMvcRequestBuilders.post("/managers")
                         .contentType(MediaType.APPLICATION_JSON)
-                        //.with(httpBasic("user", "password"))
-                        //.with(csrf())
                         .content(managerStr))
                 .andReturn();
 
         MvcResult managerGetResult = mockMvc
-                .perform(MockMvcRequestBuilders.get("/managers/" + managerDto.getId())
-                        //.with(httpBasic("user", "password"))
-                )
+                .perform(MockMvcRequestBuilders.get("/managers/" + managerDto.getId()))
                 .andReturn();
 
         MvcResult managerDeleteResult = mockMvc
-                .perform(MockMvcRequestBuilders.delete("/managers/" + managerDto.getId())
-                        //.with(httpBasic("user", "password"))
-                )
+                .perform(MockMvcRequestBuilders.delete("/managers/" + managerDto.getId()))
                 .andReturn();
 
         // then
@@ -116,15 +95,11 @@ class ManagerControllerTest {
         // when
         MvcResult managerCreationResult = mockMvc.perform(MockMvcRequestBuilders.post("/managers")
                         .contentType(MediaType.APPLICATION_JSON)
-                        //.with(httpBasic("user", "password"))
-                        //.with(csrf())
                         .content(managerStr))
                 .andReturn();
 
         MvcResult managerGetResult = mockMvc
-                .perform(MockMvcRequestBuilders.get("/managers/" + managerDto.getId())
-                        //.with(httpBasic("user", "password"))
-                )
+                .perform(MockMvcRequestBuilders.get("/managers/" + managerDto.getId()))
                 .andReturn();
 
         // then
@@ -146,8 +121,6 @@ class ManagerControllerTest {
         // when
         MvcResult managerCreationResult = mockMvc.perform(MockMvcRequestBuilders.post("/managers")
                         .contentType(MediaType.APPLICATION_JSON)
-                        //.with(httpBasic("user", "password"))
-                        //.with(csrf())
                         .content(managerStr))
                 .andReturn();
 
@@ -173,19 +146,13 @@ class ManagerControllerTest {
         // when
         MvcResult managerUpdateResult = mockMvc.perform(MockMvcRequestBuilders.put("/managers")
                         .contentType(MediaType.APPLICATION_JSON)
-                        //.with(httpBasic("user", "password"))
-                        //.with(csrf())
                         .content(managerStr))
                 .andReturn();
-        MvcResult managerGetResult = mockMvc.perform(MockMvcRequestBuilders.get("/managers/" + managerDto.getId())
-                //.with(httpBasic("user", "password"))
-                //.with(csrf())
-                ).andReturn();
+        MvcResult managerGetResult = mockMvc.perform(MockMvcRequestBuilders.get("/managers/" + managerDto.getId()))
+                .andReturn();
 
         mockMvc.perform(MockMvcRequestBuilders.put("/managers")
                         .contentType(MediaType.APPLICATION_JSON)
-                        //.with(httpBasic("user", "password"))
-                        //.with(csrf())
                         .content(managerStr1))
                 .andReturn();
 
@@ -216,14 +183,10 @@ class ManagerControllerTest {
         // when
         MvcResult managerUpdateResult1 = mockMvc.perform(MockMvcRequestBuilders.put("/managers")
                         .contentType(MediaType.APPLICATION_JSON)
-                        //.with(httpBasic("user", "password"))
-                        //.with(csrf())
                         .content(managerStr1))
                 .andReturn();
         MvcResult managerUpdateResult2 = mockMvc.perform(MockMvcRequestBuilders.put("/managers")
                         .contentType(MediaType.APPLICATION_JSON)
-                        //.with(httpBasic("user", "password"))
-                        //.with(csrf())
                         .content(managerStr2))
                 .andReturn();
 
@@ -245,18 +208,11 @@ class ManagerControllerTest {
         // when
         MvcResult managerCreationResult = mockMvc.perform(MockMvcRequestBuilders.post("/managers")
                         .contentType(MediaType.APPLICATION_JSON)
-                        //.with(httpBasic("user", "password"))
-                        //.with(csrf())
                         .content(managerStr))
                 .andReturn();
-        MvcResult managerDeletionResult = mockMvc.perform(MockMvcRequestBuilders.delete("/managers/" + managerDto.getId())
-                        //.with(httpBasic("user", "password"))
-                        //.with(csrf())
-                        )
+        MvcResult managerDeletionResult = mockMvc.perform(MockMvcRequestBuilders.delete("/managers/" + managerDto.getId()))
                 .andReturn();
-        MvcResult managerGetResult = mockMvc.perform(MockMvcRequestBuilders.get("/managers/" + managerDto.getId())
-                        //.with(httpBasic("user", "password"))
-                )
+        MvcResult managerGetResult = mockMvc.perform(MockMvcRequestBuilders.get("/managers/" + managerDto.getId()))
                 .andReturn();
 
         // then
@@ -269,21 +225,12 @@ class ManagerControllerTest {
     @WithUserDetails("vip@gmail.com")
     void shouldReceiveExceptionDeleteManagerByID() throws Exception {
         // given
-        ManagerDto managerDto = new ManagerDto("523e4567-e89b-12d3-a456-010000000018",
-                "John",
-                "Smith",
-                "WORKING");
-        String managerStr = objectMapper.writeValueAsString(managerDto);
+        String managerId = "523e4567-e89b-12d3-a456-010000000018";
 
         // when
-        MvcResult managerGetResult = mockMvc.perform(MockMvcRequestBuilders.get("/managers/" + managerDto.getId())
-                        //.with(httpBasic("user", "password"))
-                )
+        MvcResult managerGetResult = mockMvc.perform(MockMvcRequestBuilders.get("/managers/" + managerId))
                 .andReturn();
-        MvcResult managerDeletionResult = mockMvc.perform(MockMvcRequestBuilders.delete("/managers/" + managerDto.getId())
-                        //.with(httpBasic("user", "password"))
-                        //.with(csrf())
-                )
+        MvcResult managerDeletionResult = mockMvc.perform(MockMvcRequestBuilders.delete("/managers/" + managerId))
                 .andReturn();
 
         // then
@@ -312,9 +259,7 @@ class ManagerControllerTest {
         expectedManagers = Set.of(managerDto1, managerDto2);
 
         // when
-        MvcResult managerGetResult = mockMvc.perform(MockMvcRequestBuilders.get("/managers/get-all-by-clients-status/" + status)
-                        //.with(httpBasic("user", "password"))
-                )
+        MvcResult managerGetResult = mockMvc.perform(MockMvcRequestBuilders.get("/managers/get-all-by-clients-status/" + status))
                 .andReturn();
 
         // then

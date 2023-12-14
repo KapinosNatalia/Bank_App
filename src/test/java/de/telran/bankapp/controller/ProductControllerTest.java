@@ -2,35 +2,24 @@ package de.telran.bankapp.controller;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.zaxxer.hikari.HikariConfig;
-import com.zaxxer.hikari.HikariDataSource;
 import de.telran.bankapp.config.TestConfig;
-import de.telran.bankapp.dto.ClientDto;
 import de.telran.bankapp.dto.ProductDto;
 import de.telran.bankapp.dto.ProductWithManagerAndQuantityDto;
-import de.telran.bankapp.entity.Product;
 import de.telran.bankapp.repository.ProductRepository;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.test.context.support.WithUserDetails;
-import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-import org.testcontainers.containers.PostgreSQLContainer;
-import org.testcontainers.containers.wait.strategy.Wait;
-import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
 
 import java.util.List;
 import java.util.Set;
 import java.util.UUID;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 @Testcontainers
 @SpringBootTest(classes = TestConfig.class)
@@ -53,9 +42,7 @@ class ProductControllerTest {
     @WithUserDetails("vip@gmail.com")
     void shouldGetAllProducts() throws Exception {
         // when
-        MvcResult productsGetResult = mockMvc.perform(MockMvcRequestBuilders.get("/products")
-                        //.with(httpBasic("user", "password"))
-                )
+        MvcResult productsGetResult = mockMvc.perform(MockMvcRequestBuilders.get("/products"))
                 .andReturn();
 
         // then
@@ -70,19 +57,14 @@ class ProductControllerTest {
     void shouldGetProduct() throws Exception {
         //given
         ProductDto expectedProductDto = new ProductDto(
-                "523e4567-e89b-12d3-a456-020000000004", //"523e4567-e89b-12d3-a456-020000000011",
-                "Current account EUR", //"Test product",
+                "523e4567-e89b-12d3-a456-020000000004",
+                "Current account EUR",
                 "ACTIVE",
                 "EUR"
         );
-        //Product product = objectMapper.convertValue(expectedProductDto, Product.class);
-        //Product product = new Product();
-        //productRepository.save(product);
 
         //when
-        MvcResult productGetResult = mockMvc.perform(MockMvcRequestBuilders.get("/products/" + expectedProductDto.getId())
-                        //.with(httpBasic("user", "password"))
-                )
+        MvcResult productGetResult = mockMvc.perform(MockMvcRequestBuilders.get("/products/" + expectedProductDto.getId()))
                 .andReturn();
 
         //then
@@ -99,9 +81,7 @@ class ProductControllerTest {
         String productID = "523e4567-e89b-12d3-a456-020000000011";
 
         //when
-        MvcResult productGetResult = mockMvc.perform(MockMvcRequestBuilders.get("/products/" + productID)
-                        //.with(httpBasic("user", "password"))
-                )
+        MvcResult productGetResult = mockMvc.perform(MockMvcRequestBuilders.get("/products/" + productID))
                 .andReturn();
 
         //then
@@ -122,9 +102,7 @@ class ProductControllerTest {
         );
 
         //when
-        MvcResult productListGetResult = mockMvc.perform(MockMvcRequestBuilders.get("/products/find-all-products-where-agreement-quantity-more-than/1")
-                        //.with(httpBasic("user", "password"))
-                )
+        MvcResult productListGetResult = mockMvc.perform(MockMvcRequestBuilders.get("/products/find-all-products-where-agreement-quantity-more-than/1"))
                 .andReturn();
 
         //then
@@ -165,9 +143,7 @@ class ProductControllerTest {
         );
 
         //when
-        MvcResult productListGetResult = mockMvc.perform(MockMvcRequestBuilders.get("/products/get-products-with-quantity-of-using")
-                        //.with(httpBasic("user", "password"))
-                )
+        MvcResult productListGetResult = mockMvc.perform(MockMvcRequestBuilders.get("/products/get-products-with-quantity-of-using"))
                 .andReturn();
 
         //then

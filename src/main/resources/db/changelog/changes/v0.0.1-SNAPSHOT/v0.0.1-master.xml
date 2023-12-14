@@ -18,7 +18,7 @@
     <include file="/db/changelog/changes/v0.0.1-SNAPSHOT/04-insert_test_data_accounts-changelog.xml"/>
     <include file="/db/changelog/changes/v0.0.1-SNAPSHOT/05-insert_test_data_agreements-changelog.xml"/>
     <include file="/db/changelog/changes/v0.0.1-SNAPSHOT/06-insert_test_data_transactions-changelog.xml"/>
-<!--    <include file="/db/changelog/changes/v0.0.1-SNAPSHOT/create_function.sql"/>-->
+    <include file="/db/changelog/changes/v0.0.1-SNAPSHOT/create_function.xml"/>
 
 
 </databaseChangeLog>

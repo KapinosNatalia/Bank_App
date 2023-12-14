@@ -10,6 +10,8 @@ spring:
     driverClassName: org.postgresql.Driver
 
   jpa:
+    hibernate:
+      ddl-auto: none
 
   liquibase:
     enabled: false
