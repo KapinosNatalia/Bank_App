@@ -15,7 +15,7 @@ public class TestConfig {
     @Bean(initMethod = "start", destroyMethod = "stop")
     public JdbcDatabaseContainer<?> jdbcDatabaseContainer() {
         return new PostgreSQLContainer<>("postgres:16.0")
-                .withInitScript("db/all_in_one.sql")
+                .withInitScript("db/create_test_db.sql")
                 .waitingFor(Wait.forListeningPort());
     }
 

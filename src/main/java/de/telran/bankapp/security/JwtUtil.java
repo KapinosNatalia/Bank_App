@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
 @Component
 public class JwtUtil {
     private final String secret_key = "secret";
-    private long accessTokenValidity = 60*60*1000;
+    private long accessTokenValidity = 24*60*60;
     private final JwtParser jwtParser;
     private final String TOKEN_HEADER = "Authorization";
     private final String TOKEN_PREFIX = "Bearer ";
@@ -27,7 +27,7 @@ public class JwtUtil {
         claims.put("firstName", client.getFirstName());
         claims.put("lastName", client.getLastName());
         Date tokenCreationTime = new Date();
-        Date tokenValidityTime = new Date(tokenCreationTime.getTime() + TimeUnit.MINUTES.toMillis(accessTokenValidity));
+        Date tokenValidityTime = new Date(tokenCreationTime.getTime() + TimeUnit.SECONDS.toMillis(accessTokenValidity));
         return Jwts.builder()
                 .setClaims(claims)
                 .setExpiration(tokenValidityTime)
@@ -70,12 +70,12 @@ public class JwtUtil {
             throw ex;
         }
     }
-
-    public String getEmails(Claims claims) {
-        return claims.getSubject();
-    }
-
-    public List<String> getRoles(Claims claims) {
-        return (List<String>) claims.get("roles");
-    }
+//
+//    public String getEmails(Claims claims) {
+//        return claims.getSubject();
+//    }
+//
+//    public List<String> getRoles(Claims claims) {
+//        return (List<String>) claims.get("roles");
+//    }
 }

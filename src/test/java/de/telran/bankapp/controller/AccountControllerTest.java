@@ -31,7 +31,6 @@ class AccountControllerTest {
     @Autowired
     private ObjectMapper objectMapper;
 
-
     @Autowired
     AccountRepository accountRepository;
 

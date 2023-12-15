@@ -25,10 +25,9 @@ public class SecurityConfig {
     private final JwtAuthorisationFilter jwtAuthorisationFilter;
 
     @Bean
-    public AuthenticationManager authenticationManager(HttpSecurity http, NoOpPasswordEncoder noOpPasswordEncoder)
+    public AuthenticationManager authenticationManager(HttpSecurity http)
             throws Exception {
         AuthenticationManagerBuilder authenticationManagerBuilder = http.getSharedObject(AuthenticationManagerBuilder.class);
-//        authenticationManagerBuilder.userDetailsService(userDetailsService).passwordEncoder(noOpPasswordEncoder);
         authenticationManagerBuilder.userDetailsService(userDetailsService).passwordEncoder(getEncoder());
         return authenticationManagerBuilder.build();
     }
@@ -38,28 +37,15 @@ public class SecurityConfig {
         http
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests((authorize) -> authorize
-//                        .anyRequest().permitAll())
-                        //.requestMatchers(new AntPathRequestMatcher("/auth/login")).permitAll()
                         .requestMatchers(new AntPathRequestMatcher("/auth/**")).permitAll()
                         .requestMatchers(new AntPathRequestMatcher("/products")).permitAll()
                         .requestMatchers(new AntPathRequestMatcher("/swagger-ui/index.html")).permitAll()
                         .requestMatchers(new AntPathRequestMatcher("/v3/api-docs/**")).permitAll()
                         .requestMatchers(new AntPathRequestMatcher("/swagger-ui/**")).permitAll()
-
                         .anyRequest().authenticated())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-                .addFilterBefore(jwtAuthorisationFilter, UsernamePasswordAuthenticationFilter.class)
-
-        //.httpBasic(Customizer.withDefaults())
-                //.formLogin(Customizer.withDefaults())
-        ;
-
+                .addFilterBefore(jwtAuthorisationFilter, UsernamePasswordAuthenticationFilter.class);
         return http.build();
-    }
-
-    @Bean
-    public NoOpPasswordEncoder passwordEncoder() {
-        return (NoOpPasswordEncoder) NoOpPasswordEncoder.getInstance();
     }
 
     @Bean
